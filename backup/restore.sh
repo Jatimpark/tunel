@@ -33,7 +33,7 @@ cp ss.conf /etc/shadowsocks-libev/ss.conf
 cp -r scrz-prem /var/lib/
 cp -r sstp /home/
 cp -r xray /etc/
-cp -r trojan-go /etc/
+#cp -r trojan-go /etc/
 cp -r shadowsocksr /usr/local/
 cp -r public_html /home/vps/
 cp crontab /etc/
