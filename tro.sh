@@ -1,6 +1,4 @@
 #!/bin/bash
-## crt xray
-clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
@@ -97,6 +95,7 @@ mkdir /var/log/trojan-go/
 touch /etc/trojan-go/akun.conf
 touch /var/log/trojan-go/trojan-go.log
 
+uuid=$(cat /proc/sys/kernel/random/uuid)
 # Buat Config Trojan Go
 cat > /etc/trojan-go/config.json << END
 {
