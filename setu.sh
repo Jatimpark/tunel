@@ -342,8 +342,6 @@ echo -e "${OKEY} Your Domain : $domain"
 sleep 2
 else
 echo -e "${EROR} Please Choose 1 & 2 Only !"
-exit 1
-fi
 clear
 domain=$(cat /root/domain)
 CITY=$(curl -s ipinfo.io/city )
