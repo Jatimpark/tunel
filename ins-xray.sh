@@ -425,13 +425,13 @@ cat <<EOF> /etc/xray/config.json
     },
    {
      "listen": "127.0.0.1",
-     "port": "38100",
+     "port": "25542",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
             "clients": [
                {
-                 "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"                 
+                 "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59"                 
 #vless
              }
           ]
@@ -445,16 +445,16 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "16493",
+     "port": "41762",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff",
+                 "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59",
                  "alterId": 0
 #vmess
-### asuu 2023-09-08
-},{"id": "f0cf1fd1-bdf0-48d7-aa0e-03c67690bbc4","alterId": 0,"email": "asuu"
+### babi 2023-09-08
+},{"id": "88ef7c86-f458-4987-8561-88bdd3260ee3","alterId": 0,"email": "babi"
              }
           ]
        },
@@ -467,16 +467,16 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "24514",
+     "port": "17127",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff",
+                 "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59",
                  "alterId": 0
 #vmessworry
-### asuu 2023-09-08
-},{"id": "f0cf1fd1-bdf0-48d7-aa0e-03c67690bbc4","alterId": 0,"email": "asuu"
+### babi 2023-09-08
+},{"id": "88ef7c86-f458-4987-8561-88bdd3260ee3","alterId": 0,"email": "babi"
              }
           ]
        },
@@ -489,16 +489,16 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "31533",
+     "port": "41798",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff",
+                 "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59",
                  "alterId": 0
 #vmesskuota
-### asuu 2023-09-08
-},{"id": "f0cf1fd1-bdf0-48d7-aa0e-03c67690bbc4","alterId": 0,"email": "asuu"
+### babi 2023-09-08
+},{"id": "88ef7c86-f458-4987-8561-88bdd3260ee3","alterId": 0,"email": "babi"
              }
           ]
        },
@@ -511,16 +511,16 @@ cat <<EOF> /etc/xray/config.json
      },
     {
       "listen": "127.0.0.1",
-      "port": "21846",
+      "port": "37400",
       "protocol": "trojan",
       "settings": {
           "decryption":"none",		
            "clients": [
               {
-                 "password": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"
+                 "password": "dcb2c56c-4085-4e88-840e-d29b92f97c59"
 #trojanws
-### trial5458 2023-09-07
-},{"password": "aad61bb9-f96b-4d15-9bfb-efa462160c54","email": "trial5458"
+### cok 2023-09-08
+},{"password": "cda902c7-aa54-46d0-8ea2-2aa5b9fc5ea6","email": "cok"
               }
           ],
          "udp": true
@@ -534,13 +534,13 @@ cat <<EOF> /etc/xray/config.json
      },
     {
          "listen": "127.0.0.1",
-        "port": "40274",
+        "port": "10846",
         "protocol": "shadowsocks",
         "settings": {
            "clients": [
            {
            "method": "aes-128-gcm",
-          "password": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"
+          "password": "dcb2c56c-4085-4e88-840e-d29b92f97c59"
 #ssws
            }
           ],
@@ -555,13 +555,13 @@ cat <<EOF> /etc/xray/config.json
      },	
       {
         "listen": "127.0.0.1",
-        "port": "39206",
+        "port": "38541",
         "protocol": "vless",
         "settings": {
          "decryption":"none",
            "clients": [
              {
-               "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"
+               "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59"
 #vlessgrpc
              }
           ]
@@ -575,16 +575,16 @@ cat <<EOF> /etc/xray/config.json
      },
      {
       "listen": "127.0.0.1",
-      "port": "28281",
+      "port": "36179",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "326ef643-8df6-45ce-ab76-b60ee67cd8ff",
+                 "id": "dcb2c56c-4085-4e88-840e-d29b92f97c59",
                  "alterId": 0
 #vmessgrpc
-### asuu 2023-09-08
-},{"id": "f0cf1fd1-bdf0-48d7-aa0e-03c67690bbc4","alterId": 0,"email": "asuu"
+### babi 2023-09-08
+},{"id": "88ef7c86-f458-4987-8561-88bdd3260ee3","alterId": 0,"email": "babi"
              }
           ]
        },
@@ -597,16 +597,16 @@ cat <<EOF> /etc/xray/config.json
      },
      {
         "listen": "127.0.0.1",
-        "port": "42529",
+        "port": "26815",
         "protocol": "trojan",
         "settings": {
           "decryption":"none",
              "clients": [
                {
-                 "password": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"
+                 "password": "dcb2c56c-4085-4e88-840e-d29b92f97c59"
 #trojangrpc
-### trial5458 2023-09-07
-},{"password": "aad61bb9-f96b-4d15-9bfb-efa462160c54","email": "trial5458"
+### cok 2023-09-08
+},{"password": "cda902c7-aa54-46d0-8ea2-2aa5b9fc5ea6","email": "cok"
                }
            ]
         },
@@ -619,13 +619,13 @@ cat <<EOF> /etc/xray/config.json
    },
    {
     "listen": "127.0.0.1",
-    "port": "39242",
+    "port": "10461",
     "protocol": "shadowsocks",
     "settings": {
         "clients": [
           {
              "method": "aes-128-gcm",
-             "password": "326ef643-8df6-45ce-ab76-b60ee67cd8ff"
+             "password": "dcb2c56c-4085-4e88-840e-d29b92f97c59"
 #ssgrpc
            }
          ],
@@ -710,6 +710,7 @@ cat <<EOF> /etc/xray/config.json
     }
   }
 }
+
 
 EOF
 # Install Trojan Go
