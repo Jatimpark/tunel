@@ -6,7 +6,6 @@ clear
 echo -e "${GREEN}"
 echo -e " [INFO] ${CYAN}Downloading Update File"
 sleep 2
-cd /usr/bin
 rm -rf menu
 rm -rf menu-ssh
 rm -rf menu-vmess
@@ -15,7 +14,6 @@ rm -rf menu-trojan
 
 clear
 echo -e " [INFO] Downloading Update File"
-clear
 sleep 2
 
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
@@ -66,18 +64,7 @@ chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 clear
 clear
-echo -e " "
-echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e "\E[42;1;37m        SCRIPT UDAH UPDATED              \E[0m"
-echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e " "
-read -n 1 -s -r -p "Press any key to back on menu"
+echo -e "${NC}"
+echo -e "${GREEN} [INFO] ${NC}Update Sukses Sayank..!!"
+sleep 2
 menu
-;;
-x)
-clear
-echo -e ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
-;;
-esac
