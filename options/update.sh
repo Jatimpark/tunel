@@ -1,13 +1,4 @@
 #!/bin/bash
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-echo ""
 CYAN='\e[0;36m'
 GREEN='\e[0;32m'
 NC='\e[0;37m'
@@ -24,12 +15,8 @@ rm -rf menu-trojan
 
 clear
 echo -e " [INFO] Downloading Update File"
-sleep 2
 clear
-echo ""
-
 sleep 2
-cd /usr/bin
 
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/restart.sh"
@@ -78,15 +65,12 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 clear
-echo -e ""
-
-rm -fr update.sh
 clear
-echo ""
+echo -e " "
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo -e "\E[42;1;37m        SCRIPT UDAH UPDATED              \E[0m"
 echo -e "\033[0;34m----------------------------------------\033[0m"
-echo ""
+echo -e " "
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
