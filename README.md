@@ -4,13 +4,7 @@
 
 Multiport v3 Stable stunel5
 
-kuota
-
 apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/setup.sh && chmod +x setup.sh && ./setup.sh
-
-nokuota
-
-apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/setup1.sh && chmod +x setup1.sh && ./setup1.sh
 
 apt install -y wget screen && wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/setup2.sh && chmod +x setup2.sh && ./setup2.sh
 
