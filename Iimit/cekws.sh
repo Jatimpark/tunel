@@ -56,7 +56,7 @@ jum=$(cat /tmp/ipvmess.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/scrz-prem/limit/vmess/ip/${akun})
+iplimit=$(cat /etc/limit/vmess/ip/${akun})
 jum2=$(cat /tmp/ipvmess.txt | wc -l)
 byte=$(cat /etc/vmess/${akun})
 lim=$(con ${byte})

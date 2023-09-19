@@ -69,7 +69,7 @@ checking_sc() {
 checking_sc
 echo -e "\e[32mloading...\e[0m"
 clear
-source /var/lib/scrz-prem/ipvps.conf
+#source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 #NS=`cat /etc/xray/dns`
@@ -261,8 +261,8 @@ if [ ! -e /etc/vmess ]; then
 fi
 
 if [[ $iplimit -gt 0 ]]; then
-mkdir -p /etc/scrz-prem/limit/vmess/ip
-echo -e "$iplimit" > /etc/scrz-prem/limit/vmess/ip/$user
+mkdir -p /etc//limit/vmess/ip
+echo -e "$iplimit" > /etc/limit/vmess/ip/$user
 else
 echo > /dev/null
 fi
