@@ -315,12 +315,6 @@ echo -e "└──────────────────────�
 sleep 1
 wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #Kuota
-wget -q https://raw.githubusercontent.com/Jatimpark/asu/main/limit/quota.sh && chmod +x quota.sh && ./quota.sh
-chmod +x /usr/local/sbin/quota
-chmod + x /usr/local/sbin/quota
-cd /usr/local/sbin/
-sed -i 's/\r//' quota
-cd
 wget -q https://raw.githubusercontent.com/Jatimpark/asu/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 chmod +x /usr/bin/*
 cd /usr/bin
@@ -435,6 +429,7 @@ systemctl restart qmtr
 systemctl enable qmtr
 sleep 2
 clear
+cd /usr/bin
 #wget https://raw.githubusercontent.com/Jatimpark/tunel/main/autodns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
