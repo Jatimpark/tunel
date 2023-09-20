@@ -314,9 +314,7 @@ echo -e " \E[42;1;37m           >>> Install Backup <<<           \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
 wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
-#Kuota
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/limit/limit-ip.sh && chmod +x limit-ip.sh && ./limit-ip.sh
-
+wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/restart.sh"
