@@ -315,8 +315,122 @@ echo -e "└──────────────────────�
 sleep 1
 wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #Kuota
-wget -q https://raw.githubusercontent.com/Jatimpark/asu/main/limit/limit-ip.sh && chmod +x limit-ip.sh && ./limit-ip.sh
+wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/limit/limit-ip.sh && chmod +x limit-ip.sh && ./limit-ip.sh
 #wget https://raw.githubusercontent.com/Jatimpark/tunel/main/autodns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+chmod +x /usr/bin/*
+cd /usr/bin
+sed -i 's/\r//' limit-ip
+cd
+clear
+#SERVICE LIMIT ALL IP
+cat >/etc/systemd/system/vmip.service << EOF
+[Unit]
+Description=My
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/bin/limit-ip vmip
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart vmip
+systemctl enable vmip
+
+cat >/etc/systemd/system/vlip.service << EOF
+[Unit]
+Description=My
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/bin/limit-ip vlip
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart vlip
+systemctl enable vlip
+
+cat >/etc/systemd/system/trip.service << EOF
+[Unit]
+Description=My
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/bin/limit-ip trip
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart trip
+systemctl enable trip
+#SERVICE LIMIT QUOTA
+
+#SERVICE VMESS
+cat >/etc/systemd/system/qmv.service << EOF
+[Unit]
+Description=My
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/local/sbin/quota vmess
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart qmv
+systemctl enable qmv
+
+#SERVICE VLESS
+cat >/etc/systemd/system/qmvl.service << EOF
+[Unit]
+Description=My 
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/local/sbin/quota vless
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart qmvl
+systemctl enable qmvl
+
+#SERVICE TROJAN
+cat >/etc/systemd/system/qmtr.service << EOF
+[Unit]
+Description=My 
+ProjectAfter=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=/usr/local/sbin/quota trojan
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart qmtr
+systemctl enable qmtr
+sleep 2
+clear
+cd /usr/bin
 echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/restart.sh"
