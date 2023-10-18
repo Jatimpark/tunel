@@ -1,4 +1,5 @@
 #!/bin/bash
+# HT Cloud
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -12,11 +13,18 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-clear
-# By TARAP KUHING
+echo "Checking VPS"
+IZIN=$( curl ipinfo.io/ip | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Fuck You!!"
+exit 0
+fi
 # ==================================================
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Jatimpark/tunel/main/ssh"
+akbarvpn="raw.githubusercontent.com/Jatimpark/tunel/main/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -30,7 +38,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/vpn.zip
+wget https://${akbarvpn}/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -107,32 +115,23 @@ END
 sed -i $MYIP2 /etc/openvpn/ssl.ovpn;
 
 cd
-# pada tulisan xxx ganti dengan alamat ip address VPS anda
-/etc/init.d/openvpn restart
-
-# masukkan certificatenya ke dalam config client TCP 1194
 echo '<ca>' >> /etc/openvpn/tcp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/tcp.ovpn
 echo '</ca>' >> /etc/openvpn/tcp.ovpn
-
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
-cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
-
-# masukkan certificatenya ke dalam config client UDP 2200
+cp /etc/openvpn/tcp.ovpn /var/www/html/tcp.ovpn
 echo '<ca>' >> /etc/openvpn/udp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/udp.ovpn
 echo '</ca>' >> /etc/openvpn/udp.ovpn
-
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( UDP 2200 )
-cp /etc/openvpn/udp.ovpn /home/vps/public_html/udp.ovpn
-
-# masukkan certificatenya ke dalam config client SSL
-echo '<ca>' >> /etc/openvpn/ssl.ovpn
-cat /etc/openvpn/server/ca.crt >> /etc/openvpn/ssl.ovpn
+cp /etc/openvpn/udp.ovpn /var/www/html/udp.ovpn
+echo '<ca>' >> /etc/openvpn/ws-ssl.ovpn
+cat /etc/openvpn/server/ca.crt >> /etc/openvpn/ws-ssl.ovpn
+echo '</ca>' >> /etc/openvpn/ws-ssl.ovpn
+cp /etc/openvpn/ws-ssl.ovpn /var/www/html/ws-ssl.ovpn
 echo '</ca>' >> /etc/openvpn/ssl.ovpn
-
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( SSL )
-cp /etc/openvpn/ssl.ovpn /home/vps/public_html/ssl.ovpn
+cp /etc/openvpn/ws-ssl.ovpn /var/www/html/ssl.ovpn
+    
+/etc/init.d/openvpn restart
+echo '</ca>' >> /etc/openvpn/tcp.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
 
