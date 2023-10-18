@@ -2,7 +2,8 @@
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipinfo.io/ip);
-domain=do.aryapro.xyz
+#domain=do.aryapro.xyz
+domen=cat /etc/xray/domain
 #MYIP2="s/xxxxxxxxx/$MYIP/g";
 MYIP2="s/xxxxxxxxx/$domain/g";
 
