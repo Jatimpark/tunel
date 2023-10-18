@@ -1,5 +1,4 @@
 #!/bin/bash
-# HT Cloud
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -13,18 +12,11 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl ipinfo.io/ip | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Fuck You!!"
-exit 0
-fi
+clear
+# By TARAP KUHING
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/Jatimpark/tunel/main/ssh"
+tarapkuhing="raw.githubusercontent.com/Jatimpark/tunel/main/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -38,7 +30,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://${akbarvpn}/vpn.zip
+wget https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -115,7 +107,7 @@ END
 sed -i $MYIP2 /etc/openvpn/ssl.ovpn;
 
 cd
-# pada tulisan xxx ganti dengan alamat ip address VPS anda 
+# pada tulisan xxx ganti dengan alamat ip address VPS anda
 /etc/init.d/openvpn restart
 
 # masukkan certificatenya ke dalam config client TCP 1194
