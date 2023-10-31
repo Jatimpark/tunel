@@ -1,6 +1,5 @@
 #!/bin/bash
 cd /usr/bin
-
 wget -O up-ssh-vpn "raw.githubusercontent.com/Jatimpark/tunel/main/ssh/up-ssh-vpn.sh" && chmod +x up-ssh-vpn.sh
 up-ssh-vpn
 rm -fr up-ssh-vpn.sh
