@@ -2,7 +2,7 @@
 cd /usr/bin
 
 echo ""
-wget -O run-update "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/update.sh"
+wget -O update "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/update.sh"
 clear
 echo -e "\e[0;32mPlease Wait...!\e[0m"
 sleep 2
