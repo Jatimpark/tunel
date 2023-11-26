@@ -299,7 +299,8 @@ install_speedtest() {
     fi
     printf "%-18s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
-
+clear
+clear
 print_intro() {
     echo "-------------------- Script By Nbc-Group -------------------"
     echo " Version            : $(_green v5000)"
