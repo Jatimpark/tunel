@@ -431,7 +431,7 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$servlets/mms",
+     "port": "$kuotahabis",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -445,7 +445,7 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets/mms"
+                "path": "/kuota-habis"
           }
         }
      },
