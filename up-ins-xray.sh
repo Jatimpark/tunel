@@ -221,13 +221,13 @@ install_ssl(){
 }
 
 # install nginx
-#apt install -y nginx
-#cd
-#rm -fr /etc/nginx/sites-enabled/default
-#rm -fr /etc/nginx/sites-available/default
-#wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
+apt install -y nginx
+cd
+rm -fr /etc/nginx/sites-enabled/default
+rm -fr /etc/nginx/sites-available/default
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
 #mkdir -p /home/vps/public_html
-#wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
 
 # Install Xray #
 #==========#
@@ -313,10 +313,10 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /worryfree' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$servlets"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$worryfree"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -325,10 +325,10 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /kuota-habis' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$mms"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$kuotahabis"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -465,7 +465,7 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$servlets",
+     "port": "$worryfree",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -479,13 +479,13 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets"
+                "path": "/servlets/mms"
           }
         }
      },
      {
      "listen": "127.0.0.1",
-     "port": "$mms",
+     "port": "$kuotahabis",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -499,7 +499,7 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/mms"
+                "path": "/servlets/mms"
           }
         }
      },
