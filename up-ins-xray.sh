@@ -313,10 +313,10 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$servlets"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$servletsmms"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -325,10 +325,10 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$mms"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$servletsmms"';' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -465,7 +465,7 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$servlets",
+     "port": "$servlets/mms",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -479,13 +479,13 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets"
+                "path": "/servletsmms"
           }
         }
      },
      {
      "listen": "127.0.0.1",
-     "port": "$mms",
+     "port": "$servletsmms",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -499,7 +499,7 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/mms"
+                "path": "/servlets/mms"
           }
         }
      },
