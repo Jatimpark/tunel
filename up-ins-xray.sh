@@ -260,7 +260,7 @@ worryfree=$((RANDOM + 10000))
 kuotahabis=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
-fightertunnelssh=$((RANDOM + 10000))
+#fightertunnelssh=$((RANDOM + 10000))
 
 # nginx xray.conf
 rm -fr /etc/nginx/conf.d/xray.conf
@@ -278,7 +278,7 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              root /home/vps/public_html;
         }
 EOF
-sed -i '$ ilocation /fightertunnelssh ' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation /fightertunnelssh' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:700'';' /etc/nginx/conf.d/xray.conf
