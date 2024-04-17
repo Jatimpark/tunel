@@ -257,7 +257,7 @@ vless=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
 worryfree=$((RANDOM + 10000))
-kuotahabis=$((RANDOM + 10000))
+fightertunnelssh=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 #fightertunnelssh=$((RANDOM + 10000))
@@ -332,9 +332,9 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /kuota-habis' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /fightertunnelssh' /etc/nginx/conf.d/xray.conf
 sed -i '$ i                   if ($http_upgrade != "Upgrade") {' /etc/nginx/conf.d/xray.conf
-sed -i '$ i                   rewrite /(.*) /kuota-habis break;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i                   rewrite /(.*) /fightertunnelssh break;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$kuotahabis"';' /etc/nginx/conf.d/xray.conf
@@ -498,7 +498,7 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "$kuotahabis",
+     "port": "$fightertunnelssh",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -512,7 +512,7 @@ cat <<EOF> /etc/xray/config.json
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/kuota-habis"
+                "path": "/fightertunnelssh"
           }
         }
      },
