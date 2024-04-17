@@ -250,6 +250,7 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 
 # Random Port Xray
+fightertunnelssh=$((RANDOM + 10000))
 trojanws=$((RANDOM + 10000))
 ssws=$((RANDOM + 10000))
 ssgrpc=$((RANDOM + 10000))
