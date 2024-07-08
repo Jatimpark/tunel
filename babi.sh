@@ -38,7 +38,7 @@ jum2=$(cat /tmp/ipvmess.txt | wc -l)
 lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -d " " -f 2 | tail -1)
 echo -e "\033[1;91m┌──────────────────────────────────────┐\033[0m"
 printf "  %-13s %-7s %-8s %2s\n" "  UserName : ${akun}"
-printf "  %-13s %-7s %-8s %2s\n" "  Online   : $lastlogin"
+printf "  %-13s %-7s %-8s %2s\n"    Online   : $lastlogin"
 #printf "  %-13s %-7s %-8s %2s\n" "  Usage Quota : ${gb}"
 #printf "  %-13s %-7s %-8s %2s\n" "  Limit Quota : ${lim}"
 #printf "  %-13s %-7s %-8s %2s\n" "  Limit IP : $iplimit"
