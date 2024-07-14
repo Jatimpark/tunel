@@ -14,7 +14,7 @@ GREEN='\033[0;32m'
 clear
 clear
 echo -n >/tmp/other.txt
-data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 3 | sort | uniq`);
+data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "\033[\033[0;34m┌──────────────────────────────────────────┐\033[0m"
 echo -e "            ALLXRAY USER LOGIN            $NC"
 echo -e "\033[\033[0;34m└──────────────────────────────────────────┘\033[0m"
