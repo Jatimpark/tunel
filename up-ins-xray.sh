@@ -29,7 +29,7 @@ export UNDERLINE="\e[4m"
 clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
-#domain=$(cat /etc/xray/domain)
+domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
