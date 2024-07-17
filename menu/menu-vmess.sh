@@ -67,7 +67,7 @@ menu
 		fi
 	done
 
-uuid=$(1d1c1d94-6987-4658-a4dc-8821a30fe7e0)
+#uuid=$(1d1c1d94-6987-4658-a4dc-8821a30fe7e0)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
