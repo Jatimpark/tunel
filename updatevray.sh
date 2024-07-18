@@ -166,9 +166,40 @@ apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/files/runn.service" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/xray.conf"
 #mkdir -p /home/vps/public_html
-wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/haproxy.cfg"
+
+cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
+
+    # > Set Permission
+    chmod +x /etc/systemd/system/runn.service
+
+    # > Create Service
+    rm -rf /etc/systemd/system/xray.service.d
+    cat >/etc/systemd/system/xray.service <<EOF
+Description=Xray Service
+Documentation=https://github.com
+After=network.target nss-lookup.target
+
+[Service]
+User=www-data
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+
+EOF
+print_success "Konfigurasi Packet"
+}
 
 # Install Xray #
 #==========#
