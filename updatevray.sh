@@ -90,41 +90,6 @@ chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 
-# nginx renew ssl
-echo -n '#!/bin/bash
-/etc/init.d/nginx stop
-"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" &> /root/renew_ssl.log
-/etc/init.d/nginx start
-/etc/init.d/nginx status
-' > /usr/local/bin/ssl_renew.sh
-chmod +x /usr/local/bin/ssl_renew.sh
-if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
-
-mkdir -p /home/vps/public_html
-
-# Make Folder & Log XRay & Log Trojan
-rm -fr /var/log/xray
-#rm -fr /var/log/trojan
-rm -fr /home/vps/public_html
-mkdir -p /var/log/xray
-#mkdir -p /var/log/trojan
-mkdir -p /home/vps/public_html
-chown www-data.www-data /var/log/xray
-chown www-data.www-data /etc/xray
-chmod +x /var/log/xray
-#chmod +x /var/log/trojan
-touch /var/log/xray/access.log
-touch /var/log/xray/error.log
-touch /var/log/xray/access2.log
-touch /var/log/xray/error2.log
-# Make Log Autokill & Log Autoreboot
-rm -fr /root/log-limit.txt
-rm -fr /root/log-reboot.txt
-touch /root/log-limit.txt
-touch /root/log-reboot.txt
-touch /home/limit
-echo "" > /root/log-limit.txt
-echo "" > /root/log-reboot.txt
 
 # nginx for debian & ubuntu
 install_ssl(){
@@ -166,9 +131,9 @@ apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/nginx.conf" 
 #mkdir -p /home/vps/public_html
-wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/xray.conf"
 
 # Install Xray #
 #==========#
