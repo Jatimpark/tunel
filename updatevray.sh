@@ -200,9 +200,9 @@ WantedBy=multi-user.target
 
 
 EOF
-print_success "Konfigurasi Packet"
+#print_success "Konfigurasi Packet"
 
-function ins_restart(){
+#function ins_restart(){
 clear
 print_install "Restarting  All Packet"
 /etc/init.d/nginx restart
