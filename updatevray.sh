@@ -198,9 +198,11 @@ LimitNOFILE=1000000
 [Install]
 WantedBy=multi-user.target
 
+
 EOF
 print_success "Konfigurasi Packet"
-
+}
+cd
 function ins_restart(){
 clear
 print_install "Restarting  All Packet"
@@ -233,6 +235,7 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 print_success "All Packet"
 }
+
 # Restart layanan after install
 function enable_services(){
 clear
