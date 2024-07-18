@@ -171,6 +171,13 @@ rm -fr /etc/nginx/sites-available/default
 wget -q -O /etc/runn.service/runn.service "https://raw.githubusercontent.com/Jatimpark/pusata/main/files/runn.service" 
 wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/haproxy.cfg"
 wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/xray.conf"
+# / / Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+# / / Ambil Xray Core Version Terbaru
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+#bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
 
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 
@@ -228,7 +235,6 @@ systemctl restart haproxy
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
-cd
 rm -f /root/openvpn
 rm -f /root/key.pem
 rm -f /root/cert.pem
