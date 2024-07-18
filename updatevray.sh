@@ -169,17 +169,15 @@ install_ssl(){
 #==========#
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-# / / Installation Xray Core
-#xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
-# / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
+
 apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
 wget -O /etc/systemd/system/runn.service "https://raw.githubusercontent.com/Jatimpark/pusata/main/files/runn.service" 
 #mkdir -p /home/vps/public_html
-wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Jatimpark/tunel/pusata/main/config/haproxy.cfg"
+wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Jatimpark/pusata/main/config/haproxy.cfg"
 wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/Jatimpark/tunel/pusata/main/config/xray.conf"
 
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
