@@ -201,8 +201,7 @@ WantedBy=multi-user.target
 
 EOF
 print_success "Konfigurasi Packet"
-}
-cd
+
 function ins_restart(){
 clear
 print_install "Restarting  All Packet"
