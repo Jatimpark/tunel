@@ -233,7 +233,6 @@ rm -f /root/openvpn
 rm -f /root/key.pem
 rm -f /root/cert.pem
 print_success "All Packet"
-}
 
 # Restart layanan after install
 function enable_services(){
