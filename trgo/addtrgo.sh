@@ -17,7 +17,7 @@ MYIP=$(wget -qO- icanhazip.com);
 clear
 clear
 uuid=$(cat /etc/trojan-go/uuid.txt)
-source /var/lib/SIJA/ipvps.conf
+source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
