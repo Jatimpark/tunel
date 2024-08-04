@@ -251,7 +251,7 @@ socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 [dropbear]
-accept = 447
+accept = 443
 connect = 127.0.0.1:109
 [openssh]
 accept = 777
