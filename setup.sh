@@ -129,7 +129,12 @@ mkdir -p /var/lib/scrz-prem/
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 mkdir -p /usr/local/etc/xray
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+apt install jq curl -y
+rm -rf /root/xray/scdomain
+mkdir -p /root/xray
+clear
+echo ""
+read -rp "Input Domain Name. Example ( babi ): " -e sub
 DOMAIN=group-nbc.my.id
 SUB_DOMAIN=${sub}.group-nbc.my.id
 CF_ID=lahseta19@gmail.com
@@ -157,11 +162,15 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 -H "X-Auth-Key: ${CF_KEY}" \
 -H "Content-Type: application/json" \
 --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
-echo "Host : $SUB_DOMAIN"
-echo $SUB_DOMAIN > /root/domain
-echo "IP=$SUB_DOMAIN" > /var/lib/scrz-prem/ipvps.conf
+
+echo "$SUB_DOMAIN" > /root/domain
+echo "$SUB_DOMAIN" > /root/scdomain
+echo "$SUB_DOMAIN" > /etc/xray/domain
+echo "$SUB_DOMAIN" > /etc/v2ray/domain
+echo "$SUB_DOMAIN" > /etc/xray/scdomain
+echo "IP=$SUB_DOMAIN" > /var/scrz-prem/ipvps.conf
+rm -rf cf
 sleep 1
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Domain added.."
 sleep 3
 domain=$(cat /root/domain)
