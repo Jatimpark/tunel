@@ -163,9 +163,9 @@ apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/nginx.conf" 
 #mkdir -p /home/vps/public_html
-wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/vps.conf"
 
 # Install Xray #
 #==========#
@@ -238,9 +238,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /' /etc/nginx/conf.d/xray.conf
-sed -i '$ if ($http_upgrade != "Upgrade") { /etc/nginx/conf.d/xray.conf
-sed -i '$ rewrite /(.*) /vmess break; /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -368,21 +366,17 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-          }
-        ]
-      },
-      "streamSettings":{
-        "network": "ws",
-        "wsSettings": {
-          "path": "/",
-          "alpn": [
-            "h2",
-            "http/1.1"
+             }
           ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vmess"
+          }
         }
-      }
-    },
-    {
+     },
+     {
      "listen": "127.0.0.1",
       "port": "$trojanws",
       "protocol": "trojan",
