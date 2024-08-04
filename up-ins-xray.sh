@@ -349,13 +349,13 @@ cat <<EOF> /etc/xray/config.json
     },
    {
      "listen": "127.0.0.1",
-     "port": "41361",
+     "port": "$vless",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
             "clients": [
                {
-                 "id": "82db0d2f-9523-4588-9a78-efea0f44218f"                 
+                 "id": "${uuid}"                 
 #vless
              }
           ]
@@ -369,12 +369,12 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-     "port": "30854",
+     "port": "$vmess",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "82db0d2f-9523-4588-9a78-efea0f44218f",
+                 "id": "${uuid}",
                  "alterId": 0
 #vmess
 ### asuu 2024-10-14
@@ -391,13 +391,13 @@ cat <<EOF> /etc/xray/config.json
      },
      {
      "listen": "127.0.0.1",
-      "port": "22563",
+      "port": "$trojanws",
       "protocol": "trojan",
       "settings": {
           "decryption":"none",		
            "clients": [
               {
-                 "password": "82db0d2f-9523-4588-9a78-efea0f44218f"
+                 "password": "${uuid}"
 #trojanws
               }
           ],
@@ -412,13 +412,13 @@ cat <<EOF> /etc/xray/config.json
      },
     {
          "listen": "127.0.0.1",
-        "port": "39594",
+        "port": "$ssws",
         "protocol": "shadowsocks",
         "settings": {
            "clients": [
            {
            "method": "aes-128-gcm",
-          "password": "82db0d2f-9523-4588-9a78-efea0f44218f"
+          "password": "${uuid}"
 #ssws
            }
           ],
@@ -433,13 +433,13 @@ cat <<EOF> /etc/xray/config.json
      },	
       {
         "listen": "127.0.0.1",
-        "port": "22455",
+        "port": "$vlessgrpc",
         "protocol": "vless",
         "settings": {
          "decryption":"none",
            "clients": [
              {
-               "id": "82db0d2f-9523-4588-9a78-efea0f44218f"
+               "id": "${uuid}"
 #vlessgrpc
              }
           ]
@@ -453,16 +453,14 @@ cat <<EOF> /etc/xray/config.json
      },
      {
       "listen": "127.0.0.1",
-      "port": "27489",
+      "port": "$vmessgrpc",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "82db0d2f-9523-4588-9a78-efea0f44218f",
+                 "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### asuu 2024-10-14
-},{"id": "c1bd0ad6-fd1f-40ad-a630-c88be2b55ebf","alterId": 0,"email": "asuu"
              }
           ]
        },
@@ -475,13 +473,13 @@ cat <<EOF> /etc/xray/config.json
      },
      {
         "listen": "127.0.0.1",
-        "port": "30834",
+        "port": "$trojangrpc",
         "protocol": "trojan",
         "settings": {
           "decryption":"none",
              "clients": [
                {
-                 "password": "82db0d2f-9523-4588-9a78-efea0f44218f"
+                 "password": "${uuid}"
 #trojangrpc
                }
            ]
@@ -495,13 +493,13 @@ cat <<EOF> /etc/xray/config.json
    },
    {
     "listen": "127.0.0.1",
-    "port": "24292",
+    "port": "$ssgrpc",
     "protocol": "shadowsocks",
     "settings": {
         "clients": [
           {
              "method": "aes-128-gcm",
-             "password": "82db0d2f-9523-4588-9a78-efea0f44218f"
+             "password": "${uuid}"
 #ssgrpc
            }
          ],
@@ -586,7 +584,6 @@ cat <<EOF> /etc/xray/config.json
     }
   }
 }
-
 EOF
 # Installing Xray Service
 rm -fr /etc/systemd/system/xray.service.d
