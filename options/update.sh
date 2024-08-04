@@ -1,8 +1,36 @@
 #!/bin/bash
-echo -e ""
+
+GitUser="Jatimpark"
+if [ "${EUID}" -ne 0 ]; then
+		echo "You need to run this script as root"
+		exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+		echo "OpenVZ is not supported"
+		exit 1
+fi
+clear
+echo ""
 sleep 2
-echo -e "\033[0;32m Start Loading.......\033[0m"
-sleep 3. 
+echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
+sleep 2
+clear
+echo -e "\e[0;32mGetting New Version Script..\e[0m"
+sleep 1
+echo ""
+# UPDATE RUN-UPDATE
+cd /usr/bin
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/tunel/main/options/update.sh"
+chmod +x run-update
+# RUN UPDATE
+echo ""
+clear
+echo -e "\e[0;32mPlease Wait...!\e[0m"
+sleep 6
+clear
+echo ""
+echo -e "\e[0;32mNew Version Downloading started!\e[0m"
+sleep 2
 cd /usr/bin
 
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/afiaza/tunel/main/options/autoreboot.sh"
@@ -50,8 +78,13 @@ clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
+sleep 2
+echo -e "\e[0;32mPatching... OK!\e[0m"
+sleep 1
+echo ""
+echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
 cd
-rm -fr update.sh
+rm -f update.sh
 clear
 echo ""
 echo -e "\033[0;34m----------------------------------------\033[0m"
