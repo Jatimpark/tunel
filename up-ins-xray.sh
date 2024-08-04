@@ -120,7 +120,8 @@ grpc_set_header Host $http_host;
 grpc_pass grpc://127.0.0.1:20006;
 }
         }
-        
+# xray config
+cat <<EOF> /etc/xray/config.json
         
 {
   "log" : {
