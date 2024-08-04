@@ -238,10 +238,31 @@ echo -e "${EROR} Please Choose 1 & 2 Only !"
 exit 1
 fi
 echo -e "┌─────────────────────────────────────────┐"
-echo -e " \E[42;1;37m           >>> Install Tools <<<          \E[0m$NC"
+echo -e " \E[42;1;37m           >>> Install Vpnstat          \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/aryapro.sh && chmod +x aryapro.sh && ./aryapro.sh
+clear
+echo "Install Main..."
+echo "Progress..."
+sleep 2
+/etc/init.d/vnstat restart >/dev/null 2>&1
+wget -q https://humdi.net/vnstat/vnstat-2.6.tar.gz
+tar zxvf vnstat-2.6.tar.gz
+cd vnstat-2.6
+./configure --prefix=/usr --sysconfdir=/etc >/dev/null 2>&1 && make >/dev/null 2>&1 && make install >/dev/null 2>&1
+cd
+vnstat -u -i $NET
+sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
+chown vnstat:vnstat /var/lib/vnstat -R
+systemctl enable vnstat >/dev/null 2>&1
+/etc/init.d/vnstat restart >/dev/null 2>&1
+rm -f /root/vnstat-2.6.tar.gz >/dev/null 2>&1
+rm -rf /root/vnstat-2.6 >/dev/null 2>&1
+
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+yellow "Main successfully installed..."
+sleep 3
+clear
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[42;1;37m          >>> Install SSH / WS <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
@@ -423,3 +444,4 @@ exit 0
 else
 reboot
 fi
+
