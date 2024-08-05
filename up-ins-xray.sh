@@ -172,9 +172,9 @@ apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/nginx.conf" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
 #mkdir -p /home/vps/public_html
-wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
 
 # Install Xray #
 #==========#
@@ -204,6 +204,8 @@ ssgrpc=$((RANDOM + 10000))
 vless=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
+worryfree=$((RANDOM + 10000))
+kuotahabis=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
@@ -386,6 +388,13 @@ cat <<EOF> /etc/xray/config.json
              }
           ]
        },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vmess"
+          }
+        }
+     },
      {
      "listen": "127.0.0.1",
       "port": "$trojanws",
