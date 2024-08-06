@@ -6,7 +6,8 @@ CONFIG_FILE="${CONFIG_DIR}/bandwidth.conf"
 INTERFACE="eth0" 
 USAGE_FILE="/var/log/vnstat_usage.log"
 YELLOW='\033[0;34m'
-GREEN='\033[0;32m'
+GREEN='\033[0;33m"
+CYAN='\033[0;36m"
 NC='\033[0m' # No Color
 
 # Fungsi untuk membuat direktori dan file konfigurasi
@@ -42,17 +43,17 @@ REMAINING_GB=$(echo "$TOTAL_QUOTA_GB - $USAGE_GB" | bc)
 # Menyimpan hasil ke file log
 {
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "       Total Kuota Bandwidth        ${NC}"
+    echo -e "${CYAN}       Total Kuota Bandwidth        ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "Total Kuota Bandwidth: ${TOTAL_QUOTA_TB} TB${NC}"
+    echo -e "${GREEN}Total Kuota Bandwidth: ${TOTAL_QUOTA_TB} TB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "        Penggunaan Saat Ini          ${NC}"
+    echo -e "${GREEN}        Penggunaan Saat Ini          ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "lPenggunaan Saat Ini: ${USAGE_GB} GB${NC}"
+    echo -e "${GREEN}lPenggunaan Saat Ini: ${USAGE_GB} GB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "             Sisa Bandwidth          ${NC}"
+    echo -e " ${GREEN}            Sisa Bandwidth          ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "lSisa Bandwidth: ${REMAINING_GB} GB${NC}"
+    echo -e "${GREEN} Sisa Bandwidth: ${REMAINING_GB} GB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
 } > $USAGE_FILE
 
