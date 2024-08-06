@@ -286,17 +286,18 @@ wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Jatimpark/tune
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/menu-set.sh"
+wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/update.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
-wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/crt.sh"
+wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
 wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
-wget -q -O /usr/bin/updatevray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/updatevray.sh"
+wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
+wget -q -O /usr/bin/update-xray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/update-xray.sh"
 
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
@@ -319,7 +320,8 @@ chmod +x /usr/bin/certxray
 chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/babi
-chmod +x /usr/bin/updatevray
+chmod +x /usr/bin/cek-bw
+chmod +x /usr/bin/update-xray
 
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
