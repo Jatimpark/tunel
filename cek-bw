@@ -42,17 +42,17 @@ REMAINING_GB=$(echo "$TOTAL_QUOTA_GB - $USAGE_GB" | bc)
 # Menyimpan hasil ke file log
 {
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${GREEN}        Total Kuota Bandwidth        ${NC}"
+    echo -e "       Total Kuota Bandwidth        ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${YELLOW}Total Kuota Bandwidth: ${TOTAL_QUOTA_TB} TB${NC}"
+    echo -e "Total Kuota Bandwidth: ${TOTAL_QUOTA_TB} TB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${YELLOW}        Penggunaan Saat Ini          ${NC}"
+    echo -e "        Penggunaan Saat Ini          ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${YELLOW}Penggunaan Saat Ini: ${USAGE_GB} GB${NC}"
+    echo -e "lPenggunaan Saat Ini: ${USAGE_GB} GB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${YELLOW}             Sisa Bandwidth          ${NC}"
+    echo -e "             Sisa Bandwidth          ${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
-    echo -e "${YELLOW}Sisa Bandwidth: ${REMAINING_GB} GB${NC}"
+    echo -e "lSisa Bandwidth: ${REMAINING_GB} GB${NC}"
     echo -e "${YELLOW}--------------------------------------${NC}"
 } > $USAGE_FILE
 
