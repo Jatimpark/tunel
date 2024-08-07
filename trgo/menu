@@ -165,10 +165,10 @@ echo -e " ${NC} │$NC [${BRED}21$NC]${YELL} CHANGE BANNER                      
 echo -e " ${NC} │$NC [${BRED}22$NC]${YELL} RESTART BANNER                                            ${NC}│"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │$bblue Script Version $YELL=$NC V2.1 LifeTime "
+echo -e " ${NC} │$bblue Script Version $YELL=$NC FZVPN LifeTime "
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════╯\033[0;37m"
 echo -e " "
-read -p "  Options [ 1 - 18 ] ❱❱❱ " opt
+read -p "  Options [ 1 - 22 ] ❱❱❱ " opt
 echo -e ""
 case $opt in
 1 | 01)
