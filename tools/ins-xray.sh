@@ -61,7 +61,6 @@ apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
-
 # install xray
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
@@ -76,6 +75,15 @@ touch /var/log/xray/access.log
 touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
+
+# Install Xray #
+#==========#
+# / / Ambil Xray Core Version Terbaru
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+# / / Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+# / / Ambil Xray Core Version Terbaru
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
 
 ## crt xray
 systemctl stop nginx
@@ -167,15 +175,6 @@ wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/afiaza/tunel
 #mkdir -p /home/vps/public_html
 wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/vps.conf"
 
-# Install Xray #
-#==========#
-# / / Ambil Xray Core Version Terbaru
-latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-# / / Installation Xray Core
-xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
-# / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
-
 # / / Make Main Directory
 
 mkdir -p /usr/bin/xray
@@ -189,13 +188,13 @@ mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 
 # Random Port Xray
-trojanws=$((RANDOM + 10000))
 ssws=$((RANDOM + 10000))
 ssgrpc=$((RANDOM + 10000))
 vless=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
+trojanws=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
 # nginx xray.conf
