@@ -1,6 +1,6 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+#biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
@@ -84,9 +84,9 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Remarks       : ${user}" 
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
-echo -e "port TLS      : $tls" 
-echo -e "port none TLS : $none"
-echo -e "port GRPC     : $tls" 
+echo -e "port none TLS : 80, 8880, 2082"
+echo -e "port TLS      : 443, 8443, 2096" 
+echo -e "port GRPC     : 443, 8443, 2096" 
 echo -e "id            : ${uuid}"
 echo -e "Encryption    : none" 
 echo -e "Network       : ws" 
@@ -129,9 +129,9 @@ echo -e "\033[0;34m═════════════\033[0;33mXRAY/VLESS\0
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
-echo -e "Port TLS       : 443"
-echo -e "Port none TLS  : 80"
-echo -e "Port gRPC      : 443"
+echo -e "Port none TLS  : 80, 8880, 2082"
+echo -e "Port TLS       : 443, 8443, 2096"
+echo -e "Port gRPC      : 443, 8443, 2096"
 echo -e "ID             : ${uuid}"
 echo -e "Encryption     : none"
 echo -e "Network        : ws"
