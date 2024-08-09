@@ -60,8 +60,8 @@ echo -e " $BICyan│$NC   ${BIGreen}[7]${NC}  • Restart All Service "
 echo -e " $BICyan│$NC   ${BIGreen}[8]${NC}  • Auto Reboot"
 echo -e " $BICyan│$NC   ${BIGreen}[9]${NC}  • Reboot"
 echo -e " $BICyan│$NC   ${BIGreen}[10]${NC} • Speedtest"
-echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
-echo -e " $BICyan│$NC   ${BIGreen}[12]${NC} • Upgrade Versi New Xray"
+#echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
+echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Upgrade Versi New Xray"
 echo -e " $BICyan│$NC   ${BIGreen}[0]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
@@ -78,8 +78,8 @@ case $opt in
 08 | 8) clear ; autoreboot ;;
 09 | 9) clear ; reboot ;;
 10) clear ; speedtest ;;
-11) clear ; cek-bw ;;
-12) clear ; update-xray ;;
+#11) clear ; cek-bw ;;
+11) clear ; update-xray ;;
 #13) clear ; update ;;
 #14) clear ; nef ;;
 #15) clear ; upray ;;
