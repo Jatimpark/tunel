@@ -79,7 +79,7 @@ case $opt in
 09 | 9) clear ; reboot ;;
 10) clear ; speedtest ;;
 #11) clear ; cek-bw ;;
-11) clear ; update-xray ;;
+11) clear ; updatevray ;;
 #13) clear ; update ;;
 #14) clear ; nef ;;
 #15) clear ; upray ;;
