@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# // Export Color & Information
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 export YELLOW='\033[0;33m'
@@ -24,7 +23,6 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 clear
-clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
@@ -32,24 +30,74 @@ else
 domain=$IP
 fi
 
-echo -e "[ ${GREEN}INFO${NC} ] Checking... "
-sleep 1
-echo -e "[ ${GREEN}INFO$NC ] Setting ntpdate"
-sleep 1
 domain=$(cat /root/domain)
+sleep 1
+mkdir -p /etc/xray 
+echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
-apt install socat cron bash-completion ntpdate -y
-#ntpdate pool.ntp.org
-ntpdate -u pool.ntp.org
-apt -y install chrony
+sleep 1
+echo -e "[ ${green}INFO$NC ] Setting ntpdate"
+ntpdate pool.ntp.org 
 timedatectl set-ntp true
-#systemctl enable chronyd && systemctl restart chronyd
-systemctl enable chrony && systemctl restart chrony
+sleep 1
+echo -e "[ ${green}INFO$NC ] Enable chronyd"
+systemctl enable chronyd
+systemctl restart chronyd
+sleep 1
+echo -e "[ ${green}INFO$NC ] Enable chrony"
+systemctl enable chrony
+systemctl restart chrony
 timedatectl set-timezone Asia/Jakarta
-#chronyc sourcestats -v
-#chronyc tracking -v
+sleep 1
+echo -e "[ ${green}INFO$NC ] Setting chrony tracking"
+chronyc sourcestats -v
+chronyc tracking -v
+echo -e "[ ${green}INFO$NC ] Setting dll"
+apt clean all && apt update
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
+apt install socat cron bash-completion ntpdate -y
+ntpdate pool.ntp.org
+apt -y install chrony
+apt install zip -y
 apt install curl pwgen openssl netcat cron -y
+
+
+# install xray
+sleep 1
+echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
+domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
+chown www-data.www-data $domainSock_dir
+# Make Folder XRay
+mkdir -p /var/log/xray
+mkdir -p /etc/xray
+chown www-data.www-data /var/log/xray
+chmod +x /var/log/xray
+touch /var/log/xray/access.log
+touch /var/log/xray/error.log
+touch /var/log/xray/access2.log
+touch /var/log/xray/error2.log
+
+## crt xray
+systemctl stop nginx
+mkdir /root/.acme.sh
+curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
+chmod +x /root/.acme.sh/acme.sh
+/root/.acme.sh/acme.sh --upgrade --auto-upgrade
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
+
+# nginx renew ssl
+echo -n '#!/bin/bash
+/etc/init.d/nginx stop
+"/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" &> /root/renew_ssl.log
+/etc/init.d/nginx start
+/etc/init.d/nginx status
+' > /usr/local/bin/ssl_renew.sh
+chmod +x /usr/local/bin/ssl_renew.sh
+if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
+
+mkdir -p /home/vps/public_html
 
 # Make Folder & Log XRay & Log Trojan
 rm -fr /var/log/xray
@@ -115,9 +163,9 @@ apt install -y nginx
 cd
 rm -fr /etc/nginx/sites-enabled/default
 rm -fr /etc/nginx/sites-available/default
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/nginx.conf" 
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/nginx.conf" 
 #mkdir -p /home/vps/public_html
-wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/afiaza/tunel/main/tools/vps.conf"
 
 # Install Xray #
 #==========#
@@ -129,6 +177,7 @@ xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_vers
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
 
 # / / Make Main Directory
+
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 mkdir -p /usr/local/etc/xray
@@ -146,8 +195,6 @@ ssgrpc=$((RANDOM + 10000))
 vless=$((RANDOM + 10000))
 vlessgrpc=$((RANDOM + 10000))
 vmess=$((RANDOM + 10000))
-#worryfree=$((RANDOM + 10000))
-#kuotahabis=$((RANDOM + 10000))
 vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
@@ -157,16 +204,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 8880;
-             listen [::]:8880;
-             listen 2082;
-             listen [::]:2082;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;	
-             listen 8443 ssl http2 reuseport;
-             listen [::]:8443 http2 reuseport;	
-             listen 2096 ssl http2 reuseport;
-             listen [::]:2096 http2 reuseport;	
              server_name 127.0.0.1 localhost;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
@@ -334,26 +373,6 @@ cat <<EOF> /etc/xray/config.json
          "network": "ws",
             "wsSettings": {
                 "path": "/vmess"
-          }
-        }
-     },
-     {
-     "listen": "127.0.0.1",
-     "port": "$worryfree",
-     "protocol": "vmess",
-      "settings": {
-            "clients": [
-               {
-                 "id": "${uuid}",
-                 "alterId": 0
-#vmessworry
-             }
-          ]
-       },
-       "streamSettings":{
-         "network": "ws",
-            "wsSettings": {
-                "path": "/worryfree"
           }
         }
      },
