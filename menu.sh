@@ -9,12 +9,14 @@ ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
 
+MYIP=$(wget -qO- ifconfig.me)
 colornow=$(cat /etc/rmbl/theme/color.conf)
 export NC="\e[0m"
 export yl='\033[0;33m';
 export RED="\033[0;31m"
 export COLOR1="$(cat /etc/rmbl/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 export COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[0;31m'        # Red
 BIGreen='\033[0;31m'      # Green
