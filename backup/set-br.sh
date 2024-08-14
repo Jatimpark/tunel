@@ -57,6 +57,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
 wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/backup.sh" && chmod +x /usr/bin/backup
 wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/restore.sh" && chmod +x /usr/bin/restore
+wget -q -O /usr/bin/cleaner "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/cleaner.sh" && chmod +x /usr/bin/cleaner
 
 service cron restart > /dev/null 2>&1
 
