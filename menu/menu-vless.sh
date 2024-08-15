@@ -1,6 +1,4 @@
 #!/bin/bash
-#dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-#biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
@@ -77,6 +75,85 @@ sed -i '/#vlessgrpc$/a\### '"$user $exp"'\
 vlesslink1="vless://${uuid}@bug.com:443?path=/vless&security=tls&host=${domain}&encryption=none&type=ws&sni=${domain}#${user}"
 vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws&host=${domain}#${user}"
 vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+cat > /home/vps/public_html/vless-$user.txt <<-END
+====================
+BY ARYA NBC
+wa.me/6281931615811
+====================
+
+# Format Vless WS TLS
+
+proxies:
+  - name: Vless-$user-WS TLS
+    server: bug.com
+    port: 443
+    type: vless
+    uuid: ${uuid}
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vless WS Non TLS
+
+proxies:
+  - name: Vless-$user-WS (CDN) Non TLS
+    server: bug.com
+    port: 80
+    type: vless
+    uuid: ${uuid}
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${domain}
+    udp: true
+    
+# Format Vless Grpc
+
+proxies:
+  - name: Vless-$user-WS (CDN) gRPC (SNI)
+    server: ${domain}
+    port: 443
+    type: vless
+    uuid: bdfb0d8c-b7a6-4549-bd8f-cecd9a92bbdc
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: bug.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vless-grpc
+    udp: true
+    
+===============
+Link Akun Vless 
+===============
+Link TLS      : 
+${vlesslink1}
+============================
+Link none TLS : 
+${vlesslink2}
+============================
+Link GRPC     : 
+${vlesslink3}
+============================
+Trima Kasih Sudah Order Mass
+============================
+Salam Pecinta Janda Mania
+============================
+
+END
 systemctl restart xray
 clear
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VLESS\033[0;34m═══════════${NC}"
@@ -101,6 +178,8 @@ echo -e "${vlesslink2}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
 echo -e "Link GRPC : "
 echo -e "${vlesslink3}" 
+echo -e "\033[0;34m════════════════════════════════${NC}"
+echo -e "Format Openclash : http://$domain:81/vless-$user.txt "
 echo -e "\033[0;34m════════════════════════════════${NC}" 
 echo -e ""
 echo -e "${GREEN} Sc By Arya Blitar ${NC}" 
@@ -123,6 +202,85 @@ sed -i '/#vlessgrpc$/a\### '"$user $exp"'\
 vlesslink1="vless://${uuid}@bug.com:443?path=/vless&security=tls&host=${domain}&encryption=none&type=ws&sni=${domain}#${user}"
 vlesslink2="vless://${uuid}@${domain}:80$none?path=/vless&encryption=none&type=ws&host=${domain}#${user}"
 vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+cat > /home/vps/public_html/vless-$user.txt <<-END
+====================
+BY ARYA NBC
+wa.me/6281931615811
+====================
+
+# Format Vless WS TLS
+
+proxies:
+  - name: Vless-$user-WS TLS
+    server: bug.com
+    port: 443
+    type: vless
+    uuid: ${uuid}
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vless WS Non TLS
+
+proxies:
+  - name: Vless-$user-WS (CDN) Non TLS
+    server: bug.com
+    port: 80
+    type: vless
+    uuid: ${uuid}
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${domain}
+    udp: true
+    
+# Format Vless Grpc
+
+proxies:
+  - name: Vless-$user-WS (CDN) gRPC (SNI)
+    server: ${domain}
+    port: 443
+    type: vless
+    uuid: bdfb0d8c-b7a6-4549-bd8f-cecd9a92bbdc
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: bug.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vless-grpc
+    udp: true
+    
+===============
+Link Akun Vless 
+===============
+Link TLS      : 
+${vlesslink1}
+============================
+Link none TLS : 
+${vlesslink2}
+============================
+Link GRPC     : 
+${vlesslink3}
+============================
+Trima Kasih Sudah Order Mass
+============================
+Salam Pecinta Janda Mania
+============================
+
+END
 systemctl restart xray
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VLESS\033[0;34m═════════════${NC}"
@@ -145,6 +303,8 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Link gRPC      : ${vlesslink3}"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Expired On     : $exp"
+echo -e "\033[0;34m════════════════════════════════════\033[0m"
+echo -e "Format Openclash : http://$domain:81/vless-$user.txt "
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"

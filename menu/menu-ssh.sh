@@ -41,6 +41,13 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
+sleep 1
+clear
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
+
 cat > /home/vps/public_html/ssh-$Login.txt <<-END
 ==========================
 BY ARYA NBC
@@ -52,15 +59,14 @@ Password         : $Pass
 IP               : $IP
 Host             : $domen
 Port OpenSSH     : 22
-Stunnel5         : 447, 777
 Port Dropbear    : 109, 143
-Port Dropbear WS : 443, 109
 Port SSH WS      : 80, 8080, 8880, 2082
 Port SSH SSL WS  : 443, 8443, 2096, 2087
-Port SSL/TLS     : 443
+Port SSL/TLS     :$ssl
 BadVPN UDP       : 7100-7300
 ==========================
 Aktif Selama     : $masaaktif Hari
+Berakhir Pada    : $exp
 ==========================
 PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 ==========================
@@ -68,13 +74,9 @@ PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: 
 ============================
 Trima Kasih Sudah Order Mass
 ============================
+Salam Pecinta Janda Mania
+============================
 END
-sleep 1
-clear
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "\033[0;34m════════════\033[0;33mSSH ACCOUNTS\033[0;34m══════════${NC}"
@@ -165,6 +167,12 @@ sleep 0.5
 echo Setting Password: $Pass &> /dev/null
 sleep 0.5
 
+clear
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
+
 cat > /home/vps/public_html/ssh-$Login.txt <<-END
 ==========================
 BY ARYA NBC
@@ -176,15 +184,13 @@ Password         : $Pass
 IP               : $IP
 Host             : $domen
 Port OpenSSH     : 22
-Stunnel5         : 447, 777
 Port Dropbear    : 109, 143
-Port Dropbear WS : 443, 109
 Port SSH WS      : 80, 8080, 8880, 2082
 Port SSH SSL WS  : 443, 8443, 2096, 2087
-Port SSL/TLS     : 443
+Port SSL/TLS     :$ssl
 BadVPN UDP       : 7100-7300
 ==========================
-Aktif Selama     : $masaaktif Hari
+Berakhir Pada    : $exp
 ==========================
 PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 ==========================
@@ -192,12 +198,9 @@ PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: 
 ============================
 Trima Kasih Sudah Order Mass
 ============================
+Salam Pecinta Janda Mania
+============================
 END
-clear
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\033[0;34m═══════════${NC}"

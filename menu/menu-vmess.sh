@@ -117,15 +117,97 @@ grpc=`cat<<EOF
       "tls": "tls"
 }
 EOF`
-
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmess_base642=$( base64 -w 0 <<< $vmess_json2)
 vmess_base643=$( base64 -w 0 <<< $vmess_json3)
 vmesslink1="vmess://$(echo $asu | base64 -w 0)"
 vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
+cat > /home/vps/public_html/vmess-$user.txt <<-END
+====================
+BY ARYA NBC
+wa.me/6281931615811
+====================
+
+# Format Vmess WS TLS
+
+proxies:
+  - name: Vmess-$user-WS TLS
+    server: bug.com
+    port: 443
+    type: vmess
+    uuid: ${uuid}
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vmess WS Non TLS
+
+proxies:
+  - name: Vmess-$user-WS Non TLS
+    server: bug.com
+    port: 80
+    type: vmess
+    uuid: ${domain}
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vmess gRPC
+
+proxies:
+  - name: Vmess-$user-gRPC (SNI)
+    server: ${domain}
+    port: 443
+    type: vmess
+    uuid: ${uuid}
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: bug.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vmess-grpc
+    udp: true
+    
+================
+ Link Akun Vmess                   
+================
+Link TLS         : 
+${vmesslink1}
+============================
+Link none TLS    : 
+${vmesslink2}
+============================
+Link GRPC        : 
+${vmesslink3}
+============================
+Trima Kasih Sudah Order Mass
+============================
+Salam Pecinta Janda Mania
+============================
+
+END
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
+
 clear
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VMESS\033[0;34m═══════════${NC}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
@@ -153,6 +235,8 @@ echo -e "${vmesslink2}"
 echo -e "\033[0;34m════════════════════════════════${NC} "
 echo -e "Link GRPC : "
 echo -e "${vmesslink3}"
+echo -e "\033[0;34m════════════════════════════════${NC} "
+echo -e "Format OpenClash : http://$domain:81/vmess-$user.txt"
 echo -e "\033[0;34m════════════════════════════════${NC}" 
 echo -e "\033[0;32m Sc By Arya Blitar ${NC}" 
 echo "" | tee -a /etc/log-create-user.log
@@ -225,8 +309,91 @@ vmess_base643=$( base64 -w 0 <<< $vmess_json3)
 vmesslink1="vmess://$(echo $asu | base64 -w 0)"
 vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
+cat > /home/vps/public_html/vmess-$user.txt <<-END
+====================
+BY ARYA NBC
+wa.me/6281931615811
+====================
+
+# Format Vmess WS TLS
+
+proxies:
+  - name: Vmess-$user-WS TLS
+    server: bug.com
+    port: 443
+    type: vmess
+    uuid: ${uuid}
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vmess WS Non TLS
+
+proxies:
+  - name: Vmess-$user-WS Non TLS
+    server: bug.com
+    port: 80
+    type: vmess
+    uuid: ${domain}
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${domain}
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: ${domain}
+    udp: true
+
+# Format Vmess gRPC
+
+proxies:
+  - name: Vmess-$user-gRPC (SNI)
+    server: ${domain}
+    port: 443
+    type: vmess
+    uuid: ${uuid}
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: bug.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vmess-grpc
+    udp: true
+    
+================
+ Link Akun Vmess                   
+================
+Link TLS         : 
+${vmesslink1}
+============================
+Link none TLS    : 
+${vmesslink2}
+============================
+Link GRPC        : 
+${vmesslink3}
+============================
+Trima Kasih Sudah Order Mass
+============================
+Salam Pecinta Janda Mania
+============================
+
+END
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
+
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VMESS\033[0;34m═════════════\033[0m"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
@@ -252,6 +419,8 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Link gRPC      : ${vmesslink3}"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Expired On     : $exp"
+echo -e "\033[0;34m════════════════════════════════════\033[0m"
+echo -e "Format OpenClash : http://$domain:81/vmess-$user.txt"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
