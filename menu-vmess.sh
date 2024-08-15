@@ -117,16 +117,7 @@ grpc=`cat<<EOF
       "tls": "tls"
 }
 EOF`
-
-vmess_base641=$( base64 -w 0 <<< $vmess_json1)
-vmess_base642=$( base64 -w 0 <<< $vmess_json2)
-vmess_base643=$( base64 -w 0 <<< $vmess_json3)
-vmesslink1="vmess://$(echo $asu | base64 -w 0)"
-vmesslink2="vmess://$(echo $ask | base64 -w 0)"
-vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
-systemctl restart xray > /dev/null 2>&1
-service cron restart > /dev/null 2>&1
-cat >/var/www/html/vmess-${user}.txt <<-END
+cat > /home/vps/public_html/vmess-$user.txt <<-END
 ====================
 BY ARYA NBC
 wa.me/6281931615811
@@ -135,7 +126,7 @@ wa.me/6281931615811
 # Format Vmess WS TLS
 
 proxies:
-  - name: Vmess-${user}-WS TLS
+  - name: Vmess-$user-WS TLS
     server: bug.com
     port: 443
     type: vmess
@@ -155,7 +146,7 @@ proxies:
 # Format Vmess WS Non TLS
 
 proxies:
-  - name: Vmess-${user}-WS Non TLS
+  - name: Vmess-$user-WS Non TLS
     server: bug.com
     port: 80
     type: vmess
@@ -175,7 +166,7 @@ proxies:
 # Format Vmess gRPC
 
 proxies:
-  - name: Vmess-${user}-gRPC (SNI)
+  - name: Vmess-$user-gRPC (SNI)
     server: ${domain}
     port: 443
     type: vmess
@@ -204,6 +195,15 @@ ${vmesslink3}
 ================
 
 END
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
+vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmess_base643=$( base64 -w 0 <<< $vmess_json3)
+vmesslink1="vmess://$(echo $asu | base64 -w 0)"
+vmesslink2="vmess://$(echo $ask | base64 -w 0)"
+vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
+systemctl restart xray > /dev/null 2>&1
+service cron restart > /dev/null 2>&1
+
 clear
 echo -e "\033[0;34m═══════════\033[0;33mXRAY/VMESS\033[0;34m═══════════${NC}"
 echo -e "\033[0;34m════════════════════════════════${NC}"
@@ -231,7 +231,7 @@ echo -e "${vmesslink2}"
 echo -e "\033[0;34m════════════════════════════════${NC} "
 echo -e "Link GRPC : "
 echo -e "${vmesslink3}"
-echo -e "Format OpenClash : https://${domain}:81/vmess-${user}.txt"
+echo -e "Format OpenClash : http://$domain:81/vmess-$user.txt"
 echo -e "\033[0;34m════════════════════════════════${NC}" 
 echo -e "\033[0;32m Sc By Arya Blitar ${NC}" 
 echo "" | tee -a /etc/log-create-user.log
@@ -298,15 +298,7 @@ grpc=`cat<<EOF
       "tls": "tls"
 }
 EOF`
-vmess_base641=$( base64 -w 0 <<< $vmess_json1)
-vmess_base642=$( base64 -w 0 <<< $vmess_json2)
-vmess_base643=$( base64 -w 0 <<< $vmess_json3)
-vmesslink1="vmess://$(echo $asu | base64 -w 0)"
-vmesslink2="vmess://$(echo $ask | base64 -w 0)"
-vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
-systemctl restart xray > /dev/null 2>&1
-service cron restart > /dev/null 2>&1
-cat >/var/www/html/vmess-${user}.txt <<-END
+cat > /home/vps/public_html/vmess-$user.txt <<-END
 ====================
 BY ARYA NBC
 wa.me/6281931615811
@@ -315,7 +307,7 @@ wa.me/6281931615811
 # Format Vmess WS TLS
 
 proxies:
-  - name: Vmess-${user}-WS TLS
+  - name: Vmess-$user-WS TLS
     server: bug.com
     port: 443
     type: vmess
@@ -335,7 +327,7 @@ proxies:
 # Format Vmess WS Non TLS
 
 proxies:
-  - name: Vmess-${user}-WS Non TLS
+  - name: Vmess-$user-WS Non TLS
     server: bug.com
     port: 80
     type: vmess
@@ -355,7 +347,7 @@ proxies:
 # Format Vmess gRPC
 
 proxies:
-  - name: Vmess-${user}-gRPC (SNI)
+  - name: Vmess-$user-gRPC (SNI)
     server: ${domain}
     port: 443
     type: vmess
@@ -384,6 +376,15 @@ ${vmesslink3}
 ================
 
 END
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
+vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmess_base643=$( base64 -w 0 <<< $vmess_json3)
+vmesslink1="vmess://$(echo $asu | base64 -w 0)"
+vmesslink2="vmess://$(echo $ask | base64 -w 0)"
+vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
+systemctl restart xray > /dev/null 2>&1
+service cron restart > /dev/null 2>&1
+
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VMESS\033[0;34m═════════════\033[0m"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
@@ -409,7 +410,7 @@ echo -e "\033[0;34m════════════════════�
 echo -e "Link gRPC      : ${vmesslink3}"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Expired On     : $exp"
-echo -e "Format OpenClash : https://${domain}:81/vmess-${user}.txt"
+echo -e "Format OpenClash : http://$domain:81/vmess-$user.txt"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
