@@ -190,7 +190,6 @@ Port SSH SSL WS  : 443, 8443, 2096, 2087
 Port SSL/TLS     :$ssl
 BadVPN UDP       : 7100-7300
 ==========================
-Aktif Selama     : $masaaktif Hari
 Berakhir Pada    : $exp
 ==========================
 PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
