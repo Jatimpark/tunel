@@ -41,6 +41,34 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
+cat > /home/vps/public_html/ssh-$Login.txt <<-END
+==========================
+BY ARYA NBC
+wa.me/6281931615811
+==========================
+Username         : $Login
+Password         : $Pass
+==========================
+IP               : $IP
+Host             : $domen
+Port OpenSSH     : 22
+Stunnel5         : 447, 777
+Port Dropbear    : 109, 143
+Port Dropbear WS : 443, 109
+Port SSH WS      : 80, 8080, 8880, 2082
+Port SSH SSL WS  : 443, 8443, 2096, 2087
+Port SSL/TLS     : 443
+BadVPN UDP       : 7100-7300
+==========================
+Aktif Selama     : $masaaktif Hari
+==========================
+PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+==========================
+PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+============================
+Trima Kasih Sudah Order Mass
+============================
+END
 sleep 1
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
@@ -73,6 +101,8 @@ echo -e "\033[0;34m════════════════════�
 echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
+echo -e " "
+echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar ${NC}" 
 
@@ -102,6 +132,8 @@ echo -e "\033[0;34m════════════════════�
 echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
+echo -e " "
+echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi
@@ -132,6 +164,35 @@ echo Create Akun: $Login &> /dev/null
 sleep 0.5
 echo Setting Password: $Pass &> /dev/null
 sleep 0.5
+
+cat > /home/vps/public_html/ssh-$Login.txt <<-END
+==========================
+BY ARYA NBC
+wa.me/6281931615811
+==========================
+Username         : $Login
+Password         : $Pass
+==========================
+IP               : $IP
+Host             : $domen
+Port OpenSSH     : 22
+Stunnel5         : 447, 777
+Port Dropbear    : 109, 143
+Port Dropbear WS : 443, 109
+Port SSH WS      : 80, 8080, 8880, 2082
+Port SSH SSL WS  : 443, 8443, 2096, 2087
+Port SSL/TLS     : 443
+BadVPN UDP       : 7100-7300
+==========================
+Aktif Selama     : $masaaktif Hari
+==========================
+PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+==========================
+PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
+============================
+Trima Kasih Sudah Order Mass
+============================
+END
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
@@ -159,6 +220,8 @@ echo -e "${PURPLE}════════════════════�
 echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
+echo -e " "
+echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}" 
 
@@ -184,6 +247,7 @@ echo -e "${PURPLE}════════════════════�
 echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
+echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi
