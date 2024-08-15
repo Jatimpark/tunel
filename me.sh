@@ -52,8 +52,8 @@ Password         : $Pass
 IP               : $IP
 Host             : $domen
 Port OpenSSH     : 22
-Stunnel5               : 447, 777
-Port Dropbear      : 109, 143
+Stunnel5         : 447, 777
+Port Dropbear     : 109, 143
 Port Dropbear WS : 443, 109
 Port SSH WS      : 80, 8080, 8880, 2082
 Port SSH SSL WS  : 443, 8443, 2096, 2087
@@ -61,14 +61,14 @@ Port SSL/TLS     : 443
 BadVPN UDP       : 7100-7300
 ==========================
 Aktif Selama     : $masaaktif Hari
-Berakhir Pada    : $exp
+Berakhir Pada    : $exp hari
 ==========================
 PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 ==========================
 PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-==========================
+============================
 Trima Kasih Sudah Order Mass
-==========================
+============================
 END
 sleep 1
 clear
@@ -177,8 +177,8 @@ Password         : $Pass
 IP               : $IP
 Host             : $domen
 Port OpenSSH     : 22
-Stunnel5               : 447, 777
-Port Dropbear      : 109, 143
+Stunnel5         : 447, 777
+Port Dropbear     : 109, 143
 Port Dropbear WS : 443, 109
 Port SSH WS      : 80, 8080, 8880, 2082
 Port SSH SSL WS  : 443, 8443, 2096, 2087
@@ -186,14 +186,14 @@ Port SSL/TLS     : 443
 BadVPN UDP       : 7100-7300
 ==========================
 Aktif Selama     : $masaaktif Hari
-Berakhir Pada    : $exp
+Berakhir Pada    : $exp hari
 ==========================
 PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
 ==========================
 PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-==========================
+============================
 Trima Kasih Sudah Order Mass
-==========================
+============================
 END
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
