@@ -104,7 +104,7 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt "
+echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar ${NC}" 
 
@@ -135,7 +135,7 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt "
+echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi
@@ -224,7 +224,7 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt"
+echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}" 
 
@@ -251,7 +251,7 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e " "
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$domen:81/ssh-$Login.txt"
+echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi
