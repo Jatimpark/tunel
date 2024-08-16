@@ -48,36 +48,6 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
-cat > /home/vps/public_html/ssh-$Login.txt <<-END
-==========================
-BY ARYA NBC
-wa.me/6281931615811
-==========================
-Username         : $Login
-Password         : $Pass
-==========================
-IP               : $IP
-Host             : $domen
-Port OpenSSH     : 22
-Port Dropbear    : 109, 143
-Port SSH WS      : 80, 8080, 8880, 2082
-Port SSH SSL WS  : 443, 8443, 2096, 2087
-Port SSL/TLS     :$ssl
-BadVPN UDP       : 7100-7300
-==========================
-Aktif Selama     : $masaaktif Hari
-Berakhir Pada    : $exp
-==========================
-PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-==========================
-PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-============================
-Trima Kasih Sudah Order Mass
-============================
-Salam Pecinta Janda Mania
-============================
-END
-
 if [[ ! -z "${PID}" ]]; then
 echo -e "\033[0;34m════════════\033[0;33mSSH ACCOUNTS\033[0;34m══════════${NC}"
 echo -e "\033[0;34m══════════════════════════════════${NC}"
@@ -104,7 +74,6 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar ${NC}" 
 
@@ -135,7 +104,6 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt "
 echo -e "\033[0;34m══════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi
@@ -173,35 +141,6 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
-cat > /home/vps/public_html/ssh-$Login.txt <<-END
-==========================
-BY ARYA NBC
-wa.me/6281931615811
-==========================
-Username         : $Login
-Password         : $Pass
-==========================
-IP               : $IP
-Host             : $domen
-Port OpenSSH     : 22
-Port Dropbear    : 109, 143
-Port SSH WS      : 80, 8080, 8880, 2082
-Port SSH SSL WS  : 443, 8443, 2096, 2087
-Port SSL/TLS     :$ssl
-BadVPN UDP       : 7100-7300
-==========================
-Berakhir Pada    : $exp
-==========================
-PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-==========================
-PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]
-============================
-Trima Kasih Sudah Order Mass
-============================
-Salam Pecinta Janda Mania
-============================
-END
-
 if [[ ! -z "${PID}" ]]; then
 echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\033[0;34m═══════════${NC}"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
@@ -224,7 +163,6 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e ""
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}" 
 
@@ -251,7 +189,6 @@ echo -e "PAYLOD WS : GET / HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websock
 echo -e " "
 echo -e "PAYLOD WS/TLS : GET wss://$domen/ HTTP/1.1[crlf]Host: [host_port][crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]"
 echo -e " "
-echo -e "Save Link Account: http://$IP:81/ssh-$Login.txt"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "\033[0;32m Sc By Arya Blitar${NC}"
 fi

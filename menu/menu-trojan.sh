@@ -74,59 +74,7 @@ sed -i '/#trojangrpc$/a\### '"$user $exp"'\
 systemctl restart xray
 trojanlink="trojan://${uuid}@bug.com:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
-cat > /home/vps/public_html/trojan-$user.txt <<-END
-====================
-BY ARYA NBC
-wa.me/6281931615811
-====================
 
-# Format Trojan GO/WS
-
-proxies:
-  - name: Trojan-$user-GO/WS
-    server: bug.com
-    port: 443
-    type: trojan
-    password: ${uuid}
-    skip-cert-verify: true
-    sni: ${domain}
-    network: ws
-    ws-opts:
-      path: /trojan-ws
-      headers:
-        Host: ${domain}
-    udp: true
-
-# Format Trojan gRPC
-
-proxies:
-  - name: Trojan-$user-gRPC
-    server: ${domain}
-    port: 443
-    type: trojan
-    password:  ${uuid}
-    skip-cert-verify: true
-    sni: bug.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: trojan-grpc
-    udp: true
-    
-====================
-Link Akun Trojan 
-====================
-Link WS          : 
-${trojanlink}
-============================
-Link GRPC        : 
-${trojanlink1}
-============================
-Trima Kasih Sudah Order Mass
-============================
-Salam Pecinta Janda Mania
-============================
-
-END
 clear
 echo -e "\033[0;34m════════════\033[0;33mXRAY/TROJANWS\033[0;34m════════════${NC}"
 echo -e "Remarks     : ${user}" 
@@ -143,8 +91,6 @@ echo -e "${trojanlink}"
 echo -e "\033[0;34m════════════════════════════════════${NC} "
 echo -e "Link GRPC : "
 echo -e "${trojanlink1}"
-echo -e "\033[0;34m════════════════════════════════════${NC}" 
-echo -e "Format Openclash : http://$IP:81/trojan-$user.txt "
 echo -e "\033[0;34m════════════════════════════════════${NC}" 
 echo -e ""
 echo -e " \033[0;32mSc By Arya Blitar${NC}" 
@@ -225,59 +171,7 @@ sed -i '/#trojangrpc$/a\### '"$user $exp"'\
 systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlink="trojan://${uuid}@bug.com:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
-cat > /home/vps/public_html/trojan-$user.txt <<-END
-====================
-BY ARYA NBC
-wa.me/6281931615811
-====================
 
-# Format Trojan GO/WS
-
-proxies:
-  - name: Trojan-$user-GO/WS
-    server: bug.com
-    port: 443
-    type: trojan
-    password: ${uuid}
-    skip-cert-verify: true
-    sni: ${domain}
-    network: ws
-    ws-opts:
-      path: /trojan-ws
-      headers:
-        Host: ${domain}
-    udp: true
-
-# Format Trojan gRPC
-
-proxies:
-  - name: Trojan-$user-gRPC
-    server: ${domain}
-    port: 443
-    type: trojan
-    password:  ${uuid}
-    skip-cert-verify: true
-    sni: bug.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: trojan-grpc
-    udp: true
-    
-====================
-Link Akun Trojan 
-====================
-Link WS          : 
-${trojanlink}
-============================
-Link GRPC        : 
-${trojanlink1}
-============================
-Trima Kasih Sudah Order Mass
-============================
-Salam Pecinta Janda Mania
-============================
-
-END
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[42;1;37m           Trial TROJAN            \E[0m"
@@ -294,8 +188,6 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "Link GRPC    : ${trojanlink1}"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Expired On   : $exp"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "Format Openclash : http://$IP:81/trojan-$user.txt "
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " "
 echo -e "\033[0;32m Sc Arya Blitar \033[0m"
