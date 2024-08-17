@@ -286,7 +286,7 @@ wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Jatimpark/tune
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set.sh"
+wget -q -O /usr/bin/menu-set2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set2.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu2.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/xp.sh"
@@ -315,7 +315,7 @@ chmod +x /usr/bin/menu-vmess
 chmod +x /usr/bin/menu-ss
 chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
-chmod +x /usr/bin/menu-set
+chmod +x /usr/bin/menu-set2
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu2
 chmod +x /usr/bin/xp
