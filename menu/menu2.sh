@@ -185,6 +185,6 @@ case $opt in
 12) clear ; update2 ;;
 13) clear ; babi ;;
 14) clear ; menu-set ;;
-0) clear ; menu ;;
+0) clear ; menu2 ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
 esac
