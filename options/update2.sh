@@ -39,11 +39,11 @@ wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/Jatimpark/tunel/
 wget -q -O /usr/bin/running2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/running2.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bandwidth.sh"
-wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vmess.sh"
+wget -q -O /usr/bin/menu-vless2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vless2.sh"
+wget -q -O /usr/bin/menu-vmess2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vmess2.sh"
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
-wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh.sh"
+wget -q -O /usr/bin/menu-trojan2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan2.sh"
+wget -q -O /usr/bin/menu-ssh2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh2.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu2.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
@@ -65,11 +65,11 @@ chmod +x /usr/bin/clearlog
 chmod +x /usr/bin/running2
 chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/cek-bandwidth
-chmod +x /usr/bin/menu-vless
-chmod +x /usr/bin/menu-vmess
+chmod +x /usr/bin/menu-vless2
+chmod +x /usr/bin/menu-vmess2
 chmod +x /usr/bin/menu-ss
-chmod +x /usr/bin/menu-trojan
-chmod +x /usr/bin/menu-ssh
+chmod +x /usr/bin/menu-trojan2
+chmod +x /usr/bin/menu-ssh2
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu2
 chmod +x /usr/bin/babi.sh
