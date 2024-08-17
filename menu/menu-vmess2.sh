@@ -385,5 +385,5 @@ case $opt in
 4) clear ; renewws;;
 0) clear ; menu2 ;;
 x) exit ;;
-*) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu ;;
+*) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu2 ;;
 esac

@@ -708,5 +708,5 @@ case $opt in
 9) clear ; member ;;
 10) clear ; tendang ;;
 0) clear ; menu2 ;;
-*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
+*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu2 ;;
 esac
