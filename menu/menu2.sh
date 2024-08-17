@@ -181,7 +181,7 @@ case $opt in
 8) clear ; info ;;
 9) clear ; gotop ;;
 10) clear ; infoserv ;;
-11) clear ; update ;;
+11) clear ; update2 ;;
 12) clear ; babi ;;
 13) clear ; menu-set ;;
 14) clear ; trojaan ;;
