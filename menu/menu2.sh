@@ -142,13 +142,13 @@ echo -e "$BICyan   ┌───────────────────�
 echo -e "$BICyan   │${BIYellow}                    INFO MENU                $BICyan    │$NC"
 echo -e "$BICyan   └─────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}╭═════════════════════════════════════════════════════╮${NC}"
-echo -e "${BICyan} │    ${ICyan}[${GREEN}01${ICyan}]${NC} • SSH/WS     "   "${BICyan}│    ${ICyan}[${GREEN}08${ICyan}]${NC} • INFO PORT         ${BICyan}│${NC}   "
-echo -e "${BICyan} │    ${ICyan}[${GREEN}02${ICyan}]${NC} • VMESS      "  "${BICyan}│    ${ICyan}[${GREEN}09${ICyan}]${NC} • GOTOP X RAM       ${BICyan}│${NC}"
-echo -e "${BICyan} │    ${ICyan}[${GREEN}03${ICyan}]${NC} • VLESS      "   "${BICyan}│    ${ICyan}[${GREEN}10${ICyan}]${NC} • INFO SERVER       ${BICyan}│  ${NC} "
-echo -e "${BICyan} │    ${ICyan}[${GREEN}04${ICyan}]${NC} • TROJAN     "  "${BICyan}│    ${ICyan}[${GREEN}11${ICyan}] ${NC}• UPDATE MENU       ${BICyan}│ ${NC}      "
-echo -e "${BICyan} │    ${ICyan}[${GREEN}05${ICyan}]${NC} • SHADOWS    "   "${BICyan}│    ${ICyan}[${GREEN}12${ICyan}]${NC} • CEK LOG XRAY      ${BICyan}│${NC}"
-echo -e "${BICyan} │    ${ICyan}[${GREEN}06${ICyan}]${NC} • BACKUP   "  "  ${BICyan}│    ${ICyan}[${GREEN}13${ICyan}]${NC} • MENU SYSTEM       ${BICyan}│${NC}"
-echo -e "${BICyan} │    ${ICyan}[${GREEN}07${ICyan}]${NC} • CLEAR S    "  "${BICyan}│    ${ICyan}[${GREEN}14${ICyan}]${NC} • ADD-TROJANGO      ${BICyan}│${NC}"
+echo -e "${BICyan} │    ${ICyan}[${GREEN}01${ICyan}]${NC} • SSH-WS      "     "${BICyan}│    ${ICyan}[${GREEN}08${ICyan}]${NC} • CLEAR S          ${BICyan}│${NC}   "
+echo -e "${BICyan} │    ${ICyan}[${GREEN}02${ICyan}]${NC} • VMESS-WS    "  "${BICyan}│    ${ICyan}[${GREEN}09${ICyan}]${NC} • INFO PORT        ${BICyan}│${NC}"
+echo -e "${BICyan} │    ${ICyan}[${GREEN}03${ICyan}]${NC} • VLESS-WS    "   "${BICyan}│    ${ICyan}[${GREEN}10${ICyan}]${NC} • GOTOP X RAM      ${BICyan}│  ${NC} "
+echo -e "${BICyan} │    ${ICyan}[${GREEN}04${ICyan}]${NC} • TROJAN-WS   "  "${BICyan}│    ${ICyan}[${GREEN}11${ICyan}] ${NC}• INFO SERVER      ${BICyan}│ ${NC}      "
+echo -e "${BICyan} │    ${ICyan}[${GREEN}05${ICyan}]${NC} • TROJAN-GO   "   "${BICyan}│    ${ICyan}[${GREEN}12${ICyan}]${NC} • UPDATE MENU      ${BICyan}│${NC}"
+echo -e "${BICyan} │    ${ICyan}[${GREEN}06${ICyan}]${NC} • SHADOWS   "  "  ${BICyan}│    ${ICyan}[${GREEN}13${ICyan}]${NC} • CEK LOG XRAY     ${BICyan}│${NC}"
+echo -e "${BICyan} │    ${ICyan}[${GREEN}07${ICyan}]${NC} • MENU BACKUP " "${BICyan}│    ${ICyan}[${GREEN}14${ICyan}]${NC} • SYSTEM MENU      ${BICyan}│${NC}"
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │ ${NC}HARI INI${NC}: ${BIYellow}$ttoday$NC ${NC}KEMARIN${NC}: ${BIYellow}$tyest$NC ${NC}BULAN${NC}: ${BIYellow}$tmon$NC $NC"
@@ -175,16 +175,16 @@ case $opt in
 2) clear ; menu-vmess ;;
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
-5) clear ; menu-ss ;;
-6) clear ; menu-backup ;;
-7) clear ; clearlog ;;
-8) clear ; info ;;
-9) clear ; gotop ;;
-10) clear ; infoserv ;;
-11) clear ; update2 ;;
-12) clear ; babi ;;
-13) clear ; menu-set ;;
-14) clear ; trojaan ;;
+5) clear ; trojaan ;;
+6) clear ; menu-ss.sh ;;
+7) clear ; menu-backup ;;
+8) clear ; clearlog ;;
+9) clear ; info ;;
+10) clear ; gotop ;;
+11) clear ; infoserv ;;
+12) clear ; update2 ;;
+13) clear ; babi ;;
+14) clear ; menu-set ;;
 0) clear ; menu ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
 esac
