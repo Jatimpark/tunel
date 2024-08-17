@@ -260,7 +260,7 @@ echo -e "┌──────────────────────�
 echo -e " \E[42;1;37m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ins-xray2.sh && chmod +x ins-xray2.sh && ./ins-xray2.sh
 #echo -e "┌─────────────────────────────────────────┐"
 #echo -e " \E[42;1;37m           >>> Install Openvpn <<<           \E[0m$NC"
 #echo -e "└─────────────────────────────────────────┘"
@@ -432,7 +432,7 @@ echo  ""
 echo  "" | tee -a log-install.txt
 rm -fr /root/aryapro.sh
 rm -fr /root/ssh-vpn.sh
-rm -fr /root/ins-xray.sh
+rm -fr /root/ins-xray2.sh
 rm -fr /root/setup.sh
 rm -fr /root/set-br.sh
 rm -fr /root/domain
