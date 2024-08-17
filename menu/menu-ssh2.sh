@@ -303,7 +303,7 @@ echo " ";
 echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo " ";
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu2
 }
 function cek(){
 if [ -e "/var/log/auth.log" ]; then
