@@ -49,7 +49,7 @@ wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/Jatimpark/tunel/mai
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/menu-set2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set2.sh"
-wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
+wget -q -O /usr/bin/babi2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi2.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/xp.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
 wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
@@ -72,7 +72,7 @@ chmod +x /usr/bin/menu-trojan2
 chmod +x /usr/bin/menu-ssh2
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu2
-chmod +x /usr/bin/babi.sh
+chmod +x /usr/bin/babi2.sh
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
