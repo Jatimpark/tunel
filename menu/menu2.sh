@@ -192,7 +192,7 @@ case $opt in
 11) clear ; infoserv ;;
 12) clear ; update2 ;;
 13) clear ; babi ;;
-14) clear ; menu-set ;;
+14) clear ; menu-set2 ;;
 0) clear ; menu2 ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
 esac
