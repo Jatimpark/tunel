@@ -317,7 +317,7 @@ chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/menu-backup
-chmod +x /usr/bin/menu
+chmod +x /usr/bin/menu2
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/update2
 chmod +x /usr/bin/addhost
