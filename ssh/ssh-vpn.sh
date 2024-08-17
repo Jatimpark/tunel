@@ -284,9 +284,6 @@ connect = 127.0.0.1:143
 [openssh]
 accept = 777
 connect = 127.0.0.1:22
-[openssh]
-accept = 444
-connect = 127.0.0.1:700
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
