@@ -89,6 +89,8 @@ else
 resdbr="${red}OFF${NC}"
 fi
 # Status Service Trojan GO
+trgo="$(systemctl show trojan-go.service --no-page)"                                      
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 if [[ $strgo == "active" ]]; then
   status_trgo="${green}ON${NC}"
 else
@@ -142,7 +144,7 @@ echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${BIYellow}$vma  
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN ${RED}: $resv2r"
-echo -e "  ${NC}STUNNEL${RED}: $resst""${NC}DROPBEAR ${RED}: $resdbr""${NC} SSH-WS${RED}: $ressshws""${NC} TROJAN-GO ${RED}: $status_trgo "
+echo -e "  ${NC}STUNNEL${RED}: $resst" "${NC}DROPBEAR ${RED}: $resdbr""${NC} SSH-WS${RED}: $ressshws""${NC} TROJAN-GO ${RED}: $status_trgo "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan   │${BIYellow}                    INFO MENU                $BICyan    │$NC"
