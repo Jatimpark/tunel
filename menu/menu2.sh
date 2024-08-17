@@ -179,10 +179,10 @@ echo
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; menu-ssh ;;
-2) clear ; menu-vmess ;;
-3) clear ; menu-vless ;;
-4) clear ; menu-trojan ;;
+1) clear ; menu-ssh2 ;;
+2) clear ; menu-vmess2 ;;
+3) clear ; menu-vless2 ;;
+4) clear ; menu-trojan2 ;;
 5) clear ; trojaan ;;
 6) clear ; menu-ss.sh ;;
 7) clear ; menu-backup ;;
