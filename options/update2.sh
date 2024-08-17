@@ -20,8 +20,8 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/tunel/main/options/update.sh"
-chmod +x run-update
+wget -O run-update2 "https://raw.githubusercontent.com/${GitUser}/tunel/main/options/update2.sh"
+chmod +x run-update2
 # RUN UPDATE
 echo ""
 clear
@@ -94,7 +94,7 @@ sleep 1
 echo ""
 echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
 cd
-rm -f update.sh
+rm -f update2.sh
 clear
 echo ""
 echo -e "\033[0;34m----------------------------------------\033[0m"
@@ -108,6 +108,6 @@ x)
 clear
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu2
 ;;
 esac
