@@ -278,7 +278,7 @@ echo -e "${GREEN}Install File ..${NC}"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/restart.sh"
 wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/clearlog.sh"
-wget -q -O /usr/bin/running "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/running.sh"
+wget -q -O /usr/bin/running2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/running2.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bandwidth.sh"
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vless.sh"
@@ -307,7 +307,7 @@ wget -q -O /usr/bin/trojaan "https://raw.githubusercontent.com/Jatimpark/tunel/m
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
 chmod +x /usr/bin/clearlog
-chmod +x /usr/bin/running
+chmod +x /usr/bin/running2
 chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/cek-bandwidth
 chmod +x /usr/bin/menu-vless
