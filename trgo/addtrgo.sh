@@ -47,7 +47,7 @@ echo -e "${BLUE}========-TROJAN-GO-========${NC}"
 echo -e "Remarks    : ${user}"
 echo -e "IP/Host    : ${MYIP}"
 echo -e "Address    : ${domain}"
-echo -e "Port       : 2087"
+echo -e "Port       : 2053"
 echo -e "Key        : ${user}"
 echo -e "Encryption : none"
 echo -e "Path       : /trojango"
@@ -66,7 +66,7 @@ echo -ne "Select menu : "; read x
 case "$x" in 
    0 | 00)
    clear
-   menu
+   menu2
    break
    ;;
    *)
