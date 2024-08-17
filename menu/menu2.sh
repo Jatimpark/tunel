@@ -191,7 +191,7 @@ case $opt in
 10) clear ; gotop ;;
 11) clear ; infoserv ;;
 12) clear ; update2 ;;
-13) clear ; babi ;;
+13) clear ; babi2 ;;
 14) clear ; menu-set2 ;;
 0) clear ; menu2 ;;
 *) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu2 ;;
