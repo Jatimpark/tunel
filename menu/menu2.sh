@@ -143,7 +143,7 @@ echo -e "${BICyan} │                    ${NC}SSH     ${RED}: ${BIYellow}$ssh1 
 echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${BIYellow}$vma     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN ${RED}: $resv2r"
+echo -e "  ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN-WS ${RED}: $resv2r"
 echo -e "  ${NC}STUNNEL${RED}: $resst" "${NC}DROPBEAR ${RED}: $resdbr""${NC} SSH-WS${RED}: $ressshws""${NC} TROJAN-GO ${RED}: $status_trgo "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
