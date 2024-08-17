@@ -194,5 +194,5 @@ case $opt in
 13) clear ; babi ;;
 14) clear ; menu-set2 ;;
 0) clear ; menu2 ;;
-*) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
+*) echo -e "" ; echo " Klik Enter Balik Menu" ; sleep 1 ; menu2 ;;
 esac
