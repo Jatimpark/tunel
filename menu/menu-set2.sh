@@ -85,7 +85,7 @@ case $opt in
 #15) clear ; upray ;;
 #16) clear ; up ;;
 #17) clear ; up-opok ;;
-00 | 0) clear ; menu ;;
-*) clear ; menu-set ;;
+00 | 0) clear ; menu2 ;;
+*) clear ; menu-set2 ;;
 esac
 
