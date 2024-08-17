@@ -384,7 +384,7 @@ echo ""
 echo "===============-[ Script By Arya Blitar ]-==============="
 echo ""
 echo  "   >>> Service & Port"  | tee -a log-install.txt
-echo  "   - OpenSSH                 : 22, 2253"  | tee -a log-install.txt
+echo  "   - OpenSSH                 : 22,2253"  | tee -a log-install.txt
 echo  "   - SSH Websocket           : 80, 8080, 8880, 2082" | tee -a log-install.txt
 echo  "   - SSH SSL Websocket       : 443, 8443, 2096, 2087" | tee -a log-install.txt
 echo  "   - Stunnel5                : 445, 447, 777" | tee -a log-install.txt
