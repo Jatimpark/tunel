@@ -65,7 +65,7 @@ echo -ne "Select menu : "; read x
 case "$x" in 
    0 | 00)
    clear
-   menu
+   menu2
    break
    ;;
    *)
