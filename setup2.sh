@@ -283,7 +283,7 @@ wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/Jatimpark/tunel
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bandwidth.sh"
 wget -q -O /usr/bin/menu-vless2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vless2.sh"
 wget -q -O /usr/bin/menu-vmess2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vmess2.sh"
-wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
+wget -q -O /usr/bin/menu-ss2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss2.sh"
 wget -q -O /usr/bin/menu-trojan2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan2.sh"
 wget -q -O /usr/bin/menu-ssh2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh2.sh"
 wget -q -O /usr/bin/menu-set2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set2.sh"
@@ -312,7 +312,7 @@ chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/cek-bandwidth
 chmod +x /usr/bin/menu-vless2
 chmod +x /usr/bin/menu-vmess2
-chmod +x /usr/bin/menu-ss
+chmod +x /usr/bin/menu-ss2
 chmod +x /usr/bin/menu-trojan2
 chmod +x /usr/bin/menu-ssh2
 chmod +x /usr/bin/menu-set2
