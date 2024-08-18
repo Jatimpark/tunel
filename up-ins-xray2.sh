@@ -259,7 +259,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -387,13 +387,17 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### aku7 2025-07-13
+},{"id": "d707ae0e-db3e-4b8a-8a8d-a205f1c5fafa","alterId": 0,"email": "aku7"
+### opok 2025-07-13
+},{"id": "f1eafa95-8ffe-4028-84a9-8c32fd690137","alterId": 0,"email": "opok"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmess"
+                "path": "/servlets/mms"
           }
         }
      },
@@ -407,6 +411,12 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
+### akuh 2025-07-13
+},{"password": "02751f79-45cd-4299-be01-0deefba7b28e","email": "akuh"
+### ilyas 2025-07-13
+},{"password": "393507f5-8a16-48bc-ae8e-25d99564dcae","email": "ilyas"
+### imame 2025-07-13
+},{"password": "61461557-ac5e-4dfe-b765-12f11acc91ed","email": "imame"
               }
           ],
          "udp": true
@@ -469,6 +479,10 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
+### aku7 2025-07-13
+},{"id": "d707ae0e-db3e-4b8a-8a8d-a205f1c5fafa","alterId": 0,"email": "aku7"
+### opok 2025-07-13
+},{"id": "f1eafa95-8ffe-4028-84a9-8c32fd690137","alterId": 0,"email": "opok"
              }
           ]
        },
@@ -489,6 +503,12 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
+### akuh 2025-07-13
+},{"password": "02751f79-45cd-4299-be01-0deefba7b28e","email": "akuh"
+### ilyas 2025-07-13
+},{"password": "393507f5-8a16-48bc-ae8e-25d99564dcae","email": "ilyas"
+### imame 2025-07-13
+},{"password": "61461557-ac5e-4dfe-b765-12f11acc91ed","email": "imame"
                }
            ]
         },
@@ -612,7 +632,7 @@ cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
-  "local_port": 2083,
+  "local_port": 2053,
   "remote_addr": "127.0.0.1",
   "remote_port": 89,
   "log_level": 1,
