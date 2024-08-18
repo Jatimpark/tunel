@@ -62,6 +62,6 @@ echo -e ""
 case $opt in
 01 | 1) clear ; backup2 ;;
 02 | 2) clear ; restore2 ;;
-00 | 0) clear ; menu ;;
+00 | 0) clear ; menu2 ;;
 *) clear ; menu-backup2 ;;
 esac
