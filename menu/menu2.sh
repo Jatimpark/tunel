@@ -185,7 +185,7 @@ case $opt in
 4) clear ; menu-trojan2 ;;
 5) clear ; trojaan ;;
 6) clear ; menu-ss.sh ;;
-7) clear ; menu-backup ;;
+7) clear ; menu-backup2 ;;
 8) clear ; clearlog ;;
 9) clear ; info ;;
 10) clear ; gotop ;;
