@@ -112,6 +112,8 @@ else
    swstls="${RED} Error${NC}"
 fi
 # Status Service Trojan GO
+trgo="$(systemctl show trojan-go.service --no-page)"                                      
+strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 if [[ $strgo == "active" ]]; then
   status_trgo=" ${GREEN}Aktif ${NC}"
 else
