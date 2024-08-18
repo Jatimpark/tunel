@@ -187,9 +187,9 @@ case $opt in
 6) clear ; menu-ss.sh ;;
 7) clear ; menu-backup2 ;;
 8) clear ; clearlog ;;
-9) clear ; info ;;
+9) clear ; info2 ;;
 10) clear ; gotop ;;
-11) clear ; infoserv ;;
+11) clear ; infoserv2 ;;
 12) clear ; update2 ;;
 13) clear ; babi2 ;;
 14) clear ; menu-set2 ;;
