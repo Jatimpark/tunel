@@ -51,8 +51,8 @@ wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/
 wget -q -O /usr/bin/menu-set2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-set2.sh"
 wget -q -O /usr/bin/babi2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi2.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/xp.sh"
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
-wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
+wget -q -O /usr/bin/info2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info2.sh"
+wget -q -O /usr/bin/infoserv2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv2.sh"
 wget -q -O /usr/bin/addtrgo "https://raw.githubusercontent.com/Jatimpark/tunel/main/trgo/addtrgo.sh"
 wget -q -O /usr/bin/cektrgo "https://raw.githubusercontent.com/Jatimpark/tunel/main/trgo/cektrgo.sh"
 wget -q -O /usr/bin/deltrgo "https://raw.githubusercontent.com/Jatimpark/tunel/main/trgo/deltrgo.sh"
@@ -77,8 +77,8 @@ chmod +x /usr/bin/xp
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
 chmod +x /usr/bin/menu-set2
-chmod +x /usr/bin/info
-chmod +x /usr/bin/infoserv
+chmod +x /usr/bin/info2
+chmod +x /usr/bin/infoserv2
 chmod +x /usr/bin/addtrgo
 chmod +x /usr/bin/cektrgo
 chmod +x /usr/bin/deltrgo
