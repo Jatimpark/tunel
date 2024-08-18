@@ -55,8 +55,8 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Creating service... "
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
-wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/backup2.sh" && chmod +x /usr/bin/backup2
-wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/restore2.sh" && chmod +x /usr/bin/restore2
+wget -q -O /usr/bin/backup2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/backup2.sh" && chmod +x /usr/bin/backup2
+wget -q -O /usr/bin/restore2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/restore2.sh" && chmod +x /usr/bin/restore2
 wget -q -O /usr/bin/cleaner "https://raw.githubusercontent.com/Jatimpark/tunel/main/backup/cleaner.sh" && chmod +x /usr/bin/cleaner
 
 service cron restart > /dev/null 2>&1
