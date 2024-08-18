@@ -293,8 +293,8 @@ wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Jatimpark/tunel/main/s
 wget -q -O /usr/bin/update2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/update2.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/cf.sh"
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
-wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
+wget -q -O /usr/bin/info2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info2.sh"
+wget -q -O /usr/bin/infoserv2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv2.sh"
 wget -q -O /usr/bin/babi2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi2.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
 wget -q -O /usr/bin/updatevray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/updatevray.sh"
@@ -322,8 +322,8 @@ chmod +x /usr/bin/xp
 chmod +x /usr/bin/update2
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
-chmod +x /usr/bin/info
-chmod +x /usr/bin/infoserv
+chmod +x /usr/bin/info2
+chmod +x /usr/bin/infoserv2
 chmod +x /usr/bin/babi2
 chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/updatevray
