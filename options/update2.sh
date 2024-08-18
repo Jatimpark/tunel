@@ -44,7 +44,7 @@ wget -q -O /usr/bin/menu-vmess2 "https://raw.githubusercontent.com/Jatimpark/tun
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan2.sh"
 wget -q -O /usr/bin/menu-ssh2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh2.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-backup.sh"
+wget -q -O /usr/bin/menu-backup2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-backup2.sh"
 wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu2.sh"
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/cf.sh"
@@ -70,7 +70,7 @@ chmod +x /usr/bin/menu-vmess2
 chmod +x /usr/bin/menu-ss
 chmod +x /usr/bin/menu-trojan2
 chmod +x /usr/bin/menu-ssh2
-chmod +x /usr/bin/menu-backup
+chmod +x /usr/bin/menu-backup2
 chmod +x /usr/bin/menu2
 chmod +x /usr/bin/babi2
 chmod +x /usr/bin/xp
