@@ -40,7 +40,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/akun.conf
 systemctl restart trojan-go.service
-link="trojan://${user}@${domain}:2087/?sni=${domain}&type=ws&host=${domain}&path=/trojango&encryption=none#$user"
+link="trojan://${user}@${domain}:2053/?sni=${domain}&type=ws&host=${domain}&path=/trojango&encryption=none#$user"
 clear
 echo -e ""
 echo -e "${BLUE}========-TROJAN-GO-========${NC}"
@@ -71,4 +71,5 @@ case "$x" in
    ;;
    *)
    clear
+   menu2
 esac

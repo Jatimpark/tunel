@@ -66,4 +66,5 @@ case "$x" in
    ;;
    *)
    clear
+   menu2
 esac

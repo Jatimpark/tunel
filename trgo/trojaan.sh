@@ -38,10 +38,10 @@ echo -e "\033[0;36m                MENU TROJAN-GO                    \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 #chck_pid
 echo -e " "
-echo -e "01. Create Trojan-GO Account "
-echo -e "02. Deleting Trojan-GO Account "
-echo -e "03. Extending Trojan-GO Account Active Life "
-echo -e "04. Check User Login Trojan-GO  "
+echo -e "01. Create TrojanGO Account "
+echo -e "02. Hapus TrojanGO Account "
+echo -e "03. Perpanjang Akun TrojanGo "
+echo -e "04. Check User Login TrojanGO  "
 #echo -e " \033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " "
 echo -e "\033[0;35m[00] • Back to Main Menu "
@@ -78,5 +78,6 @@ case "$x" in
    ;;
    *)
    clear
+   menu2
 esac
 done
