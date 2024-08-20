@@ -166,7 +166,6 @@ read -n 1 -s -r -p "Press any key to back on menu"
 }
 function trialvmess(){
 domain=$(cat /etc/xray/domain)
-domain=$(cat /etc/xray/domain)
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 echo -e "\033[1;96m___________________________________________\033[0m"
 echo -e " Set Expired In Minutes           "
