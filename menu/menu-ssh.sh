@@ -140,7 +140,7 @@ Pass=1
 echo Ping Host &> /dev/null
 echo Create Akun: $Login &> /dev/null
 sleep 0.5
-echo Setting Password: $Pass &> /dev/null
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 sleep 0.5
 
 clear
