@@ -126,7 +126,8 @@ sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 
 
-Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+Login=Trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
+clear
 echo -e "\033[1;96m___________________________________________\033[0m"
 echo -e "Settings Triall          "
 echo -e "\033[1;96m___________________________________________\033[0m"
@@ -137,11 +138,20 @@ read -p " Menit : " pup
 echo -e "\033[1;96m___________________________________________\033[0m"
 hari="1"
 Pass=1
-echo Ping Host &> /dev/null
-echo Create Akun: $Login &> /dev/null
-sleep 0.5
+clear
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
+tnggl="$tgl2 $bln2, $thn2"
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+hariini=`date -d "0 days" +"%Y-%m-%d"`
+expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-sleep 0.5
 
 clear
 echo userdel -f "$Login" | at now + $pup minutes
