@@ -166,7 +166,9 @@ read -n 1 -s -r -p "Press any key to back on menu"
 }
 function trialvmess(){
 domain=$(cat /etc/xray/domain)
-user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+masaaktif=1
+user=Trial-VM`</dev/urandom tr -dc 0-9 | head -c3`
+clear
 echo -e "\033[1;96m___________________________________________\033[0m"
 echo -e " Set Expired In Minutes           "
 echo -e "\033[1;96m___________________________________________\033[0m"
@@ -177,11 +179,18 @@ read -p " Menit : " pup
 echo -e "\033[1;96m___________________________________________\033[0m"
 clear 
 uuid=$(cat /proc/sys/kernel/random/uuid)
-masaaktif=1
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
+tnggl="$tgl2 $bln2, $thn2"
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 asu=`cat<<EOF
