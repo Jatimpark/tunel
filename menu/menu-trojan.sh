@@ -158,16 +158,23 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
 function trialtrojan(){
 clear
 domain=$(cat /etc/xray/domain)
-tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
-user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+masaaktif=1
+user=Trial-TR`</dev/urandom tr -dc 0-9 | head -c3`
 clear
 echo -e "\033[1;93m◇━━━━━━━━━━━━━━━━━◇\033[0m"
 echo -e " Set Expired In Minutes           "
 echo -e "\033[1;93m◇━━━━━━━━━━━━━━━━━◇\033[0m"
 read -p " Menit : " pup
 uuid=$(cat /proc/sys/kernel/random/uuid)
-masaaktif=1
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
+tnggl="$tgl2 $bln2, $thn2"
 sed -i '/#trojanws$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#trojangrpc$/a\### '"$user $exp"'\
