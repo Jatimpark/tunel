@@ -127,6 +127,14 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 
 
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e "Settings Triall          "
+echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e ""
+echo -e ""
+echo -e "\033[1;96m___________________________________________\033[0m"
+read -p " Menit : " pup
+echo -e "\033[1;96m___________________________________________\033[0m"
 hari="1"
 Pass=1
 echo Ping Host &> /dev/null
@@ -136,17 +144,15 @@ echo Setting Password: $Pass &> /dev/null
 sleep 0.5
 
 clear
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
+echo userdel -f "$Login" | at now + $pup minutes
+echo "tunnel ssh ${Login}" | at now +$pup minutes &> /dev/null
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\033[0;34m═══════════${NC}"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Expired On : $exp" 
+echo -e "Expired On : $pup menit" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
@@ -172,7 +178,7 @@ echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Expired On : $exp" 
+echo -e "Expired On : $pup menit" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 

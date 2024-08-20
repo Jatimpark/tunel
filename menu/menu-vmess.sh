@@ -166,7 +166,17 @@ read -n 1 -s -r -p "Press any key to back on menu"
 }
 function trialvmess(){
 domain=$(cat /etc/xray/domain)
+domain=$(cat /etc/xray/domain)
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e " Set Expired In Minutes           "
+echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e ""
+echo -e ""
+echo -e "\033[1;96m___________________________________________\033[0m"
+read -p " Menit : " pup
+echo -e "\033[1;96m___________________________________________\033[0m"
+clear 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -229,7 +239,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
-
+echo "tunnel vmess ${user}" | at now +$pup minutes &> /dev/null
 clear
 echo -e "\033[0;34m═════════════\033[0;33mXRAY/VMESS\033[0;34m═════════════\033[0m"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
@@ -254,7 +264,7 @@ echo -e "Link none TLS  : ${vmesslink2}"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo -e "Link gRPC      : ${vmesslink3}"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
-echo -e "Expired On     : $exp"
+echo -e "Expired On     : $pup menit"
 echo -e "\033[0;34m════════════════════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"

@@ -160,6 +160,11 @@ clear
 domain=$(cat /etc/xray/domain)
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+clear
+echo -e "\033[1;93m◇━━━━━━━━━━━━━━━━━◇\033[0m"
+echo -e " Set Expired In Minutes           "
+echo -e "\033[1;93m◇━━━━━━━━━━━━━━━━━◇\033[0m"
+read -p " Menit : " pup
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -187,7 +192,7 @@ echo -e "Link WS      : ${trojanlink}"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link GRPC    : ${trojanlink1}"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "Expired On   : $exp"
+echo -e "Expired On   : $pup menit"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " "
 echo -e "\033[0;32m Sc Arya Blitar \033[0m"
