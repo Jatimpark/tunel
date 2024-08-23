@@ -349,7 +349,7 @@ echo -e "     ${PURPLE}[${BIWhite}2${PURPLE}]${NC} Trial Vmess Account     "
 echo -e "     ${PURPLE}[${BIWhite}3${PURPLE}]${NC} Delete Account Vmess     "
 echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC}>Renew Account Vmess     "
 echo -e ""
-echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}] Back To Menu     "
+echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}]${NC} Back To Menu     "
 echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
