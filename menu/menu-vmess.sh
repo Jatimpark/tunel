@@ -5,6 +5,7 @@ PURPLE='\033[0;34m'
 GREEN='\033[0;32m' 
 RED='\033[0;31m'
 BIWhite='\033[1;97m'  
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 clear
 clear
@@ -347,7 +348,7 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "     ${PURPLE}[${BIWhite}1${PURPLE}]${NC} Create Vmess Account     "
 echo -e "     ${PURPLE}[${BIWhite}2${PURPLE}]${NC} Trial Vmess Account     "
 echo -e "     ${PURPLE}[${BIWhite}3${PURPLE}]${NC} Delete Account Vmess     "
-echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC}>Renew Account Vmess     "
+echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC} Renew Account Vmess     "
 echo -e ""
 echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}]${NC} Back To Menu     "
 echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
