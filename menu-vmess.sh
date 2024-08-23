@@ -4,7 +4,7 @@ NC='\033[0;37m'
 PURPLE='\033[0;34m' 
 GREEN='\033[0;32m' 
 RED='\033[0;31m'
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+BIWhite='\033[1;97m'  
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 clear
@@ -345,12 +345,12 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "${PURPLE}│\E[42;1;37m                    VMESS MENU                   ${PURPLE}│$NC"
 echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
 echo -e "${PURPLE}┌─────────────────────────────────────────────────┐${NC}"
-echo -e "     ${NC}[${GREEN}1${NC}] Create Vmess Account     "
-echo -e "     ${NC}[${GREEN}2${NC}] Trial Vmess Account     "
-echo -e "     ${NC}[${GREEN}3${NC}] Delete Account Vmess     "
-echo -e "     ${NC}[${GREEN}4${NC}] Renew Account Vmess     "
+echo -e "     ${PURPLE}[${BIWhite}1${PURPLE}]${NC} Create Vmess Account     "
+echo -e "     ${PURPLE}[${BIWhite}2${PURPLE}]${NC} Trial Vmess Account     "
+echo -e "     ${PURPLE}[${BIWhite}3${PURPLE}]${NC} Delete Account Vmess     "
+echo -e "     ${PURPLE}[${BIWhite}4${PURPLE}]${NC} Renew Account Vmess     "
 echo -e ""
-echo -e "     ${NC}[${GREEN}0${NC}] Back To Menu     "
+echo -e "     ${PURPLE}[${BIWhite}0${PURPLE}]${NC} Back To Menu     "
 echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
