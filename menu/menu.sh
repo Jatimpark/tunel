@@ -123,7 +123,7 @@ echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRA
 echo -e "  ${NC}     STUNNEL ${RED}: $resst" "${NC} DROPBEAR ${RED}: $resdbr" "${NC} SSH-WS ${RED}: $ressshws"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "$BICyan   ┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$BICyan   │$NC\033[42m                    INFO MENU                $BICyan    │$NC"
+echo -e "$BICyan   │$NC\033[42m                    INFO MENU                    $BICyan│$NC"
 echo -e "$BICyan   └─────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}╭═════════════════════════════════════════════════════╮${NC}"
 echo -e "${BICyan} │    ${ICyan}[${GREEN}01${ICyan}]${NC} • SSH/WS     "   "${BICyan}│    ${ICyan}[${GREEN}08${ICyan}]${NC} • INFO PORT         ${BICyan}│${NC}   "
