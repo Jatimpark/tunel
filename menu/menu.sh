@@ -19,7 +19,7 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 NC='\033[0;37m'
-KN='\033[0;33m'
+KN='\033[1;33m'
 ORANGE='\033[0;33m'
 PINK='\033[0;35m'
 dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
@@ -115,8 +115,8 @@ echo -e " ${BICyan}│  ${ICyan} Date         : ${NC}$DATEVPS "
 echo -e " ${BICyan}│  ${ICyan} Time         : ${NC}$TIMEZONE "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}╭═════════════════════════════════════════════════════╮${NC}"
-echo -e "${BICyan} │                    ${NC}SSH     ${RED}: ${BIYellow}$ssh1      ${NC} "
-echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${BIYellow}$vma     ${NC} "
+echo -e "${BICyan} │                    ${NC}SSH     ${RED}: ${KN}$ssh1      ${NC} "
+echo -e "${BICyan} │                    ${NC}ALLXRAY ${RED}: ${KN}$vma     ${NC} "
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "    ${NC} SSH ${RED}: $ressh"" ${NC} NGINX ${RED}: $resngx"" ${NC}  XRAY ${RED}: $resv2r"" ${NC} TROJAN ${RED}: $resv2r"
