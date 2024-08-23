@@ -3,25 +3,25 @@
 BIGreen='\033[0;32m'
 NC='\033[0;37m'
 BICyan='\033[0;34m' 
-
+BIWhite='\033[1;97m'  
 clear
 echo -e "$BICyan┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$BICyan│${BIGreen}                  MENU SETTINGS               $BICyan   │$NC"
 echo -e "$BICyan└─────────────────────────────────────────────────┘${NC}"
 echo -e " $BICyan┌───────────────────────────────────────────────┐${NC}"
-echo -e " $BICyan│$NC   ${BIGreen}[1]${NC}  • Change Host/Domain"
-echo -e " $BICyan│$NC   ${BIGreen}[2]${NC}  • Renew Cert"
-echo -e " $BICyan│$NC   ${BIGreen}[3]${NC}  • Check Running"
-echo -e " $BICyan│$NC   ${BIGreen}[4]${NC}  • Change Banner SSH "
-echo -e " $BICyan│$NC   ${BIGreen}[5]${NC}  • Restart Banner SSH "
-echo -e " $BICyan│$NC   ${BIGreen}[6]${NC}  • Info Bandwidth"
-echo -e " $BICyan│$NC   ${BIGreen}[7]${NC}  • Restart All Service "
-echo -e " $BICyan│$NC   ${BIGreen}[8]${NC}  • Auto Reboot"
-echo -e " $BICyan│$NC   ${BIGreen}[9]${NC}  • Reboot"
-echo -e " $BICyan│$NC   ${BIGreen}[10]${NC} • Speedtest"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}1]${NC}  • Change Host/Domain"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}2]${NC}  • Renew Cert"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}3]${NC}  • Check Running"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}4]${NC}  • Change Banner SSH "
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}5]${NC}  • Restart Banner SSH "
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}6]${NC}  • Info Bandwidth"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}7]${NC}  • Restart All Service "
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}8]${NC}  • Auto Reboot"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}9]${NC}  • Reboot"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}10]${NC} • Speedtest"
 #echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
-echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Upgrade Versi New Xray"
-echo -e " $BICyan│$NC   ${BIGreen}[0]${NC}  • Balik Ke Menu"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}11]${NC} • Upgrade Versi New Xray"
+echo -e " $BICyan│$NC   ${BIGreen}[${BIWhite}0]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -p "  Select menu :  "  opt

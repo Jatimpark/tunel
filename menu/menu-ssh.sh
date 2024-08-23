@@ -2,7 +2,7 @@
 NC='\033[0;37m' 
 PURPLE='\033[0;34m' 
 GREEN='\033[0;32m' 
-
+BIWhite='\033[1;97m'  
 clear
 function usernew(){
 clear
@@ -674,18 +674,18 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "${PURPLE} \E[42;1;37m                     SSH MENU                    ${PURPLE}│$NC"
 echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
 echo -e "${PURPLE}┌───────────────────────────────────────────────┐${NC}"
-echo -e "     ${GREEN}[1]${NC}  Create Ssh Account "
-echo -e "     ${GREEN}[2]${NC}  Trial Ssh Acoount  "
-echo -e "     ${GREEN}[3]${NC}  Delete Ssh Acoount  "
-echo -e "     ${GREEN}[4]${NC}  Perpanjang Ssh Account  "
-echo -e "     ${GREEN}[5]${NC}  Cek User Login "
-echo -e "     ${GREEN}[6]${NC}  Cek User Multi Log "
-echo -e "     ${GREEN}[7]${NC}  Auto Del User Exp  "
-echo -e "     ${GREEN}[8]${NC}  Auto Kill User Ssh "
-echo -e "     ${GREEN}[9]${NC}  Cek All Member Ssh "
-echo -e "     ${GREEN}[10]${NC} Tendang User Multi"
+echo -e "     ${GREEN}[${BIWhite}1]${NC}  Create Ssh Account "
+echo -e "     ${GREEN}[${BIWhite}2]${NC}  Trial Ssh Acoount  "
+echo -e "     ${GREEN}[${BIWhite}3]${NC}  Delete Ssh Acoount  "
+echo -e "     ${GREEN}[${BIWhite}4]${NC}  Perpanjang Ssh Account  "
+echo -e "     ${GREEN}[${BIWhite}5]${NC}  Cek User Login "
+echo -e "     ${GREEN}[${BIWhite}6]${NC}  Cek User Multi Log "
+echo -e "     ${GREEN}[${BIWhite}7]${NC}  Auto Del User Exp  "
+echo -e "     ${GREEN}[${BIWhite}8]${NC}  Auto Kill User Ssh "
+echo -e "     ${GREEN}[${BIWhite}9]${NC}  Cek All Member Ssh "
+echo -e "     ${GREEN}[${BIWhite}10]${NC} Tendang User Multi"
 echo -e " "
-echo -e "     ${GREEN}[0]${NC} Back To Menu      "
+echo -e "     ${GREEN}[${BIWhite}0]${NC} Back To Menu      "
 echo -e "${PURPLE}└───────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt

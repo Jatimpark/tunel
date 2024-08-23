@@ -4,7 +4,7 @@ NC='\033[0;37m'
 PURPLE='\033[0;34m' 
 GREEN='\033[0;32m' 
 RED='\033[0;31m'
-
+BIWhite='\033[1;97m'  
 clear
 clear
 function add-ws(){
@@ -343,12 +343,12 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "${PURPLE}│\E[42;1;37m                    VMESS MENU                   ${PURPLE}│$NC"
 echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
 echo -e "${PURPLE}┌─────────────────────────────────────────────────┐${NC}"
-echo -e "     ${NC}[${GREEN}1${NC}] Create Vmess Account     "
-echo -e "     ${NC}[${GREEN}2${NC}] Trial Vmess Account     "
-echo -e "     ${NC}[${GREEN}3${NC}] Delete Account Vmess     "
-echo -e "     ${NC}[${GREEN}4${NC}] Renew Account Vmess     "
+echo -e "     ${NC}[${BIWhite}1${NC}] Create Vmess Account     "
+echo -e "     ${NC}[${BIWhite}2${NC}] Trial Vmess Account     "
+echo -e "     ${NC}[${BIWhite}3${NC}] Delete Account Vmess     "
+echo -e "     ${NC}[${BIWhite}4${NC}] Renew Account Vmess     "
 echo -e ""
-echo -e "     ${NC}[${GREEN}0${NC}] Back To Menu     "
+echo -e "     ${NC}[${BIWhite}0${NC}] Back To Menu     "
 echo -e "${PURPLE}└──────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt

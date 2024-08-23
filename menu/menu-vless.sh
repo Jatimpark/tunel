@@ -5,6 +5,7 @@ COLOR1='\033[0;34m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BICyan='\033[0;34m' 
+BIWhite='\033[1;97m'  
 clear
 clear
 function add-vless(){
@@ -228,12 +229,12 @@ echo -e "${BICyan}┌───────────────────�
 echo -e "${BICyan}│\E[42;1;37m                   VLESS MENU                    ${BICyan}│$NC"
 echo -e "${BICyan}└─────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}┌───────────────────────────────────────────────┐${NC}"
-echo -e "     ${NC}[${GREEN}1${NC}] Create Vless Account     "
-echo -e "     ${NC}[${GREEN}2${NC}] Trial Vless Acoount     "
-echo -e "     ${NC}[${GREEN}3${NC}] Delete Account Vless     "
-echo -e "     ${NC}[${GREEN}4${NC}] Renew Account Vless     "
+echo -e "     ${NC}[${BIWhite}1${NC}] Create Vless Account     "
+echo -e "     ${NC}[${BIWhite}2${NC}] Trial Vless Acoount     "
+echo -e "     ${NC}[${BIWhite}3${NC}] Delete Account Vless     "
+echo -e "     ${NC}[${BIWhite}4${NC}] Renew Account Vless     "
 echo -e " "
-echo -e "     ${NC}[${GREEN}0${NC}] Back To Menu     "
+echo -e "     ${NC}[${BIWhite}0${NC}] Back To Menu     "
 echo -e " ${BICyan}└──────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
