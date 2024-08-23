@@ -1,26 +1,7 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-#########################
+NC='\033[0;37m'
+green='\033[0;32m'
 
-# // Export Banner Status Information
-export EROR="[${RED} EROR ${NC}]"
-export INFO="[${YELLOW} INFO ${NC}]"
-export OKEY="[${GREEN} OKEY ${NC}]"
-export PENDING="[${YELLOW} PENDING ${NC}]"
-export SEND="[${YELLOW} SEND ${NC}]"
-export RECEIVE="[${YELLOW} RECEIVE ${NC}]"
-
-# // Export Align
-export BOLD="\e[1m"
-export WARNING="${RED}\e[5m"
-export UNDERLINE="\e[4m"
-
-
-#fi
-#sleep 3
-#echo -e "
-#"
 clear
 echo ""
 sleep 1
