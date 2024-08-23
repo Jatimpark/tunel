@@ -2,13 +2,7 @@
 NC='\033[0;37m' 
 PURPLE='\033[0;34m' 
 GREEN='\033[0;32m' 
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-# // Export Align
-export BOLD="\e[1m"
-export WARNING="${red}\e[5m"
-export UNDERLINE="\e[4m"
 clear
 function usernew(){
 clear
@@ -126,43 +120,27 @@ sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 
 
-Login=Trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
-clear
-echo -e "\033[1;96m___________________________________________\033[0m"
-echo -e "Settings Triall          "
-echo -e "\033[1;96m___________________________________________\033[0m"
-echo -e ""
-echo -e ""
-echo -e "\033[1;96m___________________________________________\033[0m"
-read -p " Menit : " pup
-echo -e "\033[1;96m___________________________________________\033[0m"
+Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
-clear
-tgl=$(date -d "$masaaktif days" +"%d")
-bln=$(date -d "$masaaktif days" +"%b")
-thn=$(date -d "$masaaktif days" +"%Y")
-expe="$tgl $bln, $thn"
-tgl2=$(date +"%d")
-bln2=$(date +"%b")
-thn2=$(date +"%Y")
-tnggl="$tgl2 $bln2, $thn2"
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-hariini=`date -d "0 days" +"%Y-%m-%d"`
-expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
-echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+echo Ping Host &> /dev/null
+echo Create Akun: $Login &> /dev/null
+sleep 0.5
+echo Setting Password: $Pass &> /dev/null
+sleep 0.5
 
 clear
-echo userdel -f "$Login" | at now + $pup minutes
-echo "tunnel ssh ${Login}" | at now +$pup minutes &> /dev/null
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\033[0;34m═══════════${NC}"
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Expired On : $pup menit" 
+echo -e "Expired On : $exp" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
@@ -188,7 +166,7 @@ echo -e "${PURPLE}═════════════\033[0;33mSSH ACCOUNTS\
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
-echo -e "Expired On : $pup menit" 
+echo -e "Expired On : $exp" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
 echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 

@@ -8,26 +8,10 @@ ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 #let tra=$trx/2
 #ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 #let ssa=$ssx/2
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[0;31m'        # Red
-BIGreen='\033[0;31m'      # Green
-BIYellow='\033[0;33m'     # Yellow
-BIBlue='\033[0;34m'       # Blue
-BIPurple='\033[0;35m'     # Purple
-BICyan='\033[0;34m'       # Cyan
-BIWhite='\033[0m'      # White
-UWhite='\033[0m'       # White
-On_IPurple='\033[0;105m'  #
-On_IRed='\033[0;101m'
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;31m'         # Red
-IGreen='\033[0;32m'       # Green
-IYellow='\033[0;33m'      # Yellow
-IBlue='\033[0;34m'        # Blue
-IPurple='\033[0;55m'      # Purple
-ICyan='\033[0;36m'        # Cyan
-IWhite='\033[0;37m'       # White
+
 NC='\033[0;37m'
+BICyan='\033[0;34m'
+ICyan='\033[0;36m'  
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 green='\033[0;32m'
@@ -98,7 +82,7 @@ ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
-CITY=$(curl -s ipinfo.io/city)
+#CITY=$(curl -s ipinfo.io/city)
 #IPVPS=$(curl -s ipinfo.io/ip)
 IPVPS=$(curl -sS ifconfig.me)
 RAM=$(free -m | awk 'NR==2 {print $2}')
