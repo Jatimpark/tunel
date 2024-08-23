@@ -6,7 +6,7 @@ BICyan='\033[0;34m'
 BIWhite='\033[1;97m'  
 clear
 echo -e "$BICyan┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$BICyan│${BIGreen}                  MENU SETTINGS               $BICyan   │$NC"
+echo -e "$BICyan│$NC\033[42m                  MENU SETTINGS               $BICyan   │$NC"
 echo -e "$BICyan└─────────────────────────────────────────────────┘${NC}"
 echo -e " $BICyan┌───────────────────────────────────────────────┐${NC}"
 echo -e " $BICyan│${BIGreen}[${BIWhite}1${BIGreen}]${NC}  • Change Host/Domain"
