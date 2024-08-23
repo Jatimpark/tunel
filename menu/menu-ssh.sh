@@ -2,7 +2,8 @@
 NC='\033[0;37m' 
 PURPLE='\033[0;34m' 
 GREEN='\033[0;32m' 
-BIWhite='\033[1;97m'  
+BIWhite='\033[1;97m' 
+asu='\033[1;33m' 
 clear
 function usernew(){
 clear
@@ -674,18 +675,18 @@ echo -e "${PURPLE}┌───────────────────�
 echo -e "${PURPLE} \E[42;1;37m                     SSH MENU                    ${PURPLE}│$NC"
 echo -e "${PURPLE}└─────────────────────────────────────────────────┘${NC}"
 echo -e "${PURPLE}┌───────────────────────────────────────────────┐${NC}"
-echo -e "     ${GREEN}[${BIWhite}1]${NC}  Create Ssh Account "
-echo -e "     ${GREEN}[${BIWhite}2]${NC}  Trial Ssh Acoount  "
-echo -e "     ${GREEN}[${BIWhite}3]${NC}  Delete Ssh Acoount  "
-echo -e "     ${GREEN}[${BIWhite}4]${NC}  Perpanjang Ssh Account  "
-echo -e "     ${GREEN}[${BIWhite}5]${NC}  Cek User Login "
-echo -e "     ${GREEN}[${BIWhite}6]${NC}  Cek User Multi Log "
-echo -e "     ${GREEN}[${BIWhite}7]${NC}  Auto Del User Exp  "
-echo -e "     ${GREEN}[${BIWhite}8]${NC}  Auto Kill User Ssh "
-echo -e "     ${GREEN}[${BIWhite}9]${NC}  Cek All Member Ssh "
-echo -e "     ${GREEN}[${BIWhite}10]${NC} Tendang User Multi"
+echo -e "     ${asu}[${BIWhite}1${asu}]${NC}  Create Ssh Account "
+echo -e "     ${asu}[${BIWhite}2${asu}]${NC}  Trial Ssh Acoount  "
+echo -e "     ${asu}[${BIWhite}3${asu}]${NC}  Delete Ssh Acoount  "
+echo -e "     ${asu}[${BIWhite}4${asu}]${NC}  Perpanjang Ssh Account  "
+echo -e "     ${asu}[${BIWhite}5${asu}]${NC}  Cek User Login "
+echo -e "     ${asu}[${BIWhite}6${asu}]${NC}  Cek User Multi Log "
+echo -e "     ${asu}[${BIWhite}7${asu}]${NC}  Auto Del User Exp  "
+echo -e "     ${asu}[${BIWhite}8${asu}]${NC}  Auto Kill User Ssh "
+echo -e "     ${asu}[${BIWhite}9${asu}]${NC}  Cek All Member Ssh "
+echo -e "     ${asu}[${BIWhite}10${asu}]${NC} Tendang User Multi"
 echo -e " "
-echo -e "     ${GREEN}[${BIWhite}0]${NC} Back To Menu      "
+echo -e "     ${asu}[${BIWhite}0${asu}]${NC} Back To Menu      "
 echo -e "${PURPLE}└───────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
