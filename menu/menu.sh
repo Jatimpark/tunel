@@ -149,7 +149,7 @@ echo -e " ${BICyan}│${ICyan}  Expiry In     : ${NC}$(( (d1 - d2) / 86400 )) ${
 }
 mai="datediff "$Exp" "$DATE""
 echo -e " ${BICyan}┌─────────────────────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│ ${ICyan} Version       : ${NC} GRATIS ${NC}"
+echo -e " ${BICyan}│ ${ORANGE} Version       : ${NC} GRATIS ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
