@@ -121,14 +121,14 @@ sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
-echo -e "\033[1;94m___________________________________________\033[0m"
-echo -e "Settings Triall          "
-echo -e "\033[1;94m___________________________________________\033[0m"
+echo -e "\033[0;34m________________\033[0m"
+echo -e "Settings Triall   "
+echo -e "\033[0;34m________________\033[0m"
 echo -e ""
 echo -e ""
-echo -e "\033[1;94m___________________________________________\033[0m"
+echo -e "\033[0;34m________________\033[0m"
 read -p " Menit : " pup
-echo -e "\033[1;94m___________________________________________\033[0m"
+echo -e "\033[0;34m________________\033[0m"
 hari="1"
 Pass=1
 clear
