@@ -10,5 +10,3 @@ apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.con
 
 ![logo](https://raw.githubusercontent.com/Jatimpark/tunel/main/scp1.png)
 
-
-![logo](https://raw.githubusercontent.com/Jatimpark/tunel/main/scp2.png)
