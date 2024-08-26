@@ -363,8 +363,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### trial809Z 26-08-2024
-},{"id": "db54b010-350f-429f-b1d4-f07515648420","alterId": 0,"email": "trial809Z"
 ### jod 2024-09-19
 },{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
 ### Rg888 2024-09-14
@@ -477,8 +475,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### trial809Z 2024-08-26
-},{"id": "db54b010-350f-429f-b1d4-f07515648420","alterId": 0,"email": "trial809Z"
 ### jod 2024-09-19
 },{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
 ### Rg888 2024-09-14
