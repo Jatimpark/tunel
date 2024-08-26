@@ -1,31 +1,7 @@
 #!/bin/bash
-# =========================================
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition V1.0
-# =========================================
-# // Export Color & Information
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-export YELLOW='\033[0;33m'
-export BLUE='\033[0;34m'
-export PURPLE='\033[0;35m'
-export CYAN='\033[0;36m'
-export LIGHT='\033[0;37m'
-export NC='\033[0m'
 
-# // Export Banner Status Information
-export EROR="[${RED} EROR ${NC}]"
-export INFO="[${YELLOW} INFO ${NC}]"
-export OKEY="[${GREEN} OKEY ${NC}]"
-export PENDING="[${YELLOW} PENDING ${NC}]"
-export SEND="[${YELLOW} SEND ${NC}]"
-export RECEIVE="[${YELLOW} RECEIVE ${NC}]"
-
-# // Export Align
-export BOLD="\e[1m"
-export WARNING="${RED}\e[5m"
-export UNDERLINE="\e[4m"
-
+NC='\033[0;37m'
+green='\033[0;32m' 
 
 clear
 source /var/lib/scrz-prem/ipvps.conf
@@ -259,7 +235,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -387,17 +363,41 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### aku7 2025-07-13
-},{"id": "d707ae0e-db3e-4b8a-8a8d-a205f1c5fafa","alterId": 0,"email": "aku7"
-### opok 2025-07-13
-},{"id": "f1eafa95-8ffe-4028-84a9-8c32fd690137","alterId": 0,"email": "opok"
+### trial809Z 26-08-2024
+},{"id": "db54b010-350f-429f-b1d4-f07515648420","alterId": 0,"email": "trial809Z"
+### jod 2024-09-19
+},{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
+### Rg888 2024-09-14
+},{"id": "60f7bd82-e0c8-4fab-b8a2-9a4ade175568","alterId": 0,"email": "Rg888"
+### code 2024-08-29
+},{"id": "3006c65c-854c-4950-98cd-ad24123f52f3","alterId": 0,"email": "code"
+### ihwanudin 2024-09-06
+},{"id": "b13d36ad-51c1-46b4-995b-f676f2d8bc4b","alterId": 0,"email": "ihwanudin"
+### jpt 2024-09-06
+},{"id": "54e0a7db-0df7-487c-a268-cf1125702eff","alterId": 0,"email": "jpt"
+### hasby 2024-09-05
+},{"id": "3ba3349f-5fdf-45af-aa60-363bbad9f39e","alterId": 0,"email": "hasby"
+### riyan 2024-09-05
+},{"id": "409166ec-42a5-4554-a96f-d1b3fa979778","alterId": 0,"email": "riyan"
+### herman 2024-09-05
+},{"id": "ef017a3e-ab7b-4622-b9bd-9a0ed2c0e8d7","alterId": 0,"email": "herman"
+### hafiz 2024-09-05
+},{"id": "e043654e-c020-414f-82aa-f9038837df64","alterId": 0,"email": "hafiz"
+### ida 2024-09-05
+},{"id": "dfab3552-eea7-4ba7-a11c-3dab57288c7a","alterId": 0,"email": "ida"
+### ita 2024-09-05
+},{"id": "efa45970-bcbf-4716-9de6-64932e4f2710","alterId": 0,"email": "ita"
+### ian 2024-09-04
+},{"id": "a7f9edde-e3ca-496d-88a3-c8c4ec6c6ae2","alterId": 0,"email": "ian"
+### alberto 2024-08-29
+},{"id": "bb0c35f2-5206-4455-8329-a3e9b23224ba","alterId": 0,"email": "alberto"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/servlets/mms"
+                "path": "/vmess"
           }
         }
      },
@@ -411,12 +411,10 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### akuh 2025-07-13
-},{"password": "02751f79-45cd-4299-be01-0deefba7b28e","email": "akuh"
-### ilyas 2025-07-13
-},{"password": "393507f5-8a16-48bc-ae8e-25d99564dcae","email": "ilyas"
-### imame 2025-07-13
-},{"password": "61461557-ac5e-4dfe-b765-12f11acc91ed","email": "imame"
+### akuewe 2025-07-30
+},{"password": "d5707f95-6a47-4ca9-a40e-a6383a2e83a6","email": "akuewe"
+### mad 2025-07-11
+},{"password": "d5c52a0e-3ebb-4f15-a980-1c30732557e4","email": "mad"
               }
           ],
          "udp": true
@@ -479,10 +477,34 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### aku7 2025-07-13
-},{"id": "d707ae0e-db3e-4b8a-8a8d-a205f1c5fafa","alterId": 0,"email": "aku7"
-### opok 2025-07-13
-},{"id": "f1eafa95-8ffe-4028-84a9-8c32fd690137","alterId": 0,"email": "opok"
+### trial809Z 2024-08-26
+},{"id": "db54b010-350f-429f-b1d4-f07515648420","alterId": 0,"email": "trial809Z"
+### jod 2024-09-19
+},{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
+### Rg888 2024-09-14
+},{"id": "60f7bd82-e0c8-4fab-b8a2-9a4ade175568","alterId": 0,"email": "Rg888"
+### code 2024-08-29
+},{"id": "3006c65c-854c-4950-98cd-ad24123f52f3","alterId": 0,"email": "code"
+### ihwanudin 2024-09-06
+},{"id": "b13d36ad-51c1-46b4-995b-f676f2d8bc4b","alterId": 0,"email": "ihwanudin"
+### jpt 2024-09-06
+},{"id": "54e0a7db-0df7-487c-a268-cf1125702eff","alterId": 0,"email": "jpt"
+### hasby 2024-09-05
+},{"id": "3ba3349f-5fdf-45af-aa60-363bbad9f39e","alterId": 0,"email": "hasby"
+### riyan 2024-09-05
+},{"id": "409166ec-42a5-4554-a96f-d1b3fa979778","alterId": 0,"email": "riyan"
+### herman 2024-09-05
+},{"id": "ef017a3e-ab7b-4622-b9bd-9a0ed2c0e8d7","alterId": 0,"email": "herman"
+### hafiz 2024-09-05
+},{"id": "e043654e-c020-414f-82aa-f9038837df64","alterId": 0,"email": "hafiz"
+### ida 2024-09-05
+},{"id": "dfab3552-eea7-4ba7-a11c-3dab57288c7a","alterId": 0,"email": "ida"
+### ita 2024-09-05
+},{"id": "efa45970-bcbf-4716-9de6-64932e4f2710","alterId": 0,"email": "ita"
+### ian 2024-09-04
+},{"id": "a7f9edde-e3ca-496d-88a3-c8c4ec6c6ae2","alterId": 0,"email": "ian"
+### alberto 2024-08-29
+},{"id": "bb0c35f2-5206-4455-8329-a3e9b23224ba","alterId": 0,"email": "alberto"
              }
           ]
        },
@@ -503,12 +525,10 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### akuh 2025-07-13
-},{"password": "02751f79-45cd-4299-be01-0deefba7b28e","email": "akuh"
-### ilyas 2025-07-13
-},{"password": "393507f5-8a16-48bc-ae8e-25d99564dcae","email": "ilyas"
-### imame 2025-07-13
-},{"password": "61461557-ac5e-4dfe-b765-12f11acc91ed","email": "imame"
+### akuewe 2025-07-30
+},{"password": "d5707f95-6a47-4ca9-a40e-a6383a2e83a6","email": "akuewe"
+### mad 2025-07-11
+},{"password": "d5c52a0e-3ebb-4f15-a980-1c30732557e4","email": "mad"
                }
            ]
         },
