@@ -13,8 +13,8 @@ domen=`cat /etc/xray/domain`
 else
 domen=`cat /etc/v2ray/domain`
 fi
-portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
-wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
+#portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
+#wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "\E[42;1;37m        Create SSH Account         \E[0m"
@@ -23,18 +23,18 @@ read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
 
-IP=$(curl -sS ifconfig.me);
-ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
+#IP=$(curl -sS ifconfig.me);
+#ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
 ssl="$(cat /root/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
-sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+#sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
+#ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+#ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 
-OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
-OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
-OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
+#OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
+#OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
+#OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
 sleep 1
 clear
@@ -50,7 +50,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 #echo -e "Nameserver : $sldomain" | tee -a /etc/log-create-user.log
 #echo -e "PubKey     : $slkey" | tee -a /etc/log-create-user.log
@@ -80,7 +80,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
 echo -e "\033[0;34m══════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 #echo -e "Nameserver : $sldomain" | tee -a /etc/log-create-user.log
 #echo -e "PubKey     : $slkey" | tee -a /etc/log-create-user.log
@@ -109,16 +109,16 @@ menu-ssh
 function trialssh(){
 clear
 domen=`cat /etc/xray/domain`
-portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
-wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
+#portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
+#wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 clear
-IP=$(curl -sS ifconfig.me);
-ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
+#IP=$(curl -sS ifconfig.me);
+#ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
 ssl="$(cat ~/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
-sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
+#sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
+#OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 echo -e "\033[0;34m________________\033[0m"
@@ -147,7 +147,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $pup menit" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 echo -e "OpenSSH    : $opensh"
 echo -e "Dropbear   : $db" 
@@ -173,7 +173,7 @@ echo -e "Username   : $Login"
 echo -e "Password   : $Pass"
 echo -e "Expired On : $pup menit" 
 echo -e "${PURPLE}════════════════════════════════════${NC}"
-echo -e "IP         : $IP" 
+#echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 echo -e "OpenSSH    : $opensh"
 echo -e "Dropbear   : $db" 
