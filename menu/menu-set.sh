@@ -21,6 +21,7 @@ echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Reboot"
 echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC} • Speedtest"
 #echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
 echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Upgrade Versi New Xray"
+echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Clean Log"
 echo -e " $BICyan│${BIGreen}[${BIWhite}0${BIGreen}]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
@@ -39,7 +40,7 @@ case $opt in
 10) clear ; speedtest ;;
 #11) clear ; cek-bw ;;
 11) clear ; updatevray ;;
-#13) clear ; update ;;
+12) clear ; cleaner ;;
 #14) clear ; nef ;;
 #15) clear ; upray ;;
 #16) clear ; up ;;
