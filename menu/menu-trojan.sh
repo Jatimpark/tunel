@@ -16,7 +16,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
+#tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e " \E[42;1;37m              CREATE TROJAN ACCOUNT              \E[0m"
@@ -134,7 +134,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
 function trialtrojan(){
 clear
 domain=$(cat /etc/xray/domain)
-tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
+#tr="$(cat ~/log-install.txt | grep -w "Trojan WS" | cut -d: -f2|sed 's/ //g')"
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1

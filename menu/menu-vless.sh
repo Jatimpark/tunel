@@ -17,8 +17,8 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
-none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
+#tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
+#none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\033[0;34m│\E[42;1;37m            Create Xray/Vless Account            \033[0;34m│"
@@ -36,7 +36,7 @@ clear
 			echo "A client with the specified name was already created, please choose another name."
 			echo ""
 			read -n 1 -s -r -p "Press any key to back on menu"
-			v2ray-menu
+			menu-vless
 		fi
 	done
 
