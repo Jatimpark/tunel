@@ -34,7 +34,7 @@ detect_os() {
 # Fungsi untuk memeriksa versi terbaru Xray-core
 get_latest_xray_version() {
     LATEST_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | jq -r '.tag_name')
-    if [ -z "$LATEST_VERSION" ]; then
+    if [ -z "@ install -u www-data --version 1.8.23" ]; then
         print_msg $RB "Tidak dapat menemukan versi terbaru Xray-core."
         exit 1
     fi
