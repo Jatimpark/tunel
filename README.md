@@ -10,3 +10,7 @@ apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.con
 
 ![logo](https://raw.githubusercontent.com/Jatimpark/tunel/main/scp1.png)
 
+
+
+
+sudo fallocate -l 5G /swapfile5 && ls -lh /swapfile5 && sudo chmod 600 /swapfile5 && ls -lh /swapfile5 && sudo mkswap /swapfile5  && sudo swapon /swapfile5 && sudo swapon --show && free -h && sudo cp /etc/fstab /etc/fstab.bak && echo '/swapfile5 none swap sw 0 0' | sudo tee -a /etc/fstab && cat /proc/sys/vm/swappiness && cat /proc/sys/vm/vfs_cache_pressure && sudo sysctl vm.swappiness=10 && sudo sysctl vm.vfs_cache_pressure=50 && wget https://raw.githubusercontent.com/Jatimpark/tunel/sysctl.conf && mv /root/sysctl.conf /etc/sysctl.conf
