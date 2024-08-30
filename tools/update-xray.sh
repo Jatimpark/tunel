@@ -4,13 +4,13 @@ clear
 # Warna teks
 NC='\e[0m'       # No Color (mengatur ulang warna teks ke default)
 DEFBOLD='\e[39;1m' # Default Bold
-RB='\e[31;1m'    # Red Bold
-GB='\e[32;1m'    # Green Bold
-YB='\e[33;1m'    # Yellow Bold
-BB='\e[34;1m'    # Blue Bold
-MB='\e[35;1m'    # Magenta Bold
-CB='\e[36;1m'    # Cyan Bold
-WB='\e[37;1m'    # White Bold
+RB='\033[0;31m'
+GB='\033[0;32m'
+YB='\033[0;33m'
+BB='\033[0;34m'
+MB='\033[0;35m'
+CB='\033[0;36m'
+WB='\033[0;37m'
 
 # Fungsi untuk mencetak pesan dengan warna
 print_msg() {
