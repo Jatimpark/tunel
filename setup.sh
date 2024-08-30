@@ -297,7 +297,7 @@ wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main
 wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
-wget -q -O /usr/bin/updatevray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/updatevray.sh"
+wget -q -O /usr/bin/update-xray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/update-xray.sh"
 
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
@@ -321,7 +321,7 @@ chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/babi
 chmod +x /usr/bin/cek-bw
-chmod +x /usr/bin/updatevray
+chmod +x /usr/bin/update-xray
 
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
