@@ -17,11 +17,12 @@ echo -e " $BICyan│${BIGreen}[${BIWhite}5${BIGreen}]${NC}  • Restart Banner S
 echo -e " $BICyan│${BIGreen}[${BIWhite}6${BIGreen}]${NC}  • Info Bandwidth"
 echo -e " $BICyan│${BIGreen}[${BIWhite}7${BIGreen}]${NC}  • Restart All Service "
 echo -e " $BICyan│${BIGreen}[${BIWhite}8${BIGreen}]${NC}  • Auto Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC} • Speedtest"
+echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Set Auto Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC}  • Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Speedtest"
 #echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
-echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Upgrade Versi New Xray"
-echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Clean Log"
+echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Upgrade Versi New Xray"
+echo -e " $BICyan│${BIGreen}[${BIWhite}13${BIGreen}]${NC} • Clean Log"
 echo -e " $BICyan│${BIGreen}[${BIWhite}0${BIGreen}]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
@@ -36,11 +37,12 @@ case $opt in
 06 | 6) clear ; cek-bandwidth ;;
 07 | 7) clear ; restart ;;
 08 | 8) clear ; autoreboot ;;
-09 | 9) clear ; reboot ;;
-10) clear ; speedtest ;;
+09 | 9)clear ; jam ;;
+10) clear ; reboot ;;
+11) clear ; speedtest ;;
 #11) clear ; cek-bw ;;
-11) clear ; update-xray ;;
-12) clear ; cleaner ;;
+12) clear ; update-xray ;;
+13) clear ; cleaner ;;
 #14) clear ; nef ;;
 #15) clear ; upray ;;
 #16) clear ; up ;;
