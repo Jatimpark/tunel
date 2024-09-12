@@ -57,20 +57,6 @@ touch /var/log/xray/access.log
 touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
-# / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
-
-
-
-## crt xray
-systemctl stop nginx
-mkdir /root/.acme.sh
-curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
-chmod +x /root/.acme.sh/acme.sh
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 
 # nginx renew ssl
 echo -n '#!/bin/bash
@@ -158,8 +144,7 @@ wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpa
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 # / / Installation Xray Core
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
-# / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # / / Make Main Directory
 
@@ -363,72 +348,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### fauzan 2024-10-11
-},{"id": "84c0ef48-36a5-42fc-b1b1-1d3cf748a164","alterId": 0,"email": "fauzan"
-### surkim 2024-10-10
-},{"id": "4efa6b7d-5597-4d15-a4e0-4700ad5f1927","alterId": 0,"email": "surkim"
-### solihin 2024-10-10
-},{"id": "c7ecba00-e54b-4d25-8e2b-9234d916a025","alterId": 0,"email": "solihin"
-### rukin 2024-10-09
-},{"id": "bde71b99-9f06-4b7d-92b5-1a026ea69f42","alterId": 0,"email": "rukin"
-### gufron 2024-10-07
-},{"id": "00917916-7dd1-4f97-b361-584e0b765c37","alterId": 0,"email": "gufron"
-### indah 2024-10-05
-},{"id": "c03f92da-e14b-4e18-b0af-49795d20394c","alterId": 0,"email": "indah"
-### sopian 2024-10-05
-},{"id": "0349a787-40f1-4d38-84a5-6f749700b435","alterId": 0,"email": "sopian"
-### sairi 2024-10-05
-},{"id": "156415f4-51f4-4bc0-95b5-3ac926e2c927","alterId": 0,"email": "sairi"
-### sudin 2024-10-05
-},{"id": "7a841695-00e8-43bb-878e-ea85e8c24277","alterId": 0,"email": "sudin"
-### faisol 2024-10-01
-},{"id": "d387495d-afe1-4dea-a06c-3ef2bc32fc72","alterId": 0,"email": "faisol"
-### sugik 2024-09-29
-},{"id": "80972be7-02bb-4224-9b02-21df4d5bc36b","alterId": 0,"email": "sugik"
-### junaidi 2024-09-29
-},{"id": "b42f4368-7ef0-48c2-b1b5-4101d028cfac","alterId": 0,"email": "junaidi"
-### edi 2024-09-29
-},{"id": "fc3a7391-7430-417d-8ce0-52b336cb23fd","alterId": 0,"email": "edi"
-### salam 2024-09-27
-},{"id": "014f21ae-d915-4f7c-b692-33c12cc8849f","alterId": 0,"email": "salam"
-### arsi 2024-09-26
-},{"id": "d56a51e4-4302-495c-9258-ab8eea74665b","alterId": 0,"email": "arsi"
-### syahid 2024-09-23
-},{"id": "11661559-fec4-4c1e-b9d8-918a7cf8384a","alterId": 0,"email": "syahid"
-### yasin 2024-09-21
-},{"id": "3fdf69a8-3e79-4d9c-a13a-41af2d2914d0","alterId": 0,"email": "yasin"
-### hasan 2024-09-21
-},{"id": "4f4a7372-eb27-4e89-993c-7e0d659fee6c","alterId": 0,"email": "hasan"
-### junet 2024-10-01
-},{"id": "02f7ff10-3b56-48c6-b147-7ef4dbf5ed80","alterId": 0,"email": "junet"
-### naib 2024-09-20
-},{"id": "3510d3c1-d026-499f-9e32-ee36dd77f4f2","alterId": 0,"email": "naib"
-### erna 2024-09-19
-},{"id": "ae95753e-95ac-4024-8866-67f6ce3241c0","alterId": 0,"email": "erna"
-### irma 2024-09-19
-},{"id": "4e459f2f-840c-4179-8def-cc7f1059f50e","alterId": 0,"email": "irma"
-### atem 2024-09-18
-},{"id": "a8d1cd5c-f53e-4aed-bcde-0a439164dd98","alterId": 0,"email": "atem"
-### jali 2024-09-17
-},{"id": "da9fd83b-5eb6-4253-bca5-51add6415da6","alterId": 0,"email": "jali"
-### rifai 2024-09-16
-},{"id": "9bea28a2-5de9-41ea-9cf0-2b17b984892c","alterId": 0,"email": "rifai"
-### fauziah 2024-09-16
-},{"id": "774aba9f-34b3-4a44-9766-f295d71a7497","alterId": 0,"email": "fauziah"
-### beja 2024-09-15
-},{"id": "eab66e2c-8477-4f5f-a980-18912b174acc","alterId": 0,"email": "beja"
-#vm ii 2024-08-17
-},{"id": "96231e3f-5737-4abe-b7d9-1c069cf39c9c","alterId": 0,"email": "ii"
-### saiful 2024-09-14
-},{"id": "1db6fad2-bd87-42d3-ac07-04cd10d9fe4a","alterId": 0,"email": "saiful"
-### alimin 2024-09-13
-},{"id": "ed7c8238-01d5-4505-8260-222c9503bbba","alterId": 0,"email": "alimin"
-### nasrul 2024-09-18
-},{"id": "af23807d-febb-46f9-9a25-7243a50e1d4e","alterId": 0,"email": "nasrul"
-### moonn 2024-10-10
-},{"id": "aef53e91-db80-42ba-a59e-3c8d881905a7","alterId": 0,"email": "moonn"
-### furqon 2024-12-21
-},{"id": "851e7f5b-a454-4571-9429-5cdd7ea30c30","alterId": 0,"email": "furqon"
              }
           ]
        },
@@ -511,72 +430,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### fauzan 2024-10-11
-},{"id": "84c0ef48-36a5-42fc-b1b1-1d3cf748a164","alterId": 0,"email": "fauzan"
-### surkim 2024-10-10
-},{"id": "4efa6b7d-5597-4d15-a4e0-4700ad5f1927","alterId": 0,"email": "surkim"
-### solihin 2024-10-10
-},{"id": "c7ecba00-e54b-4d25-8e2b-9234d916a025","alterId": 0,"email": "solihin"
-### rukin 2024-10-09
-},{"id": "bde71b99-9f06-4b7d-92b5-1a026ea69f42","alterId": 0,"email": "rukin"
-### gufron 2024-10-07
-},{"id": "00917916-7dd1-4f97-b361-584e0b765c37","alterId": 0,"email": "gufron"
-### indah 2024-10-05
-},{"id": "c03f92da-e14b-4e18-b0af-49795d20394c","alterId": 0,"email": "indah"
-### sopian 2024-10-05
-},{"id": "0349a787-40f1-4d38-84a5-6f749700b435","alterId": 0,"email": "sopian"
-### sairi 2024-10-05
-},{"id": "156415f4-51f4-4bc0-95b5-3ac926e2c927","alterId": 0,"email": "sairi"
-### sudin 2024-10-05
-},{"id": "7a841695-00e8-43bb-878e-ea85e8c24277","alterId": 0,"email": "sudin"
-### faisol 2024-10-01
-},{"id": "d387495d-afe1-4dea-a06c-3ef2bc32fc72","alterId": 0,"email": "faisol"
-### sugik 2024-09-29
-},{"id": "80972be7-02bb-4224-9b02-21df4d5bc36b","alterId": 0,"email": "sugik"
-### junaidi 2024-09-29
-},{"id": "b42f4368-7ef0-48c2-b1b5-4101d028cfac","alterId": 0,"email": "junaidi"
-### edi 2024-09-29
-},{"id": "fc3a7391-7430-417d-8ce0-52b336cb23fd","alterId": 0,"email": "edi"
-### salam 2024-09-27
-},{"id": "014f21ae-d915-4f7c-b692-33c12cc8849f","alterId": 0,"email": "salam"
-### arsi 2024-09-26
-},{"id": "d56a51e4-4302-495c-9258-ab8eea74665b","alterId": 0,"email": "arsi"
-### syahid 2024-09-23
-},{"id": "11661559-fec4-4c1e-b9d8-918a7cf8384a","alterId": 0,"email": "syahid"
-### yasin 2024-09-21
-},{"id": "3fdf69a8-3e79-4d9c-a13a-41af2d2914d0","alterId": 0,"email": "yasin"
-### hasan 2024-09-21
-},{"id": "4f4a7372-eb27-4e89-993c-7e0d659fee6c","alterId": 0,"email": "hasan"
-### junet 2024-10-01
-},{"id": "02f7ff10-3b56-48c6-b147-7ef4dbf5ed80","alterId": 0,"email": "junet"
-### naib 2024-09-20
-},{"id": "3510d3c1-d026-499f-9e32-ee36dd77f4f2","alterId": 0,"email": "naib"
-### erna 2024-09-19
-},{"id": "ae95753e-95ac-4024-8866-67f6ce3241c0","alterId": 0,"email": "erna"
-### irma 2024-09-19
-},{"id": "4e459f2f-840c-4179-8def-cc7f1059f50e","alterId": 0,"email": "irma"
-### atem 2024-09-18
-},{"id": "a8d1cd5c-f53e-4aed-bcde-0a439164dd98","alterId": 0,"email": "atem"
-### jali 2024-09-17
-},{"id": "da9fd83b-5eb6-4253-bca5-51add6415da6","alterId": 0,"email": "jali"
-### rifai 2024-09-16
-},{"id": "9bea28a2-5de9-41ea-9cf0-2b17b984892c","alterId": 0,"email": "rifai"
-### fauziah 2024-09-16
-},{"id": "774aba9f-34b3-4a44-9766-f295d71a7497","alterId": 0,"email": "fauziah"
-### beja 2024-09-15
-},{"id": "eab66e2c-8477-4f5f-a980-18912b174acc","alterId": 0,"email": "beja"
-#vmg ii 2024-08-17 96231e3f-5737-4abe-b7d9-1c069cf39c9c
-},{"id": "96231e3f-5737-4abe-b7d9-1c069cf39c9c","alterId": 0,"email": "ii"
-### saiful 2024-09-14
-},{"id": "1db6fad2-bd87-42d3-ac07-04cd10d9fe4a","alterId": 0,"email": "saiful"
-### alimin 2024-09-13
-},{"id": "ed7c8238-01d5-4505-8260-222c9503bbba","alterId": 0,"email": "alimin"
-### nasrul 2024-09-18
-},{"id": "af23807d-febb-46f9-9a25-7243a50e1d4e","alterId": 0,"email": "nasrul"
-### moonn 2024-10-10
-},{"id": "aef53e91-db80-42ba-a59e-3c8d881905a7","alterId": 0,"email": "moonn"
-### furqon 2024-12-21
-},{"id": "851e7f5b-a454-4571-9429-5cdd7ea30c30","alterId": 0,"email": "furqon"
              }
           ]
        },
