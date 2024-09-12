@@ -159,7 +159,7 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 # / / Installation Xray Core
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
 
 # / / Make Main Directory
 
@@ -363,28 +363,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### jod 2024-09-19
-},{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
-### Rg888 2024-09-14
-},{"id": "60f7bd82-e0c8-4fab-b8a2-9a4ade175568","alterId": 0,"email": "Rg888"
-### ihwanudin 2024-09-06
-},{"id": "b13d36ad-51c1-46b4-995b-f676f2d8bc4b","alterId": 0,"email": "ihwanudin"
-### jpt 2024-09-06
-},{"id": "54e0a7db-0df7-487c-a268-cf1125702eff","alterId": 0,"email": "jpt"
-### hasby 2024-09-05
-},{"id": "3ba3349f-5fdf-45af-aa60-363bbad9f39e","alterId": 0,"email": "hasby"
-### riyan 2024-09-05
-},{"id": "409166ec-42a5-4554-a96f-d1b3fa979778","alterId": 0,"email": "riyan"
-### herman 2024-09-05
-},{"id": "ef017a3e-ab7b-4622-b9bd-9a0ed2c0e8d7","alterId": 0,"email": "herman"
-### hafiz 2024-09-05
-},{"id": "e043654e-c020-414f-82aa-f9038837df64","alterId": 0,"email": "hafiz"
-### ida 2024-09-05
-},{"id": "dfab3552-eea7-4ba7-a11c-3dab57288c7a","alterId": 0,"email": "ida"
-### ita 2024-09-05
-},{"id": "efa45970-bcbf-4716-9de6-64932e4f2710","alterId": 0,"email": "ita"
-### ian 2024-09-04
-},{"id": "a7f9edde-e3ca-496d-88a3-c8c4ec6c6ae2","alterId": 0,"email": "ian"
              }
           ]
        },
@@ -405,10 +383,6 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
-### akuewe 2025-07-30
-},{"password": "d5707f95-6a47-4ca9-a40e-a6383a2e83a6","email": "akuewe"
-### mad 2025-07-11
-},{"password": "d5c52a0e-3ebb-4f15-a980-1c30732557e4","email": "mad"
               }
           ],
          "udp": true
@@ -471,28 +445,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### jod 2024-09-19
-},{"id": "45c79faa-17e2-4e9f-8ced-f47dc8379689","alterId": 0,"email": "jod"
-### Rg888 2024-09-14
-},{"id": "60f7bd82-e0c8-4fab-b8a2-9a4ade175568","alterId": 0,"email": "Rg888"
-### ihwanudin 2024-09-06
-},{"id": "b13d36ad-51c1-46b4-995b-f676f2d8bc4b","alterId": 0,"email": "ihwanudin"
-### jpt 2024-09-06
-},{"id": "54e0a7db-0df7-487c-a268-cf1125702eff","alterId": 0,"email": "jpt"
-### hasby 2024-09-05
-},{"id": "3ba3349f-5fdf-45af-aa60-363bbad9f39e","alterId": 0,"email": "hasby"
-### riyan 2024-09-05
-},{"id": "409166ec-42a5-4554-a96f-d1b3fa979778","alterId": 0,"email": "riyan"
-### herman 2024-09-05
-},{"id": "ef017a3e-ab7b-4622-b9bd-9a0ed2c0e8d7","alterId": 0,"email": "herman"
-### hafiz 2024-09-05
-},{"id": "e043654e-c020-414f-82aa-f9038837df64","alterId": 0,"email": "hafiz"
-### ida 2024-09-05
-},{"id": "dfab3552-eea7-4ba7-a11c-3dab57288c7a","alterId": 0,"email": "ida"
-### ita 2024-09-05
-},{"id": "efa45970-bcbf-4716-9de6-64932e4f2710","alterId": 0,"email": "ita"
-### ian 2024-09-04
-},{"id": "a7f9edde-e3ca-496d-88a3-c8c4ec6c6ae2","alterId": 0,"email": "ian"
              }
           ]
        },
@@ -513,10 +465,6 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
-### akuewe 2025-07-30
-},{"password": "d5707f95-6a47-4ca9-a40e-a6383a2e83a6","email": "akuewe"
-### mad 2025-07-11
-},{"password": "d5c52a0e-3ebb-4f15-a980-1c30732557e4","email": "mad"
                }
            ]
         },
