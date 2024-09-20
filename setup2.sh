@@ -260,17 +260,13 @@ echo -e "┌──────────────────────�
 echo -e " \E[42;1;37m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-echo -e "┌─────────────────────────────────────────┐"
-echo -e " \E[42;1;37m           >>> Install Openvpn <<<           \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
-sleep 1
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/openvpn.sh && chmod +x openvpn.sh && ./openvpn.sh
-echo -e "┌─────────────────────────────────────────┐"
-echo -e " \E[42;1;37m           >>> Install NoobzVpn <<<           \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
-wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/nob.sh && chmod +x nob.sh && ./nob.sh
+wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ins-xray2.sh && chmod +x ins-xray2.sh && ./ins-xray2.sh
+#echo -e "┌─────────────────────────────────────────┐"
+#echo -e " \E[42;1;37m           >>> Install Openvpn <<<           \E[0m$NC"
+#echo -e "└─────────────────────────────────────────┘"
+#sleep 1
+#wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/openvpn && chmod +x openvpn && ./openvpn
+#wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[42;1;37m           >>> Install Backup <<<           \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
@@ -301,8 +297,8 @@ wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main
 wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
+wget -q -O /usr/bin/jam "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/jam.sh"
 wget -q -O /usr/bin/update-xray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/update-xray.sh"
-wget -q -O /usr/bin/m-noob "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/m-noob.sh"
 
 chmod +x /usr/bin/autoreboot
 chmod +x /usr/bin/restart
@@ -326,8 +322,8 @@ chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/babi
 chmod +x /usr/bin/cek-bw
+chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
-chmod +x /usr/bin/m-noob
 
 cat > /etc/cron.d/xp_otm <<-END
 SHELL=/bin/sh
