@@ -282,7 +282,7 @@ wget -q -O /usr/bin/running "https://raw.githubusercontent.com/Jatimpark/tunel/m
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/speedtest_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bandwidth.sh"
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-vmess.sh"
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Jatimpark/opok/main/menu-vmess.sh"
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/menu-ssh.sh"
