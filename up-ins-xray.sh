@@ -60,8 +60,6 @@ touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.16
 
-
-
 ## crt xray
 systemctl stop nginx
 mkdir /root/.acme.sh
@@ -159,10 +157,9 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 # / / Installation Xray Core
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
 
 # / / Make Main Directory
-
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 mkdir -p /usr/local/etc/xray
@@ -235,7 +232,7 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -363,41 +360,59 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### rina 2024-10-20
-},{"id": "5d2d3aad-d737-4ab4-a7e3-27f0c2bd5a5a","alterId": 0,"email": "rina"
-### yuni 2024-10-19
-},{"id": "fefa97db-1c34-4b56-abb9-243164536887","alterId": 0,"email": "yuni"
-### huy 2024-10-18
-},{"id": "5c5d55e6-21e7-45af-a1f2-9b4624eae9ba","alterId": 0,"email": "huy"
-### bojes 2024-10-18
-},{"id": "06cb2d61-40db-4df6-bb74-bfe2c8516476","alterId": 0,"email": "bojes"
-### abah 2024-10-16
-},{"id": "b7e7254b-a87c-4cff-8a96-1c2df38cbed9","alterId": 0,"email": "abah"
-### susu 2024-10-15
-},{"id": "39416590-6521-417e-bd9c-cc504250f50e","alterId": 0,"email": "susu"
-### zidna 2024-10-15
-},{"id": "ac906095-5342-45e1-a769-75fb2010b6a5","alterId": 0,"email": "zidna"
-### ibhas 2024-10-13
-},{"id": "ae78fa56-3646-4e63-a2ae-b83198b1e05b","alterId": 0,"email": "ibhas"
-### alii 2024-10-07
-},{"id": "51cf8cad-0f16-4ce4-84dc-90e7dc2c8463","alterId": 0,"email": "alii"
-### myconya 2024-09-29
-},{"id": "b2d7d540-a1a6-426b-a50c-8b8fbe6f3189","alterId": 0,"email": "myconya"
-### anwar 2024-09-22
-},{"id": "6294fde0-1314-44b6-ac94-11164f4bb251","alterId": 0,"email": "anwar"
-### sudiman 2024-09-28
-},{"id": "bb2b4a46-51ed-41f5-89fb-bc0eced52bce","alterId": 0,"email": "sudiman"
-### mycode 2024-09-28
-},{"id": "79f82597-b32d-4b0d-a4db-ed3565e8e105","alterId": 0,"email": "mycode"
-### open 2025-08-05
-},{"id": "8ce5f030-c221-4557-91e8-4a6773075fbf","alterId": 0,"email": "open"
+### roni2 2024-10-20
+},{"id": "3a77d3a7-215d-409b-a27a-cd0c685fd075","alterId": 0,"email": "roni2"
+### roni1 2024-10-19
+},{"id": "953f8a57-be21-4cce-a83a-1359923fb5c2","alterId": 0,"email": "roni1"
+### roni 2024-10-18
+},{"id": "38b78173-f357-4cb9-a9ff-dd67d92c012a","alterId": 0,"email": "roni"
+### genta15 2024-10-15
+},{"id": "ba1283e1-a8b6-460f-9088-605931d7500d","alterId": 0,"email": "genta15"
+### payung 2024-10-10
+},{"id": "ecc4a6b0-2638-4a0f-9a43-ac0b0ccb04a7","alterId": 0,"email": "payung"
+### gemi 2024-10-10
+},{"id": "f12c5f5c-fd92-46df-a66c-60b5cacc64cf","alterId": 0,"email": "gemi"
+### tompo 2024-10-09
+},{"id": "7c78fc31-f49d-448d-a522-bad4b7b4d799","alterId": 0,"email": "tompo"
+### fahmy 2024-10-09
+},{"id": "789c3695-9597-4493-8dc4-2d6c5b686d98","alterId": 0,"email": "fahmy"
+### ela 2024-10-09
+},{"id": "c7230ae0-8efe-4039-9e6f-22be0c0fd2ec","alterId": 0,"email": "ela"
+### adli 2024-10-08
+},{"id": "18fbad37-92ef-43f4-a51c-0ba1c8b56e5b","alterId": 0,"email": "adli"
+### basenglah 2024-10-07
+},{"id": "0aa7426a-1ea2-49b7-a312-782c9bd22b41","alterId": 0,"email": "basenglah"
+### nelicell 2024-10-05
+},{"id": "f35bbafa-f891-4902-9d08-384c8e74341d","alterId": 0,"email": "nelicell"
+### ewok 2024-10-05
+},{"id": "552bd531-f287-4b4c-8480-218cf9571fa2","alterId": 0,"email": "ewok"
+### xljahat 2024-10-04
+},{"id": "27090331-3d8b-4a33-ae08-fb2ba66fb554","alterId": 0,"email": "xljahat"
+### bebascell 2024-10-04
+},{"id": "9a29c01d-6228-419d-8b65-62294ba68e2e","alterId": 0,"email": "bebascell"
+### rohmancell 2024-09-30
+},{"id": "1a755374-3668-4119-bc32-afe039042445","alterId": 0,"email": "rohmancell"
+### bjcell 2024-09-30
+},{"id": "dce2a757-f008-43fc-b506-3604a27a9254","alterId": 0,"email": "bjcell"
+### dewicell 2024-09-30
+},{"id": "6b61f62d-ca55-4c36-bc96-2746616795f1","alterId": 0,"email": "dewicell"
+### rah2 2024-09-29
+},{"id": "774eb178-935d-4340-a7e8-640ec020b605","alterId": 0,"email": "rah2"
+### aki 2025-08-23
+},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
+### rah 2024-09-26
+},{"id": "05c5aaa7-d713-4ced-a2b7-d2f4d612018a","alterId": 0,"email": "rah"
+### ihsan 2024-09-24
+},{"id": "cbfca075-4c7c-4463-911a-5411b0ee7535","alterId": 0,"email": "ihsan"
+### opok 2025-08-18
+},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmess"
+                "path": "/servlets/mms"
           }
         }
      },
@@ -411,6 +426,8 @@ cat <<EOF> /etc/xray/config.json
               {
                  "password": "${uuid}"
 #trojanws
+### akuu 2025-08-16
+},{"password": "e44675a4-99ac-4425-aae7-f4392d6a23b7","email": "akuu"
               }
           ],
          "udp": true
@@ -473,34 +490,52 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### rina 2024-10-20
-},{"id": "5d2d3aad-d737-4ab4-a7e3-27f0c2bd5a5a","alterId": 0,"email": "rina"
-### yuni 2024-10-19
-},{"id": "fefa97db-1c34-4b56-abb9-243164536887","alterId": 0,"email": "yuni"
-### huy 2024-10-18
-},{"id": "5c5d55e6-21e7-45af-a1f2-9b4624eae9ba","alterId": 0,"email": "huy"
-### bojes 2024-10-18
-},{"id": "06cb2d61-40db-4df6-bb74-bfe2c8516476","alterId": 0,"email": "bojes"
-### abah 2024-10-16
-},{"id": "b7e7254b-a87c-4cff-8a96-1c2df38cbed9","alterId": 0,"email": "abah"
-### susu 2024-10-15
-},{"id": "39416590-6521-417e-bd9c-cc504250f50e","alterId": 0,"email": "susu"
-### zidna 2024-10-15
-},{"id": "ac906095-5342-45e1-a769-75fb2010b6a5","alterId": 0,"email": "zidna"
-### ibhas 2024-10-13
-},{"id": "ae78fa56-3646-4e63-a2ae-b83198b1e05b","alterId": 0,"email": "ibhas"
-### alii 2024-10-07
-},{"id": "51cf8cad-0f16-4ce4-84dc-90e7dc2c8463","alterId": 0,"email": "alii"
-### myconya 2024-09-29
-},{"id": "b2d7d540-a1a6-426b-a50c-8b8fbe6f3189","alterId": 0,"email": "myconya"
-### anwar 2024-09-22
-},{"id": "6294fde0-1314-44b6-ac94-11164f4bb251","alterId": 0,"email": "anwar"
-### sudiman 2024-09-28
-},{"id": "bb2b4a46-51ed-41f5-89fb-bc0eced52bce","alterId": 0,"email": "sudiman"
-### mycode 2024-09-28
-},{"id": "79f82597-b32d-4b0d-a4db-ed3565e8e105","alterId": 0,"email": "mycode"
-### open 2025-08-05
-},{"id": "8ce5f030-c221-4557-91e8-4a6773075fbf","alterId": 0,"email": "open"
+### roni2 2024-10-20
+},{"id": "3a77d3a7-215d-409b-a27a-cd0c685fd075","alterId": 0,"email": "roni2"
+### roni1 2024-10-19
+},{"id": "953f8a57-be21-4cce-a83a-1359923fb5c2","alterId": 0,"email": "roni1"
+### roni 2024-10-18
+},{"id": "38b78173-f357-4cb9-a9ff-dd67d92c012a","alterId": 0,"email": "roni"
+### genta15 2024-10-15
+},{"id": "ba1283e1-a8b6-460f-9088-605931d7500d","alterId": 0,"email": "genta15"
+### payung 2024-10-10
+},{"id": "ecc4a6b0-2638-4a0f-9a43-ac0b0ccb04a7","alterId": 0,"email": "payung"
+### gemi 2024-10-10
+},{"id": "f12c5f5c-fd92-46df-a66c-60b5cacc64cf","alterId": 0,"email": "gemi"
+### tompo 2024-10-09
+},{"id": "7c78fc31-f49d-448d-a522-bad4b7b4d799","alterId": 0,"email": "tompo"
+### fahmy 2024-10-09
+},{"id": "789c3695-9597-4493-8dc4-2d6c5b686d98","alterId": 0,"email": "fahmy"
+### ela 2024-10-09
+},{"id": "c7230ae0-8efe-4039-9e6f-22be0c0fd2ec","alterId": 0,"email": "ela"
+### adli 2024-10-08
+},{"id": "18fbad37-92ef-43f4-a51c-0ba1c8b56e5b","alterId": 0,"email": "adli"
+### basenglah 2024-10-07
+},{"id": "0aa7426a-1ea2-49b7-a312-782c9bd22b41","alterId": 0,"email": "basenglah"
+### nelicell 2024-10-05
+},{"id": "f35bbafa-f891-4902-9d08-384c8e74341d","alterId": 0,"email": "nelicell"
+### ewok 2024-10-05
+},{"id": "552bd531-f287-4b4c-8480-218cf9571fa2","alterId": 0,"email": "ewok"
+### xljahat 2024-10-04
+},{"id": "27090331-3d8b-4a33-ae08-fb2ba66fb554","alterId": 0,"email": "xljahat"
+### bebascell 2024-10-04
+},{"id": "9a29c01d-6228-419d-8b65-62294ba68e2e","alterId": 0,"email": "bebascell"
+### rohmancell 2024-09-30
+},{"id": "1a755374-3668-4119-bc32-afe039042445","alterId": 0,"email": "rohmancell"
+### bjcell 2024-09-30
+},{"id": "dce2a757-f008-43fc-b506-3604a27a9254","alterId": 0,"email": "bjcell"
+### dewicell 2024-09-30
+},{"id": "6b61f62d-ca55-4c36-bc96-2746616795f1","alterId": 0,"email": "dewicell"
+### rah2 2024-09-29
+},{"id": "774eb178-935d-4340-a7e8-640ec020b605","alterId": 0,"email": "rah2"
+### aki 2025-08-23
+},{"id": "0270f7fd-b26a-4e05-97a1-808433e51ee8","alterId": 0,"email": "aki"
+### rah 2024-09-26
+},{"id": "05c5aaa7-d713-4ced-a2b7-d2f4d612018a","alterId": 0,"email": "rah"
+### ihsan 2024-09-24
+},{"id": "cbfca075-4c7c-4463-911a-5411b0ee7535","alterId": 0,"email": "ihsan"
+### opok 2025-08-18
+},{"id": "297f47fa-cf90-4ee9-8835-8935b351da38","alterId": 0,"email": "opok"
              }
           ]
        },
@@ -521,6 +556,8 @@ cat <<EOF> /etc/xray/config.json
                {
                  "password": "${uuid}"
 #trojangrpc
+### akuu 2025-08-16
+},{"password": "e44675a4-99ac-4425-aae7-f4392d6a23b7","email": "akuu"
                }
            ]
         },
@@ -626,6 +663,7 @@ cat <<EOF> /etc/xray/config.json
 }
 EOF
 # Installing Xray Service
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23 >/dev/null 2>&1
 rm -fr /etc/systemd/system/xray.service.d
 rm -fr /etc/systemd/system/xray.service
 cat <<EOF> /etc/systemd/system/xray.service
