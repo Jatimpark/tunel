@@ -80,12 +80,14 @@ resv2r="${red}OFF${NC}"
 fi
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
 # TOTAL RAM
-total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
-totalram=$(($total_ram/1024))
+#total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
+#totalram=$(($total_ram/1024))
+tram=$( free -m | awk 'NR==2 {print $2}' )
+uram=$( free -m | awk 'NR==2 {print $3}' )
 #CITY=$(curl -s ipinfo.io/city)
 #IPVPS=$(curl -s ipinfo.io/ip)
 IPVPS=$(curl -sS ifconfig.me)
-RAM=$(free -m | awk 'NR==2 {print $2}')
+#RAM=$(free -m | awk 'NR==2 {print $2}')
 #USAGERAM=$(free -m | awk 'NR==2 {print $3}')
 MEMOFREE=$(printf '%-1s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 LOADCPU=$(printf '%-0.00001s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
@@ -106,7 +108,8 @@ echo -e " ${BICyan}│  ${ICyan} Hostname     : ${NC}$HOSTNAME "
 echo -e " ${BICyan}│  ${ICyan} Public IP    : ${NC}$IPVPS ${NC} "
 echo -e " ${BICyan}│  ${ICyan} Domain       : ${NC}$(cat /etc/xray/domain) "
 echo -e " ${BICyan}│  ${ICyan} ISP          : ${NC}$ISP "
-echo -e " ${BICyan}│  ${ICyan} Total RAM    : ${NC}${totalram}MB  "
+echo -e " ${BICyan}│  ${ICyan} Total RAM    : ${NC}$uram / $tram MB ${NC}"
+#echo -e " ${BICyan}│  ${ICyan} Total RAM    : ${NC}${totalram}MB  "
 echo -e " ${BICyan}│  ${ICyan} Usage Memory :${NC} $MEMOFREE "
 echo -e " ${BICyan}│  ${ICyan} LoadCPU      : ${NC}$LOADCPU% "
 echo -e " ${BICyan}│  ${ICyan} Core System  : ${NC}$CORE "
