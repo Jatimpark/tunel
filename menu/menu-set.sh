@@ -15,12 +15,12 @@ echo -e " $BICyan│${BIGreen}[${BIWhite}3${BIGreen}]${NC}  • Change Banner SS
 echo -e " $BICyan│${BIGreen}[${BIWhite}4${BIGreen}]${NC}  • Restart Banner SSH "
 echo -e " $BICyan│${BIGreen}[${BIWhite}5${BIGreen}]${NC}  • Info Bandwidth"
 echo -e " $BICyan│${BIGreen}[${BIWhite}6${BIGreen}]${NC}  • Restart All Service "
-echo -e " $BICyan│${BIGreen}[${BIWhite}7${BIGreen}]${NC}  • Auto Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}8${BIGreen}]${NC}  • Set Auto Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}7${BIGreen}]${NC}  • Set Auto Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}8${BIGreen}]${NC}  • Set Jam Auto Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Reboot Vps"
 echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC} • Speedtest"
 echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Upgrade Versi New Xray"
-echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Clean Data"
+#echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Clear Data"
 echo -e " $BICyan│${BIGreen}[${BIWhite}0${BIGreen}]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
@@ -39,7 +39,6 @@ case $opt in
 09 | 9) clear ; reboot ;;
 10) clear ; speedtest ;;
 11) clear ; update-xray ;;
-12) clear ; cleaner ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac
