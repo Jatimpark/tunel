@@ -294,7 +294,7 @@ wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Jatimpark/tunel/ma
 wget -q -O /usr/bin/addhost "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/addhost.sh"
 wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/main/menu/cf.sh"
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
-wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
+#wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
 wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
 wget -q -O /usr/bin/jam "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/jam.sh"
@@ -319,7 +319,7 @@ chmod +x /usr/bin/update
 chmod +x /usr/bin/addhost
 chmod +x /usr/bin/certxray
 chmod +x /usr/bin/info
-chmod +x /usr/bin/infoserv
+#chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/babi
 chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
