@@ -29,3 +29,5 @@ echo "Successfully clean log at $bcc"
 sleep 0.5
 clear
 echo ""
+sleep 2
+menu
