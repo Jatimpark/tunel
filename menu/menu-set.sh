@@ -11,18 +11,16 @@ echo -e "$BICyan└────────────────────�
 echo -e " $BICyan┌───────────────────────────────────────────────┐${NC}"
 echo -e " $BICyan│${BIGreen}[${BIWhite}1${BIGreen}]${NC}  • Change Host/Domain"
 echo -e " $BICyan│${BIGreen}[${BIWhite}2${BIGreen}]${NC}  • Renew Cert"
-echo -e " $BICyan│${BIGreen}[${BIWhite}3${BIGreen}]${NC}  • Check Running"
-echo -e " $BICyan│${BIGreen}[${BIWhite}4${BIGreen}]${NC}  • Change Banner SSH "
-echo -e " $BICyan│${BIGreen}[${BIWhite}5${BIGreen}]${NC}  • Restart Banner SSH "
-echo -e " $BICyan│${BIGreen}[${BIWhite}6${BIGreen}]${NC}  • Info Bandwidth"
-echo -e " $BICyan│${BIGreen}[${BIWhite}7${BIGreen}]${NC}  • Restart All Service "
-echo -e " $BICyan│${BIGreen}[${BIWhite}8${BIGreen}]${NC}  • Auto Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Set Auto Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC} • Reboot"
-echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Speedtest"
-#echo -e " $BICyan│$NC   ${BIGreen}[11]${NC} • Set Limit Bw Vps"
-echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Upgrade Versi New Xray"
-echo -e " $BICyan│${BIGreen}[${BIWhite}13${BIGreen}]${NC} • Clean Log"
+echo -e " $BICyan│${BIGreen}[${BIWhite}3${BIGreen}]${NC}  • Change Banner SSH "
+echo -e " $BICyan│${BIGreen}[${BIWhite}4${BIGreen}]${NC}  • Restart Banner SSH "
+echo -e " $BICyan│${BIGreen}[${BIWhite}5${BIGreen}]${NC}  • Info Bandwidth"
+echo -e " $BICyan│${BIGreen}[${BIWhite}6${BIGreen}]${NC}  • Restart All Service "
+echo -e " $BICyan│${BIGreen}[${BIWhite}7${BIGreen}]${NC}  • Auto Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}8${BIGreen}]${NC}  • Set Auto Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}9${BIGreen}]${NC}  • Reboot"
+echo -e " $BICyan│${BIGreen}[${BIWhite}10${BIGreen}]${NC} • Speedtest"
+echo -e " $BICyan│${BIGreen}[${BIWhite}11${BIGreen}]${NC} • Upgrade Versi New Xray"
+echo -e " $BICyan│${BIGreen}[${BIWhite}12${BIGreen}]${NC} • Clean Data"
 echo -e " $BICyan│${BIGreen}[${BIWhite}0${BIGreen}]${NC}  • Balik Ke Menu"
 echo -e " $BICyan└───────────────────────────────────────────────┘${NC}"
 echo -e ""
@@ -31,22 +29,17 @@ echo -e   ""
 case $opt in
 01 | 1) clear ; addhost ;;
 02 | 2) clear ; certxray ;;
-03 | 3) clear ; running ;;
-04 | 4) clear ; nano /etc/issue.net ;;
-05 | 5) clear ; /etc/init.d/dropbear restart ;;
-06 | 6) clear ; cek-bandwidth ;;
-07 | 7) clear ; restart ;;
-08 | 8) clear ; autoreboot ;;
-09 | 9)clear ; jam ;;
-10) clear ; reboot ;;
-11) clear ; speedtest ;;
-#11) clear ; cek-bw ;;
-12) clear ; update-xray ;;
-13) clear ; cleaner ;;
-#14) clear ; nef ;;
-#15) clear ; upray ;;
-#16) clear ; up ;;
-#17) clear ; up-opok ;;
+#03 | 3) clear ; running ;;
+03 | 3) clear ; nano /etc/issue.net ;;
+04 | 4) clear ; /etc/init.d/dropbear restart ;;
+05 | 5) clear ; cek-bandwidth ;;
+06 | 6) clear ; restart ;;
+07 | 7) clear ; autoreboot ;;
+08 | 8)clear ; jam ;;
+09 | 9) clear ; reboot ;;
+10) clear ; speedtest ;;
+11) clear ; update-xray ;;
+12) clear ; cleaner ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac
