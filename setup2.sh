@@ -261,12 +261,6 @@ echo -e " \E[42;1;37m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
 wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ins-xray2.sh && chmod +x ins-xray2.sh && ./ins-xray2.sh
-#echo -e "┌─────────────────────────────────────────┐"
-#echo -e " \E[42;1;37m           >>> Install Openvpn <<<           \E[0m$NC"
-#echo -e "└─────────────────────────────────────────┘"
-#sleep 1
-#wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/openvpn && chmod +x openvpn && ./openvpn
-#wget -q https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[42;1;37m           >>> Install Backup <<<           \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
@@ -296,7 +290,6 @@ wget -q -O /usr/bin/certxray "https://raw.githubusercontent.com/Jatimpark/tunel/
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/info.sh"
 #wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/infoserv.sh"
 wget -q -O /usr/bin/babi "https://raw.githubusercontent.com/Jatimpark/tunel/main/ssh/babi.sh"
-#wget -q -O /usr/bin/cek-bw "https://raw.githubusercontent.com/Jatimpark/tunel/main/options/cek-bw.sh"
 wget -q -O /usr/bin/jam "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/jam.sh"
 wget -q -O /usr/bin/update-xray "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/update-xray.sh"
 
@@ -321,7 +314,6 @@ chmod +x /usr/bin/certxray
 chmod +x /usr/bin/info
 #chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/babi
-#chmod +x /usr/bin/cek-bw
 chmod +x /usr/bin/jam
 chmod +x /usr/bin/update-xray
 
