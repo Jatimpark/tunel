@@ -19,8 +19,8 @@ color2='\e[34;1m'
 color3='\e[0m'
 # Getting
 # IP Validation
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+#biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 MYIP=$(curl -sS ipinfo.io/ip)
@@ -89,7 +89,7 @@ trgo="$(systemctl show trojan-go.service --no-page)"
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 #sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wstls=$(systemctl status ws-stunnel.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-UdpSSH=$(systemctl status udp-custom | grep active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g')
+#UdpSSH=$(systemctl status udp-custom | grep active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g')
 #wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -224,11 +224,11 @@ else
 fi
 
 # STATUS SERVICE  SSH UDP 
-if [[ $UdpSSH == "running" ]]; then 
-   status_udp=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-   status_udp="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
+#if [[ $UdpSSH == "running" ]]; then 
+#   status_udp=" ${GREEN}Running ${NC}( No Error )${NC}"
+#else
+#   status_udp="${RED}  Not Running ${NC}  ( Error )${NC}"
+#fi
 
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
@@ -265,7 +265,7 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[42;1;37m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e " SSH / TUN               :$status_ssh"
-echo -e " SSH / UDP               :$status_udp"
+#echo -e " SSH / UDP               :$status_udp"
 #echo -e "OpenVPN                 :$status_openvpn"
 echo -e " Dropbear                :$status_beruangjatuh"
 echo -e " Stunnel5                :$status_stunnel"
