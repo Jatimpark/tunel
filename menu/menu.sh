@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
 #let vla=$vlx/2
 vmc=$(grep -c -E "^### " "/etc/xray/config.json")
@@ -22,17 +23,7 @@ NC='\033[0;37m'
 KN='\033[1;33m'
 ORANGE='\033[0;33m'
 PINK='\033[0;35m'
-dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
-utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
-ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
-dyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $2" "substr ($3, 1, 1)}')"
-uyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $5" "substr ($6, 1, 1)}')"
-tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
-dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($4, 1, 1)}')"
-umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
-tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
-clear
-clear
+
 clear
 clear && clear && clear
 clear;clear;clear
@@ -109,7 +100,6 @@ echo -e " ${BICyan}│  ${ICyan} Public IP    : ${NC}$IPVPS ${NC} "
 echo -e " ${BICyan}│  ${ICyan} Domain       : ${NC}$(cat /etc/xray/domain) "
 echo -e " ${BICyan}│  ${ICyan} ISP          : ${NC}$ISP "
 echo -e " ${BICyan}│  ${ICyan} Total RAM    : ${NC}$uram / $tram MB ${NC}"
-#echo -e " ${BICyan}│  ${ICyan} Total RAM    : ${NC}${totalram}MB  "
 echo -e " ${BICyan}│  ${ICyan} Usage Memory :${NC} $MEMOFREE "
 echo -e " ${BICyan}│  ${ICyan} LoadCPU      : ${NC}$LOADCPU% "
 echo -e " ${BICyan}│  ${ICyan} Core System  : ${NC}$CORE "
@@ -138,19 +128,9 @@ echo -e "${BICyan} │    ${ICyan}[${ORANGE}06${ICyan}]${NC} • BACKUP   "  "  
 echo -e "${BICyan} │    ${ICyan}[${ORANGE}07${ICyan}]${NC} • CLEAR S    "  "${BICyan}│    ${ICyan}[${ORANGE}14${ICyan}]${NC} • EXIT              ${BICyan}│${NC}"
 echo -e " ${BICyan}╰═════════════════════════════════════════════════════╯${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │ ${NC}HARI INI${NC}: ${BIYellow}$ttoday$NC ${NC}KEMARIN${NC}: ${BIYellow}$tyest$NC ${NC}BULAN${NC}: ${BIYellow}$tmon$NC $NC"
-echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${GREEN}  ${RED}▁ ${CYAN}▂ ${GREEN}▄ ${ORANGE}▅${PINK} ▆${GREEN} ▇ ${RED}█${BLUE}𒆜${CYAN} ༻${NC}  SCRIPT ARYA BLITAR ${BLUE}༺ ${RED}𒆜${GREEN}█ ${ORANGE}▇ ${CYAN}▆ ${RED}▅ ${GREEN}▄ ${ORANGE}▂ ${PINK}▁\E[0m"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e ""
-DATE=$(date +'%d %B %Y')
-datediff() {
-d1=$(date -d "$1" +%s)
-d2=$(date -d "$2" +%s)
-echo -e " ${BICyan}│${ICyan}  Expiry In     : ${NC}$(( (d1 - d2) / 86400 )) ${ORANGE}Days $NC"
-}
-mai="datediff "$Exp" "$DATE""
 echo -e " ${BICyan}┌─────────────────────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}│ ${ORANGE} Version       : ${NC} GRATIS ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
