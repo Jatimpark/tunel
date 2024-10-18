@@ -159,7 +159,7 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 # / / Installation Xray Core
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
 
 # / / Make Main Directory
 
@@ -236,6 +236,18 @@ sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /servlets/mms' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
@@ -363,38 +375,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### Ninik 2024-10-26
-},{"id": "ddb0855b-42e7-4dba-829e-66d032620a46","alterId": 0,"email": "Ninik"
-### payungbatu 2024-10-25
-},{"id": "3e54c4c7-801e-4b79-ac0a-7ee4c2b5f92a","alterId": 0,"email": "payungbatu"
-### irfan 2024-10-23
-},{"id": "a7bfcba9-d1a3-45bd-b00a-c28c293433b2","alterId": 0,"email": "irfan"
-### ganti 2024-10-09
-},{"id": "71039bee-1eeb-4ec5-921b-9f7e50244ba5","alterId": 0,"email": "ganti"
-### masroh 2024-10-22
-},{"id": "22b93610-ad1b-4edf-a695-3aa1ef6c4a4a","alterId": 0,"email": "masroh"
-### maspidia 2024-10-22
-},{"id": "0597a12c-3752-433e-b3cb-2e875418e2ae","alterId": 0,"email": "maspidia"
-### anwar 2024-10-22
-},{"id": "d4cf9951-d14f-4d10-a07e-c455b15fdeea","alterId": 0,"email": "anwar"
-### rina 2024-10-20
-},{"id": "5d2d3aad-d737-4ab4-a7e3-27f0c2bd5a5a","alterId": 0,"email": "rina"
-### yuni 2024-10-19
-},{"id": "fefa97db-1c34-4b56-abb9-243164536887","alterId": 0,"email": "yuni"
-### huy 2024-10-18
-},{"id": "5c5d55e6-21e7-45af-a1f2-9b4624eae9ba","alterId": 0,"email": "huy"
-### bojes 2024-10-18
-},{"id": "06cb2d61-40db-4df6-bb74-bfe2c8516476","alterId": 0,"email": "bojes"
-### abah 2024-10-16
-},{"id": "b7e7254b-a87c-4cff-8a96-1c2df38cbed9","alterId": 0,"email": "abah"
-### zidna 2024-10-15
-},{"id": "ac906095-5342-45e1-a769-75fb2010b6a5","alterId": 0,"email": "zidna"
-### ibhas 2024-10-13
-},{"id": "ae78fa56-3646-4e63-a2ae-b83198b1e05b","alterId": 0,"email": "ibhas"
-### alii 2024-10-07
-},{"id": "51cf8cad-0f16-4ce4-84dc-90e7dc2c8463","alterId": 0,"email": "alii"
-### open 2025-08-05
-},{"id": "8ce5f030-c221-4557-91e8-4a6773075fbf","alterId": 0,"email": "open"
              }
           ]
        },
@@ -402,6 +382,7 @@ cat <<EOF> /etc/xray/config.json
          "network": "ws",
             "wsSettings": {
                 "path": "/vmess"
+                "path": "/servlets/mms"
           }
         }
      },
@@ -477,38 +458,6 @@ cat <<EOF> /etc/xray/config.json
                  "id": "${uuid}",
                  "alterId": 0
 #vmessgrpc
-### Ninik 2024-10-26
-},{"id": "ddb0855b-42e7-4dba-829e-66d032620a46","alterId": 0,"email": "Ninik"
-### payungbatu 2024-10-25
-},{"id": "3e54c4c7-801e-4b79-ac0a-7ee4c2b5f92a","alterId": 0,"email": "payungbatu"
-### irfan 2024-10-23
-},{"id": "a7bfcba9-d1a3-45bd-b00a-c28c293433b2","alterId": 0,"email": "irfan"
-### ganti 2024-10-09
-},{"id": "71039bee-1eeb-4ec5-921b-9f7e50244ba5","alterId": 0,"email": "ganti"
-### masroh 2024-10-22
-},{"id": "22b93610-ad1b-4edf-a695-3aa1ef6c4a4a","alterId": 0,"email": "masroh"
-### maspidia 2024-10-22
-},{"id": "0597a12c-3752-433e-b3cb-2e875418e2ae","alterId": 0,"email": "maspidia"
-### anwar 2024-10-22
-},{"id": "d4cf9951-d14f-4d10-a07e-c455b15fdeea","alterId": 0,"email": "anwar"
-### rina 2024-10-20
-},{"id": "5d2d3aad-d737-4ab4-a7e3-27f0c2bd5a5a","alterId": 0,"email": "rina"
-### yuni 2024-10-19
-},{"id": "fefa97db-1c34-4b56-abb9-243164536887","alterId": 0,"email": "yuni"
-### huy 2024-10-18
-},{"id": "5c5d55e6-21e7-45af-a1f2-9b4624eae9ba","alterId": 0,"email": "huy"
-### bojes 2024-10-18
-},{"id": "06cb2d61-40db-4df6-bb74-bfe2c8516476","alterId": 0,"email": "bojes"
-### abah 2024-10-16
-},{"id": "b7e7254b-a87c-4cff-8a96-1c2df38cbed9","alterId": 0,"email": "abah"
-### zidna 2024-10-15
-},{"id": "ac906095-5342-45e1-a769-75fb2010b6a5","alterId": 0,"email": "zidna"
-### ibhas 2024-10-13
-},{"id": "ae78fa56-3646-4e63-a2ae-b83198b1e05b","alterId": 0,"email": "ibhas"
-### alii 2024-10-07
-},{"id": "51cf8cad-0f16-4ce4-84dc-90e7dc2c8463","alterId": 0,"email": "alii"
-### open 2025-08-05
-},{"id": "8ce5f030-c221-4557-91e8-4a6773075fbf","alterId": 0,"email": "open"
              }
           ]
        },
