@@ -382,11 +382,21 @@ cat <<EOF> /etc/xray/config.json
          "network": "ws",
             "wsSettings": {
                 "path": "/vmess"
-                "path": "/servlets/mms"
           }
         }
      },
      {
+#vmessopok
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/servlets/mms"
+          }
+        }
+     },
      "listen": "127.0.0.1",
       "port": "$trojanws",
       "protocol": "trojan",
