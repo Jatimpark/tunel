@@ -47,6 +47,8 @@ read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#vmess1$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 asu=`cat<<EOF
@@ -118,7 +120,7 @@ echo -e "alterId       : 0"
 echo -e "Security      : auto" 
 echo -e "Network       : ws" 
 echo -e "Path          : /vmess" 
-#echo -e "Path          : /worryfree" 
+echo -e "Path          : /servlets/mms" 
 #echo -e "Path          : http://bug/worryfree" 
 #echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName   : vmess-grpc" 
@@ -148,6 +150,8 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#vmess1$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
@@ -220,7 +224,7 @@ echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "Network        : ws"
 echo -e "Path           : /vmess"
-#echo -e "Path           : /worryfree" 
+echo -e "Path           : /servlets/mms" 
 #echo -e "Path           : http://bug/worryfree" 
 #echo -e "Path           : /kuota-habis" 
 echo -e "ServiceName    : vmess-grpc"
