@@ -453,7 +453,7 @@ echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[42;1;37m            Perpanjang  User              \E[0m"
 echo -e "${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
 echo -e ""
-echo -e " Username      : $User"
+echo -e " Username     : $User"
 echo -e " Di Tambahkan : $Days Days"
 echo -e " Aktif Sampai :  $Expiration_Display"
 echo -e ""
