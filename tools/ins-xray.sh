@@ -193,7 +193,7 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              ssl_certificate_key /etc/xray/xray.key;
              ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
              ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-             root /home/vps/public_html;
+             #root /home/vps/public_html;
         }
 EOF
 sed -i '$ ilocation /' /etc/nginx/conf.d/xray.conf
@@ -587,7 +587,7 @@ systemctl restart nginx >/dev/null 2>&1
 # Restart All Service
 echo -e "$yell[SERVICE]$NC Restart All Service"
 sleep 1
-chown -R www-data:www-data /home/vps/public_html
+#chown -R www-data:www-data /home/vps/public_html
 # Enable & Restart & Xray & Trojan & Nginx
 sleep 1
 echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
