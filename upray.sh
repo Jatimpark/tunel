@@ -83,10 +83,10 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 # Make Folder & Log XRay & Log Trojan
 rm -fr /var/log/xray
 #rm -fr /var/log/trojan
-rm -fr /home/vps/public_html
+# rm -fr /home/vps/public_html
 mkdir -p /var/log/xray
 #mkdir -p /var/log/trojan
-mkdir -p /home/vps/public_html
+# mkdir -p /home/vps/public_html
 chown www-data.www-data /var/log/xray
 chown www-data.www-data /etc/xray
 chmod +x /var/log/xray
@@ -157,7 +157,6 @@ xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_vers
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # / / Make Main Directory
-
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 mkdir -p /usr/local/etc/xray
