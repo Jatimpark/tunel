@@ -42,7 +42,6 @@ apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
-
 # install xray
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
@@ -80,15 +79,14 @@ echo -n '#!/bin/bash
 chmod +x /usr/local/bin/ssl_renew.sh
 if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
 
-mkdir -p /home/vps/public_html
-
+#mkdir -p /home/vps/public_html
 # Make Folder & Log XRay & Log Trojan
 rm -fr /var/log/xray
 #rm -fr /var/log/trojan
-rm -fr /home/vps/public_html
+#rm -fr /home/vps/public_html
 mkdir -p /var/log/xray
 #mkdir -p /var/log/trojan
-mkdir -p /home/vps/public_html
+#mkdir -p /home/vps/public_html
 chown www-data.www-data /var/log/xray
 chown www-data.www-data /etc/xray
 chmod +x /var/log/xray
@@ -209,7 +207,7 @@ systemctl restart nginx >/dev/null 2>&1
 # Restart All Service
 echo -e "$yell[SERVICE]$NC Restart All Service"
 sleep 1
-chown -R www-data:www-data /home/vps/public_html
+# chown -R www-data:www-data /home/vps/public_html
 # Enable & Restart & Xray & Trojan & Nginx
 sleep 1
 echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
