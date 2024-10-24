@@ -25,7 +25,7 @@ cp /etc/gshadow /root/backup/ &> /dev/null
 #cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
 cp -r /var/lib/scrz-prem/ /root/backup/scrz-prem &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
-cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+#cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
