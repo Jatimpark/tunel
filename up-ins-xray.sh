@@ -42,7 +42,6 @@ apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
-
 # install xray
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
@@ -84,10 +83,10 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 # Make Folder & Log XRay & Log Trojan
 rm -fr /var/log/xray
 #rm -fr /var/log/trojan
-rm -fr /home/vps/public_html
+# rm -fr /home/vps/public_html
 mkdir -p /var/log/xray
 #mkdir -p /var/log/trojan
-mkdir -p /home/vps/public_html
+# mkdir -p /home/vps/public_html
 chown www-data.www-data /var/log/xray
 chown www-data.www-data /etc/xray
 chmod +x /var/log/xray
