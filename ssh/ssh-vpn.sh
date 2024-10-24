@@ -23,38 +23,7 @@ email=setyaaries9@gmail.com
 wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/password"
 chmod +x /etc/pam.d/common-password
 
-# go to root
 cd
-
-# Getting websocket dropbear
-#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/ws-dropbear"
-#chmod +x /usr/local/bin/ws-dropbear
-
-# Installing Service
-#cat > /etc/systemd/system/ws-dropbear.service << END
-#[Unit]
-#Description=Ssh Websocket By Arya
-#Documentation=https://aryavpn
-#After=network.target nss-lookup.target
-
-#[Service]
-#Type=simple
-#User=root
-#CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#NoNewPrivileges=true
-#ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-dropbear 8880
-#Restart=on-failure
-
-#[Install]
-#WantedBy=multi-user.target
-#END
-
-#systemctl daemon-reload >/dev/null 2>&1
-#systemctl enable ws-dropbear >/dev/null 2>&1
-#systemctl start ws-dropbear >/dev/null 2>&1
-#systemctl restart ws-dropbear >/dev/null 2>&1
-
 clear 
 
 # Getting websocket ssl stunnel
@@ -101,11 +70,8 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
 cat > /etc/rc.local <<-END
-#!/bin/sh -e
-# rc.local
-# By default this script does nothing.
+
 exit 0
 END
 
@@ -240,19 +206,6 @@ connect = 127.0.0.1:22
 accept = 442
 connect = 127.0.0.1:1194
 END
-
-# make a certificate
-#openssl genrsa -out key.pem 2048  >/dev/null 2>&1
-#openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
-#-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"  >/dev/null 2>&1
-#cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-
-# konfigurasi stunnel
-#echo "ENABLED=1" >> /etc/default/stunnel4
-#sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-#systemctl daemon-reload >/dev/null 2>&1
-#/etc/init.d/stunnel4 start >/dev/null 2>&1
-#/etc/init.d/stunnel4 restart >/dev/null 2>&1
 
 # Service Stunnel5 systemctl restart stunnel5
 rm -fr /etc/systemd/system/stunnel5.service
@@ -425,12 +378,6 @@ if dpkg -s unscd >/dev/null 2>&1; then
 apt -y remove --purge unscd >/dev/null 2>&1
 fi
 
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
-# finishing
 cd
 echo -e "[ ${green}ok${NC} ] Restarting openvpn"
 /etc/init.d/cron restart >/dev/null 2>&1

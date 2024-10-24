@@ -75,11 +75,8 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
 cat > /etc/rc.local <<-END
-#!/bin/sh -e
-# rc.local
-# By default this script does nothing.
+
 exit 0
 END
 
@@ -308,7 +305,6 @@ Optimize_Parameters
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install successfully..."
 
-# install fail2ban
 # Instal DDOS Flate
 rm -fr /usr/local/ddos
 mkdir -p /usr/local/ddos >/dev/null 2>&1
@@ -330,8 +326,6 @@ sleep 1
 echo -e "[ ${green}INFO$NC ] Install successfully..."
 sleep 1
 echo -e "[ ${green}INFO$NC ] Config file at /usr/local/ddos/ddos.conf"
-
-# Banner /etc/issue.net
 
 # Blokir Torrent
 echo -e "[ ${green}INFO$NC ] Set iptables"
