@@ -68,8 +68,6 @@ echo -n '#!/bin/bash
 chmod +x /usr/local/bin/ssl_renew.sh
 if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
 
-mkdir -p /home/vps/public_html
-
 # Make Folder & Log XRay & Log Trojan
 rm -fr /var/log/xray
 #rm -fr /var/log/trojan
@@ -139,7 +137,6 @@ wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Jatimpark/tu
 wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Jatimpark/tunel/main/tools/vps.conf"
 
 # Install Xray #
-#==========#
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 # / / Installation Xray Core
@@ -147,7 +144,6 @@ xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_vers
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
 
 # / / Make Main Directory
-
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 mkdir -p /usr/local/etc/xray
@@ -194,7 +190,7 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              ssl_certificate_key /etc/xray/xray.key;
              ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
              ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-             root /home/vps/public_html;
+             #root /home/vps/public_html;
         }
 EOF
 sed -i '$ ilocation /' /etc/nginx/conf.d/xray.conf
@@ -620,7 +616,7 @@ systemctl restart nginx >/dev/null 2>&1
 # Restart All Service
 echo -e "$yell[SERVICE]$NC Restart All Service"
 sleep 1
-chown -R www-data:www-data /home/vps/public_html
+# chown -R www-data:www-data /home/vps/public_html
 # Enable & Restart & Xray & Trojan & Nginx
 sleep 1
 echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
